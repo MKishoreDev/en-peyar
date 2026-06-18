@@ -116,13 +116,13 @@ class MapManager {
     detailsContainer.innerHTML = `
       <div class="animate-card-slide flex flex-col justify-between h-full">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex flex-col">
-              <h3 class="font-display text-3xl font-bold tracking-tight text-gradient-tamil leading-none">${info.name}</h3>
+          <div class="flex flex-wrap sm:flex-nowrap items-start justify-between mb-4 gap-3">
+            <div class="flex flex-col min-w-0">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gradient-tamil leading-none break-words">${info.name}</h3>
               <span class="text-[9px] text-muted-foreground mt-1 uppercase tracking-wider font-semibold">${t("map.details.districtCode", "District Code")}: ${code}</span>
             </div>
-            <div class="flex flex-col items-end gap-1.5">
-              <span class="tamil text-xl text-accent font-semibold leading-none">${info.tamilName}</span>
+            <div class="flex flex-col items-start sm:items-end gap-1.5 min-w-0">
+              <span class="tamil text-xl text-accent font-semibold leading-none break-words">${info.tamilName}</span>
               ${itBadge}
             </div>
           </div>

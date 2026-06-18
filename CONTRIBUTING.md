@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 # Copy environment config
 cp .env.example .env
-# Add your GROQ_API_KEY or GEMINI_API_KEY to .env
+# Add your GROQ_API_KEY to .env
 
 # Start the dev server
 python app.py

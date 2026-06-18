@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://yen-peyar.indevs.in">
+  <a href="https://en-peyar.indevs.in/">
     <img src="https://img.shields.io/badge/Visit-Website-B22222?style=for-the-badge" />
   </a>
   <a href="https://github.com/MKishoreDev/en-peyar">
@@ -246,7 +246,7 @@ Inspired by:
 
 Special thanks to **Stackryze Domains** for providing the official project subdomain:
 
-**https://yen-peyar.indevs.in**
+**https://en-peyar.indevs.in**
 
 Managed under the **indevs.in** namespace.
 

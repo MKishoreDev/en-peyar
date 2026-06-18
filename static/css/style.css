@@ -348,33 +348,6 @@ textarea.form-input { resize: vertical; }
 /* ── Details modal ───────────────────────────────────────── */
 #details-modal { animation: fadeUp 0.2s ease both; }
 
-/* ── Mobile bottom nav ───────────────────────────────────── */
-@media (max-width: 767px) {
-  body { padding-bottom: 4.5rem; }
-  #mobile-bottom-nav {
-    position: fixed; bottom:0; left:0; right:0; z-index:60;
-    display: flex; justify-content: space-around; align-items: center;
-    background: hsl(var(--card)/0.96);
-    backdrop-filter: blur(20px) saturate(1.5);
-    border-top: 1px solid hsl(var(--border));
-    padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom));
-  }
-  #mobile-bottom-nav a, #mobile-bottom-nav button {
-    display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
-    font-size: 0.6rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.05em; color: hsl(var(--muted-foreground));
-    padding: 0.4rem 0.75rem; border-radius: 0.75rem;
-    transition: color 0.2s, background 0.2s;
-    text-decoration: none; background: none; border: none; cursor: pointer;
-  }
-  #mobile-bottom-nav a:hover, #mobile-bottom-nav button:hover,
-  #mobile-bottom-nav a.active {
-    color: hsl(var(--primary));
-    background: hsl(var(--primary)/0.08);
-  }
-  #toast-container { bottom: 5.5rem; }
-}
-@media (min-width: 768px) { #mobile-bottom-nav { display: none !important; } }
 
 /* ── Toast ───────────────────────────────────────────────── */
 .toast-item {

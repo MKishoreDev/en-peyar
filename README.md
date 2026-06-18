@@ -1,6 +1,3 @@
-# README.md
-
-````md
 <p align="center">
   <img src="static/images/banner.png" alt="En Peyar Banner" width="100%" />
 </p>
@@ -38,8 +35,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Hosted%20on-indevs.in-B22222?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Powered%20by-Stackryze%20Domains-D4A017?style=for-the-badge" />
-</p>
 
 ---
 

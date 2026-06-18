@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About — En Peyar</title>
+  <meta name="description" content="En Peyar is the digital naming home for Tamil founders — culturally rooted, globally usable." />
+  <meta name="author" content="En Peyar — MKishoreDev" />
+
+  <meta property="og:site_name" content="En Peyar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About En Peyar" />
+  <meta property="og:description" content="The philosophy, history, and open-source community behind En Peyar." />
+  <meta property="og:url" content="https://github.com/MKishoreDev/en-peyar" />
+  <meta property="og:image" content="/static/images/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0F0D0B" />
+
+  <link rel="icon" href="/static/images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/static/images/logo.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            card: 'hsl(var(--card))',
+            primary: 'hsl(var(--primary))',
+            accent: 'hsl(var(--accent))',
+            gold: 'hsl(var(--gold))',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Fraunces', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="bg-background text-foreground transition-colors duration-300">
+
+<header class="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+    <a href="/" class="flex items-center gap-2.5 logo-hover" aria-label="En Peyar home">
+      <img src="/static/images/logo.png" alt="En Peyar" class="h-9 w-9 object-contain" />
+      <div class="flex flex-col leading-none">
+        <span class="font-display text-[15px] font-bold tracking-tight">En Peyar</span>
+        <span class="tamil text-[10px] text-muted-foreground">என் பெயர்</span>
+      </div>
+    </a>
+    <div class="hidden items-center gap-1 md:flex">
+      <a href="/" class="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" data-i18n="nav.home"></a>
+      <a href="/#generator" class="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" data-i18n="nav.generate"></a>
+      <a href="/about" class="rounded-md px-3 py-2 text-sm text-primary font-semibold" data-i18n="nav.about"></a>
+    </div>
+    <div class="flex items-center gap-1">
+      <button id="lang-toggle-btn" class="hidden items-center gap-1.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m5 8 6 6"/><path d="m4 14 6-6 8 8"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>
+        </svg>
+        <span id="lang-btn-text">தமிழ்</span>
+      </button>
+      <button id="theme-toggle-btn" class="grid h-9 w-9 place-items-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+      <a href="/#generator" class="ml-2 hidden rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:inline-flex" data-i18n="nav.generate"></a>
+      <button id="menu-toggle-btn" class="grid h-9 w-9 place-items-center rounded-md text-muted-foreground md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden border-t border-border bg-background md:hidden">
+    <div class="flex flex-col space-y-1 p-4">
+      <a href="/" class="rounded-lg px-3 py-2.5 text-sm hover:bg-muted" data-i18n="nav.home"></a>
+      <a href="/#generator" class="rounded-lg px-3 py-2.5 text-sm hover:bg-muted" data-i18n="nav.generate"></a>
+      <a href="/about" class="rounded-lg px-3 py-2.5 text-sm hover:bg-muted font-semibold text-primary" data-i18n="nav.about"></a>
+      <button onclick="window.app && window.app.toggleLanguage()" class="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm hover:bg-muted text-left" data-i18n="nav.languageToggle">
+        <span class="tamil text-accent">தமிழில் காண்க</span> / English
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1">
+<article class="mx-auto max-w-3xl px-5 py-20 sm:py-28 lg:px-8 relative">
+  <div class="bg-kolam absolute inset-0 opacity-10 pointer-events-none"></div>
+  
+  <div class="relative z-10 animate-fade-up">
+    <!-- Logo -->
+    <div class="h-24 w-24 flex items-center justify-center mb-6 animate-float">
+      <img src="/static/images/logo.png" alt="En Peyar Logo" class="h-20 w-20 object-contain " />
+    </div>
+    
+    <!-- Title -->
+    <h1 class="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl">
+      <span data-i18n="about.title"></span><span class="text-gradient-tamil italic" data-i18n="about.title.gradient"></span><span data-i18n="about.title.suffix"></span>
+    </h1>
+
+    <!-- Prose body -->
+    <div class="mt-10 space-y-7 text-base leading-relaxed text-foreground/85 sm:text-lg">
+      <p data-i18n="about.body.p1"></span> — <em>En Peyar</em> means "My Name" in Tamil.
+      </p>
+      
+      <p data-i18n="about.body.p2"></p>
+      
+      <p data-i18n="about.body.p3"></p>
+
+      <h2 class="!mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl text-gradient-tamil" data-i18n="about.mission.title"></h2>
+      <p data-i18n="about.mission.p1"></p>
+
+      <h2 class="!mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl text-gradient-tamil" data-i18n="about.values.title"></h2>
+      <ul class="grid gap-4 sm:grid-cols-2 not-prose">
+        <li class="rounded-xl border border-border bg-card/50 p-5">
+          <div class="tamil text-2xl text-gradient-tamil font-bold">தெளிவு</div>
+          <h3 class="font-display text-lg font-bold mt-1" data-i18n="about.values.clarity.title"></h3>
+          <p class="mt-1 text-sm text-muted-foreground" data-i18n="about.values.clarity.body"></p>
+        </li>
+        <li class="rounded-xl border border-border bg-card/50 p-5">
+          <div class="tamil text-2xl text-gradient-tamil font-bold">வேர்</div>
+          <h3 class="font-display text-lg font-bold mt-1" data-i18n="about.values.roots.title"></h3>
+          <p class="mt-1 text-sm text-muted-foreground" data-i18n="about.values.roots.body"></p>
+        </li>
+        <li class="rounded-xl border border-border bg-card/50 p-5">
+          <div class="tamil text-2xl text-gradient-tamil font-bold">திறந்த</div>
+          <h3 class="font-display text-lg font-bold mt-1" data-i18n="about.values.open.title"></h3>
+          <p class="mt-1 text-sm text-muted-foreground" data-i18n="about.values.open.body"></p>
+        </li>
+        <li class="rounded-xl border border-border bg-card/50 p-5">
+          <div class="tamil text-2xl text-gradient-tamil font-bold">மரியாதை</div>
+          <h3 class="font-display text-lg font-bold mt-1" data-i18n="about.values.respect.title"></h3>
+          <p class="mt-1 text-sm text-muted-foreground" data-i18n="about.values.respect.body"></p>
+        </li>
+      </ul>
+
+      <h2 class="!mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl text-gradient-tamil" data-i18n="about.philosophy.title">Not every Tamil word is a brand.</h2>
+      <p class="leading-relaxed" data-i18n="about.philosophy.body"></p>
+
+      <h2 class="!mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl text-gradient-tamil" data-i18n="about.how.title"></h2>
+      <p data-i18n="about.how.p1"></p>
+
+      <h2 id="license" class="!mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl text-gradient-tamil" data-i18n="about.open.title"></h2>
+      <p data-i18n="about.open.p1"></a>.
+      </p>
+
+
+      <!-- Contributor Wall -->
+      <h2 class="!mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl text-gradient-tamil">Built in the open.</h2>
+      <div class="not-prose grid gap-4 sm:grid-cols-3 mt-4">
+        <a href="https://github.com/MKishoreDev/en-peyar" target="_blank" rel="noreferrer"
+           class="rounded-xl border border-border bg-card/50 p-5 hover:border-accent/60 transition-colors group">
+          <div class="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-sm" data-i18n="about.github.title">GitHub Repository</h3>
+          <p class="text-xs text-muted-foreground mt-1" data-i18n="about.github.desc">Source code, issues, pull requests.</p>
+          <p class="text-xs text-accent mt-2 font-semibold">MKishoreDev/en-peyar →</p>
+        </a>
+        <a href="https://github.com/MKishoreDev/en-peyar/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer"
+           class="rounded-xl border border-border bg-card/50 p-5 hover:border-accent/60 transition-colors group">
+          <div class="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-sm" data-i18n="about.contribute.title">Contribute</h3>
+          <p class="text-xs text-muted-foreground mt-1" data-i18n="about.contribute.desc">Add Tamil roots, fix translations, improve data.</p>
+          <p class="text-xs text-accent mt-2 font-semibold">Read CONTRIBUTING.md →</p>
+        </a>
+        <a href="https://github.com/MKishoreDev/en-peyar/issues" target="_blank" rel="noreferrer"
+           class="rounded-xl border border-border bg-card/50 p-5 hover:border-accent/60 transition-colors group">
+          <div class="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-sm" data-i18n="about.issues.title">Report Issues</h3>
+          <p class="text-xs text-muted-foreground mt-1" data-i18n="about.issues.desc">Found a bug or have a feature idea?</p>
+          <p class="text-xs text-accent mt-2 font-semibold">Open an issue →</p>
+        </a>
+      </div>
+
+      <blockquote class="!mt-14 border-l-4 border-accent pl-5 bg-muted/20 p-5 rounded-r-lg">
+        <p class="tamil text-xl leading-relaxed text-foreground font-semibold" data-i18n="about.quote"></p>
+        <footer class="mt-2 text-xs text-muted-foreground" data-i18n="about.quote.author"></footer>
+      </blockquote>
+    </div>
+
+    <!-- Actions -->
+    <div class="mt-16 flex flex-wrap gap-3">
+      <a href="/#generator" class="btn btn-primary text-sm px-6 py-3 font-semibold rounded-full hover:shadow-lg transition-all" data-i18n="about.cta.try"></a>
+      <a href="https://github.com/MKishoreDev/en-peyar" target="_blank" rel="noreferrer" class="btn btn-secondary text-sm px-6 py-3 font-semibold rounded-full border border-border" data-i18n="about.cta.github"></a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="border-t border-border/60 bg-background relative overflow-hidden">
+  <div class="bg-kolam-fine absolute inset-0 opacity-10 pointer-events-none"></div>
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8 relative z-10">
+    <div>
+      <a href="/" class="flex items-center gap-2.5 logo-hover w-fit">
+        <img src="/static/images/logo.png" alt="En Peyar" class="h-10 w-10 object-contain" />
+        <div class="flex flex-col leading-tight">
+          <span class="font-display text-lg font-bold">En Peyar</span>
+          <span class="tamil text-xs text-muted-foreground">என் பெயர்</span>
+        </div>
+      </a>
+      <p class="mt-4 max-w-sm text-sm text-muted-foreground" data-i18n="footer.tagline"></p>
+      <p class="mt-3 text-xs text-accent" data-i18n="footer.builtIn"></p>
+    </div>
+    <div>
+      <h4 class="text-xs font-bold uppercase tracking-wider text-foreground" data-i18n="footer.product">Product</h4>
+      <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+        <li><a href="/#generator" class="hover:text-foreground transition-colors" data-i18n="footer.generator">Generator</a></li>
+        <li><a href="/about" class="hover:text-foreground transition-colors" data-i18n="nav.about"></a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xs font-bold uppercase tracking-wider text-foreground" data-i18n="footer.opensource">Open Source</h4>
+      <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+        <li><a href="https://github.com/MKishoreDev/en-peyar" target="_blank" rel="noreferrer" class="hover:text-foreground transition-colors" data-i18n="footer.github">GitHub</a></li>
+        <li><a href="https://github.com/MKishoreDev/en-peyar/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer" class="hover:text-foreground transition-colors" data-i18n="footer.contribute">Contribute</a></li>
+        <li><a href="/about#license" class="hover:text-foreground transition-colors" data-i18n="footer.mitLicense">MIT License</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-border/60 relative z-10 bg-background/50">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-xs text-muted-foreground sm:flex-row lg:px-8">
+      <span>© <span id="current-year"></span> En Peyar · <span data-i18n="footer.craftedBy">Crafted by</span> <a href="https://github.com/MKishoreDev/" target="_blank" rel="noreferrer" class="font-semibold text-foreground hover:text-accent transition-colors">Kishore</a></span>
+      <span class="tamil text-gradient-tamil font-bold text-sm" data-i18n="footer.tamilVazhga">தமிழ் வாழ்க</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast-container" class="fixed bottom-20 right-4 z-50 flex flex-col gap-2 pointer-events-none md:bottom-4"></div>
+
+<script src="/static/js/i18n.js"></script>
+<script src="/static/js/map.js"></script>
+<script src="/static/js/generator.js"></script>
+<script src="/static/js/main.js"></script>
+<script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

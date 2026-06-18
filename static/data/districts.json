@@ -1,0 +1,945 @@
+{
+  "CHE": {
+    "name": "Chennai",
+    "tamilName": "சென்னை",
+    "meaning": "Named after Chennakesava Perumal temple or Chennappa Nayakar.",
+    "history": "The capital city and gateway of South India. Established in 1639 around Fort St. George, it grew into a sprawling colonial and modern hub of commerce, culture, and technology.",
+    "vibe": "Cosmopolitan, Legacy, Coastal, Dynamic",
+    "companies": "Zoho, Freshworks, Chargebee, Netmeds, Kissflow, TVS Motors, MRF, Madras Cements",
+    "culture": "Margazhi Music Festival, Bharatanatyam dance academies, colonial fort architecture, Marina beach, Carnatic classical heritage",
+    "itHub": true,
+    "keywords": [
+      "Mudra",
+      "Kadal",
+      "Nagar",
+      "Chennai",
+      "Keezh",
+      "Vada"
+    ],
+    "brandMood": "Bold, metropolitan, globally connected yet rooted in tradition",
+    "namingInspiration": [
+      "Marina",
+      "Madras",
+      "Mudra",
+      "Kapaal",
+      "Vaanam"
+    ]
+  },
+  "CBE": {
+    "name": "Coimbatore",
+    "tamilName": "கோயம்புத்தூர்",
+    "meaning": "Named after the chieftain Kovan (Kovanputhur), which evolved over centuries.",
+    "history": "The Manchester of South India. Famous for deep entrepreneurship culture, textile mills, pump manufacturing, and a thriving ecosystem of mid-market industrial engineering companies.",
+    "vibe": "Industrious, Enterprise, Tech, High-growth",
+    "companies": "Kovai.co, Lakshmi Machine Works (LMW), ELGI Equipments, Pricol, Roots, Craftsman Automation",
+    "culture": "Siruvani water, Kongu Tamil dialect, industrious Nattukotai Chettiar work ethic, Avinashi road startup corridor",
+    "itHub": true,
+    "keywords": [
+      "Kovan",
+      "Kongu",
+      "Maanil",
+      "Siruvani",
+      "Thozhil"
+    ],
+    "brandMood": "Gritty, enterprise-grade, built to last, quietly confident",
+    "namingInspiration": [
+      "Kovai",
+      "Kongu",
+      "Siruvani",
+      "Pumpkin",
+      "Maanila"
+    ]
+  },
+  "MAD": {
+    "name": "Madurai",
+    "tamilName": "மதுரை",
+    "meaning": "Derived from Madhuram meaning sweetness, referring to the divine nectar Shiva is said to have showered upon the city.",
+    "history": "Athens of the East. One of the oldest continuously inhabited cities on Earth. Capital of the Pandyan Dynasty, cradle of the three Tamil Sangam literary academies.",
+    "vibe": "Classical, Sacred, Midnight, Poetic",
+    "companies": "TVS Group (historical origins), Madurai Jasmine exports, local food-tech and agritech ventures",
+    "culture": "Meenakshi Amman Temple, Sangam literature, Jigarthanda drink, Alagar Kovil festival, midnight city life",
+    "itHub": true,
+    "keywords": [
+      "Sangam",
+      "Malar",
+      "Tamil",
+      "Pandyan",
+      "Koodal",
+      "Sudar"
+    ],
+    "brandMood": "Deep, literary, timeless, evocative of old wealth and cultural pride",
+    "namingInspiration": [
+      "Koodal",
+      "Pandian",
+      "Madurai",
+      "Madhuram",
+      "Alagar"
+    ]
+  },
+  "TRI": {
+    "name": "Tiruchirappalli",
+    "tamilName": "திருச்சிராப்பள்ளி",
+    "meaning": "Derived from Tiru-chinna-palli meaning holy little school, or from Trishira the three-headed demon slain there.",
+    "history": "Grew around the majestic Rockfort, a prominent Chola and Nayak stronghold. Famous for its dense concentration of engineering colleges and BHEL manufacturing.",
+    "vibe": "Central, Academic, Historical, Steady",
+    "companies": "BHEL, Ordnance Factory Trichy, Dalmia Cements, Care IT Solutions",
+    "culture": "Rockfort Temple, Kaveri river basin, ancient Srirangam temple complex, hub of Tamil education",
+    "itHub": true,
+    "keywords": [
+      "Kaveri",
+      "Kalvi",
+      "Malai",
+      "Chola",
+      "Trichy"
+    ],
+    "brandMood": "Reliable, institutional, technically grounded, builds for the long term",
+    "namingInspiration": [
+      "Kaveri",
+      "Uthayam",
+      "Chola",
+      "Malai",
+      "Arasukal"
+    ]
+  },
+  "TAN": {
+    "name": "Tanjavur",
+    "tamilName": "தஞ்சாவூர்",
+    "meaning": "Named after Tanjan a legendary character, or derived from Than-sei-oor meaning the fertile settlement.",
+    "history": "The rice bowl of Tamil Nadu. Capital of the Great Chola Empire, home to the Brihadisvara Temple and the origin of Tanjore painting, Bharatanatyam, and classical Veena crafting.",
+    "vibe": "Artistic, Royal, Fertile, Cultured",
+    "companies": "Agri-tech collectives, Tanjavur metal plate workshops, master Veena craftsmen",
+    "culture": "Brihadisvara Temple (UNESCO World Heritage), Tanjore painting on gold leaf, Bharatanatyam dance academies, bronze casting",
+    "itHub": false,
+    "keywords": [
+      "Chola",
+      "Nel",
+      "Kala",
+      "Brihad",
+      "Kaveri",
+      "Thanjam"
+    ],
+    "brandMood": "Regal, artisanal, detail-obsessed, long-lasting craft",
+    "namingInspiration": [
+      "Brihad",
+      "Thanjam",
+      "Chola",
+      "Kaveri",
+      "Nataraj"
+    ]
+  },
+  "SAL": {
+    "name": "Salem",
+    "tamilName": "சேலம்",
+    "meaning": "Derived from Sailam meaning surrounded by hills.",
+    "history": "Ringed by the Shevaroy hills. Famous for Salem Steel Plant, handloom silk weaving, silver filigree ornaments, and sweet Banganapalle mangoes.",
+    "vibe": "Grounded, Solid, Sweet, Saffron",
+    "companies": "SAIL Salem Steel Plant, handloom weaving cooperatives, mango export guilds",
+    "culture": "Shevaroy hill ecology, traditional mango harvest season, Karthigai Deepam festival",
+    "itHub": false,
+    "keywords": [
+      "Malai",
+      "Steel",
+      "Manga",
+      "Sailam",
+      "Salem"
+    ],
+    "brandMood": "Understated strength, dependable, nourishing, community-first",
+    "namingInspiration": [
+      "Sailam",
+      "Shevaroy",
+      "Manga",
+      "Yerkaadu",
+      "Magil"
+    ]
+  },
+  "DIN": {
+    "name": "Dindigul",
+    "tamilName": "திண்டுக்கல்",
+    "meaning": "Derived from Thindu meaning pillow and Kal meaning rock, for the distinctive pillow-shaped rock fort.",
+    "history": "A historically fortified strategic town. Internationally famous for precision-made locks and iron safes, and a major leather tanning cluster.",
+    "vibe": "Fortified, Secure, Industrial, Organic",
+    "companies": "Dindigul lock manufacturers, leather tannery clusters, organic farm cooperatives",
+    "culture": "Dindigul Rock Fort history, distinctive local biryani culinary tradition",
+    "itHub": false,
+    "keywords": [
+      "Kottai",
+      "Kal",
+      "Pootu",
+      "Dindigul",
+      "Saba"
+    ],
+    "brandMood": "Secure, protective, built-to-withstand, artisan precision",
+    "namingInspiration": [
+      "Kottai",
+      "Pootu",
+      "Savanad",
+      "Palani",
+      "Kaaviri"
+    ]
+  },
+  "ERO": {
+    "name": "Erode",
+    "tamilName": "ஈரோடு",
+    "meaning": "From Eeru-odai meaning two canals, referring to the confluence of streams near the original settlement.",
+    "history": "Located at the Kaveri banks. Worlds largest turmeric trading market. Major textile weaving, handloom, and agricultural commodity hub.",
+    "vibe": "Bright, Vibrant, Agricultural, Trade",
+    "companies": "Turmeric wholesale houses, dairy processing plants, power loom textile mills",
+    "culture": "Turmeric auction markets, Bhavani river confluence, traditional Kaveri Pushkaram bathing",
+    "itHub": false,
+    "keywords": [
+      "Manjal",
+      "Odai",
+      "Nool",
+      "Erode",
+      "Kaveri"
+    ],
+    "brandMood": "Warm, earthy, abundant, golden-hued, trader's confidence",
+    "namingInspiration": [
+      "Manjal",
+      "Bhavani",
+      "Kaveri",
+      "Odai",
+      "Thaenvil"
+    ]
+  },
+  "TNE": {
+    "name": "Tirunelveli",
+    "tamilName": "திருநெல்வேலி",
+    "meaning": "From Tiru-nel-veli meaning sacred paddy fence, where paddy was protected from rain by divine grace according to legend.",
+    "history": "On the banks of the Thamirabarani, the only perennial river in Tamil Nadu. Famous for Halwa sweet, wind energy, and deep Tamil literary heritage.",
+    "vibe": "Sweet, Flowing, Wind, Literary",
+    "companies": "Wind energy majors, Thamirabarani irrigation systems, Irutti Halwa makers",
+    "culture": "Nellai Tamil dialect, Nellaiappar Temple, Thamirabarani river spiritual culture, Tamil literary conventions",
+    "itHub": true,
+    "keywords": [
+      "Nel",
+      "Tamra",
+      "Veli",
+      "Porunai",
+      "Nelli"
+    ],
+    "brandMood": "Flowing, sweetly persistent, wind-powered, literary depth",
+    "namingInspiration": [
+      "Porunai",
+      "Thamira",
+      "Nellai",
+      "Sangam",
+      "Thenral"
+    ]
+  },
+  "KKN": {
+    "name": "Kanyakumari",
+    "tamilName": "கன்னியாகுமரி",
+    "meaning": "Named after Goddess Kanya Kumari, the virgin goddess who stood at the tip of the peninsula.",
+    "history": "The southernmost tip of mainland India. The sacred confluence of the Arabian Sea, Bay of Bengal, and Indian Ocean. Famous for sunrise and sunset visible simultaneously from the shore.",
+    "vibe": "Limitless, Spiritual, Oceanic, Dawn",
+    "companies": "Eco-tourism operators, rubber plantations, offshore wind energy, deep-sea marine fisheries",
+    "culture": "Three-ocean confluence, Vivekananda Rock Memorial, Thiruvalluvar Statue, sunrise pilgrimage",
+    "itHub": false,
+    "keywords": [
+      "Muna",
+      "Kadal",
+      "Kumari",
+      "Vaan",
+      "Vizhi"
+    ],
+    "brandMood": "Boundary-breaking, convergent, dawn-like, where old worlds meet new ones",
+    "namingInspiration": [
+      "Kumari",
+      "Vaakai",
+      "Muna",
+      "Vaan",
+      "Alai"
+    ]
+  },
+  "NIL": {
+    "name": "Nilgiris",
+    "tamilName": "நீலகிரி",
+    "meaning": "Blue Mountains, named after the blue Kurinji flowers that bloom once every twelve years.",
+    "history": "A pristine hill district with indigenous Toda tribal communities. Famous for high-altitude tea estates, Eucalyptus oil distilleries, and Ooty botanical gardens.",
+    "vibe": "Serene, Mist, Green, Fresh",
+    "companies": "Ooty Tea estates, Eucalyptus oil distilleries, heritage tourism developers, organic farms",
+    "culture": "Toda tribal embroidery, Kurinji blossom pilgrimage, Nilgiri Mountain Railway (UNESCO), hill station preservation",
+    "itHub": false,
+    "keywords": [
+      "Nilam",
+      "Kurinji",
+      "Ooty",
+      "Tea",
+      "Vaan",
+      "Aruvi"
+    ],
+    "brandMood": "Clean, rarified, slow and deliberate, nature-first, premium minimalism",
+    "namingInspiration": [
+      "Kurinji",
+      "Nilam",
+      "Korakundah",
+      "Thenni",
+      "Aruvi"
+    ]
+  },
+  "DHAM": {
+    "name": "Dharmapuri",
+    "tamilName": "தர்மபுரி",
+    "meaning": "Place of righteousness. Historically known as Tagadur, seat of King Adhiyaman who ruled with legendary generosity.",
+    "history": "Home to the majestic Hogenakkal waterfalls (India's Niagara). Famous for mango cultivation and the story of King Adhiyaman who gifted the rare gooseberry to poetess Avvaiyar.",
+    "vibe": "Ethical, Natural, Ancient, Generous",
+    "companies": "Mango pulping factories, rose nurseries, granite quarrying, Hogenakkal eco-tourism",
+    "culture": "Adhiyaman and Avvaiyar literary legacy, Tagadur historical kingdom, Hogenakkal waterfalls",
+    "itHub": false,
+    "keywords": [
+      "Aram",
+      "Tagadur",
+      "Avvai",
+      "Kural",
+      "Kottai"
+    ],
+    "brandMood": "Generous, ethically grounded, ancient wisdom, quiet strength",
+    "namingInspiration": [
+      "Aram",
+      "Tagadur",
+      "Avvai",
+      "Hoganakkal",
+      "Adhiyan"
+    ]
+  },
+  "KRI": {
+    "name": "Krishnagiri",
+    "tamilName": "கிருஷ்ணகிரி",
+    "meaning": "Black Hills, named after the dramatic dark granite formations surrounding the town.",
+    "history": "A border district at the intersection of three states. Home to India's largest mango export cluster and a rapidly rising electronics manufacturing corridor (Hosur).",
+    "vibe": "Border, Strong, Floral, Granite",
+    "companies": "Ather Energy, Ola Electric Gigafactory, TVS Motors Hosur plant, Titan Industries, Dell Technologies",
+    "culture": "Hosur industrial corridor, tri-state border language blends, rose cultivation in Denkanikottai",
+    "itHub": true,
+    "keywords": [
+      "Giri",
+      "Karuppu",
+      "Kottai",
+      "Krishna",
+      "Manga"
+    ],
+    "brandMood": "Hard-edged innovation, electric energy, cross-border ambition, built for scale",
+    "namingInspiration": [
+      "Hosur",
+      "Krishnam",
+      "Malai",
+      "Denkai",
+      "Kottai"
+    ]
+  },
+  "KAN": {
+    "name": "Kanchipuram",
+    "tamilName": "காஞ்சிபுரம்",
+    "meaning": "City of temple towers (Gopuram) or place of golden sands along the Vegavathi river.",
+    "history": "One of the seven sacred pilgrimage cities of India. Ancient capital of the Pallava dynasty. City of a thousand temples and world-famous heavyweight silk sarees.",
+    "vibe": "Silk, Spiritual, Craft, Ancient",
+    "companies": "Silk weaver cooperatives, temple tourism services, handloom export houses",
+    "culture": "City of 1000 temples, Pallava rock-cut architecture, Kanchi Silk weaving heritage",
+    "itHub": false,
+    "keywords": [
+      "Kanchi",
+      "Pattu",
+      "Koil",
+      "Pallava",
+      "Thiru"
+    ],
+    "brandMood": "Luxurious, heritage-crafted, woven with care, spiritually anchored",
+    "namingInspiration": [
+      "Kanchi",
+      "Pallava",
+      "Pattu",
+      "Gopuram",
+      "Vegavathi"
+    ]
+  },
+  "VEL": {
+    "name": "Vellore",
+    "tamilName": "வேலூர்",
+    "meaning": "Place of Vel (the divine spear), historically connected to Murugan worship.",
+    "history": "Home to the historic Vellore Fort, built by the Vijayanagara rulers. Today a major medical tourism hub anchored by CMC (Christian Medical College), one of Asia's finest hospitals.",
+    "vibe": "Healing, Stone, Fortress, Medical",
+    "companies": "Christian Medical College, Ranipet leather industries, Ambur tanneries",
+    "culture": "Vellore Fort moat, CMC hospital legacy, North Arcot dialect, Ambur biryani culinary tradition",
+    "itHub": false,
+    "keywords": [
+      "Vel",
+      "Kottai",
+      "Nalam",
+      "Palayam",
+      "Palar"
+    ],
+    "brandMood": "Restorative, precise, trustworthy, healing, built on deep professional ethics",
+    "namingInspiration": [
+      "Vellai",
+      "Nalam",
+      "Murai",
+      "Kottai",
+      "Palar"
+    ]
+  },
+  "NAM": {
+    "name": "Namakkal",
+    "tamilName": "நாமக்கல்",
+    "meaning": "Named after Nama-giri, the single dramatic stone hill crowned by Lord Narasimha.",
+    "history": "Famous for two uniquely Tamil industries: India's largest poultry farming cluster and the backbone of India's truck body-building supply chain.",
+    "vibe": "Egg, Truck, Hill, Brave",
+    "companies": "Poultry farm logistics conglomerates, truck body-building plants, National Egg Coordination Committee",
+    "culture": "Narasimha hilltop temple, Namagiri hills, patriotic poetry of Namakkal Kavingnar",
+    "itHub": false,
+    "keywords": [
+      "Kal",
+      "Namagiri",
+      "Pattu",
+      "Namakkal"
+    ],
+    "brandMood": "Self-made, industrial grit, feeds the nation, quietly massive",
+    "namingInspiration": [
+      "Namagiri",
+      "Kal",
+      "Veli",
+      "Kavi",
+      "Thiru"
+    ]
+  },
+  "PER": {
+    "name": "Perambalur",
+    "tamilName": "பெரம்பலூர்",
+    "meaning": "Place of canes or bamboo groves (Perambu means bamboo).",
+    "history": "Rich in calcium deposits and marine fossils dating back millions of years. A primarily agrarian district known for heavy onion, maize, and paddy cultivation.",
+    "vibe": "Fossil, Cane, Hidden, Agrarian",
+    "companies": "Maize and onion trading syndicates, mineral extraction operations",
+    "culture": "Prehistoric marine fossil discoveries, traditional agrarian festivals, ancient rock inscriptions",
+    "itHub": false,
+    "keywords": [
+      "Perambu",
+      "Nel",
+      "Kal",
+      "Oli"
+    ],
+    "brandMood": "Deeply rooted, patient, ancient foundation, hidden depth",
+    "namingInspiration": [
+      "Perambu",
+      "Thiru",
+      "Veli",
+      "Kalai",
+      "Oli"
+    ]
+  },
+  "ARI": {
+    "name": "Ariyalur",
+    "tamilName": "அரியலூர்",
+    "meaning": "Place of rare resources, historically a district rich in marine limestone deposits.",
+    "history": "Land of fossils. Home of Gangaikonda Cholapuram built by Rajendra Chola I after his legendary north Indian campaign. Massive cement industry hub.",
+    "vibe": "Chola, Stone, Fossil, Industry",
+    "companies": "Birla Cements, Tamil Nadu Cements Corporation, limestone quarrying guilds",
+    "culture": "Gangaikonda Cholapuram (UNESCO), Rajendra Chola maritime victory history, Chola water management",
+    "itHub": false,
+    "keywords": [
+      "Gangai",
+      "Chola",
+      "Kal",
+      "Kottai"
+    ],
+    "brandMood": "Victory-minded, empire-building, solid foundations, historically triumphant",
+    "namingInspiration": [
+      "Gangai",
+      "Chola",
+      "Rajendra",
+      "Kottai",
+      "Varman"
+    ]
+  },
+  "PUD": {
+    "name": "Pudukkottai",
+    "tamilName": "புதுக்கோட்டை",
+    "meaning": "New Fort, established by the Thondaiman rulers who maintained an independent princely state.",
+    "history": "Unusually, Pudukkottai remained an independent princely state under British India. Famous for prehistoric Sittannavasal cave rock paintings and ancient megalithic monuments.",
+    "vibe": "Sovereign, Rock, Ancient, Monument",
+    "companies": "Granite mining firms, agricultural processing mills",
+    "culture": "Sittannavasal rock paintings (pre-Jain), ancient megalithic burial sites, Thondaiman royal history",
+    "itHub": false,
+    "keywords": [
+      "Pudhu",
+      "Kottai",
+      "Nagar",
+      "Thondai"
+    ],
+    "brandMood": "Independent, sovereign, quietly ancient, self-reliant, made its own rules",
+    "namingInspiration": [
+      "Pudhu",
+      "Thondai",
+      "Sittannai",
+      "Kottai",
+      "Oor"
+    ]
+  },
+  "SIV": {
+    "name": "Sivagangai",
+    "tamilName": "சிவகங்கை",
+    "meaning": "Shiva's Ganges, referring to the sacred pool inside the Sivagangai palace complex.",
+    "history": "Land of freedom fighters. Home of the legendary queen Velu Nachiyar, India's first woman independence fighter, and poet-lyricist Kannadasan.",
+    "vibe": "Valiant, Literary, Rebel, Proud",
+    "companies": "Chettinad handmade tile exporters, agriculture, Karaikudi heritage food businesses",
+    "culture": "Rani Velu Nachiyar uprising history, Chettinad palatial architecture, Kannadasan film lyric poetry, Karaikudi cuisine",
+    "itHub": false,
+    "keywords": [
+      "Veeram",
+      "Koil",
+      "Velu",
+      "Ganga",
+      "Siva"
+    ],
+    "brandMood": "Rebel with purpose, historically courageous, lyrical, culturally proud",
+    "namingInspiration": [
+      "Velu",
+      "Nachiyar",
+      "Rani",
+      "Ganga",
+      "Kannadasan"
+    ]
+  },
+  "RAM": {
+    "name": "Ramanathapuram",
+    "tamilName": "இராமநாதபுரம்",
+    "meaning": "Abode of Lord Ramanatha, referring to the Shiva linga on the sacred island of Rameswaram.",
+    "history": "Famous for the Sethupathi rulers and the holy island of Rameswaram with its Pamban Rail Bridge, India's first sea bridge.",
+    "vibe": "Coastal, Holy, Bridge, Shell",
+    "companies": "Marine fisheries, sea-salt pans, pearl culture, religious tourism networks",
+    "culture": "Rameswaram pilgrimage, Pamban bridge engineering, Sethupathi kingdom legacy, pearl diving heritage",
+    "itHub": false,
+    "keywords": [
+      "Sethu",
+      "Rames",
+      "Kadal",
+      "Pamban",
+      "Ramnad"
+    ],
+    "brandMood": "Bridging distances, sacred journey, coastal endurance, the last threshold",
+    "namingInspiration": [
+      "Sethu",
+      "Pamban",
+      "Rames",
+      "Kadal",
+      "Alai"
+    ]
+  },
+  "VIR": {
+    "name": "Virudhunagar",
+    "tamilName": "விருதுநகர்",
+    "meaning": "Town of banners or awards, from Virudhugal meaning citations of honour.",
+    "history": "Birthplace of freedom fighter and educationist Kamarajar. A vital trade hub. Sivakasi, its sub-division, is India's fireworks and safety matches capital and prints 90% of India's calendars.",
+    "vibe": "Awards, Trade, Spark, Banner",
+    "companies": "Sivakasi fireworks brands, offset printing houses, match works, calendar publishers",
+    "culture": "Kamarajar's educational legacy, Sivakasi fireworks industry, Tamil Nadu's printing capital",
+    "itHub": false,
+    "keywords": [
+      "Virudhu",
+      "Kamaraj",
+      "Sudar",
+      "Nagar"
+    ],
+    "brandMood": "Sparks in the dark, colourful, celebratory, crafted by hand with fire",
+    "namingInspiration": [
+      "Virudhu",
+      "Sudar",
+      "Sivakasi",
+      "Kamaraj",
+      "Kaadhal"
+    ]
+  },
+  "THO": {
+    "name": "Thoothukudi",
+    "tamilName": "தூத்துக்குடி",
+    "meaning": "From Thoothu meaning harbor and Kudi meaning settlement, the harbor town.",
+    "history": "Pearl City. V.O. Chidambaranar launched India's first swadeshi steam navigation company here. Famous for pearl diving, salt pans, thermal power, and international shipping.",
+    "vibe": "Pearl, Maritime, Salty, Steam",
+    "companies": "V.O.C. Port shipping lines, SPIC Fertilizers, Sterlite Copper, salt extraction companies",
+    "culture": "Pearl diving heritage, swadeshi shipping legacy of VOC, coastal Nadel Tamil dialect, saltwater identity",
+    "itHub": false,
+    "keywords": [
+      "Muthu",
+      "Kadal",
+      "Kudi",
+      "Salt",
+      "Kappal"
+    ],
+    "brandMood": "Maritime grit, pearl of great value, trade-wind spirit, born by the sea",
+    "namingInspiration": [
+      "Muthu",
+      "Kappal",
+      "Kadal",
+      "Thoothu",
+      "VOC"
+    ]
+  },
+  "TEN": {
+    "name": "Tenkasi",
+    "tamilName": "தென்காசி",
+    "meaning": "Southern Kashi, named after the Kasi Viswanathar Temple built here by Pandyan rulers as the Kashi of the south.",
+    "history": "Nestled in the Western Ghats foothills. Famous for Courtallam waterfalls, known as the spa of South India, and rich spice forest ecology.",
+    "vibe": "Waterfalls, Scenic, Southern, Divine",
+    "companies": "Eco-tourism operators, organic spice farming enterprises, Western Ghats bio-resource companies",
+    "culture": "Courtallam waterfalls, Kasiviswanathar temple, Western Ghats biodiversity, rare medicinal plants",
+    "itHub": false,
+    "keywords": [
+      "Kasivis",
+      "Therku",
+      "Aruvi",
+      "Pandyan",
+      "Tenkasi"
+    ],
+    "brandMood": "Rejuvenating, flowing, nature-immersed, quietly sacred",
+    "namingInspiration": [
+      "Aruvi",
+      "Therku",
+      "Courtallam",
+      "Velli",
+      "Pandyan"
+    ]
+  },
+  "TPR": {
+    "name": "Tiruppur",
+    "tamilName": "திருப்பூர்",
+    "meaning": "The place of turning, where armies reportedly turned back, giving the settlement its name.",
+    "history": "Knitwear capital of India and Asia. Exports over 90,000 crores worth of hosiery per year. A self-made industrial city driven entirely by first-generation entrepreneurs.",
+    "vibe": "Knitwear, Global, Hustle, Textile",
+    "companies": "Dixcy Textiles, Royal Classic Group, Eastman Exports, hundreds of export-oriented textile units",
+    "culture": "Noyyal river history, textile industrial hustle culture, first-generation wealth creation",
+    "itHub": false,
+    "keywords": [
+      "Nool",
+      "Aadai",
+      "Thozhil",
+      "Tiruppur"
+    ],
+    "brandMood": "Hustle that ships globally, woven from nothing, relentless industrial ambition",
+    "namingInspiration": [
+      "Nool",
+      "Noyyal",
+      "Thiru",
+      "Aadai",
+      "Kural"
+    ]
+  },
+  "CHN": {
+    "name": "Chengalpattu",
+    "tamilName": "செங்கல்பட்டு",
+    "meaning": "Town of red bricks or red lilies, named for the laterite soil of the region.",
+    "history": "Carved from Kanchipuram district. Home to Mahabalipuram (UNESCO), the stunning Pallava rock-cut shore temples, and a growing IT and auto manufacturing corridor.",
+    "vibe": "Red, Stone, Shore, Tech",
+    "companies": "Zoho Estancia campus, Mahindra World City, IT park developers, auto component manufacturers",
+    "culture": "Mahabalipuram Pallava rock-cut architecture (UNESCO), Muttukadu backwaters, ECR beach culture",
+    "itHub": true,
+    "keywords": [
+      "Sem",
+      "Kal",
+      "Kadal",
+      "Mahaba",
+      "Nagar"
+    ],
+    "brandMood": "Ancient craft meets modern tech, seaside confidence, stone-built permanence",
+    "namingInspiration": [
+      "Mamallan",
+      "Shore",
+      "Pallava",
+      "Kadal",
+      "Vella"
+    ]
+  },
+  "RAN": {
+    "name": "Ranipet",
+    "tamilName": "இராணிப்பேட்டை",
+    "meaning": "Queen's market, named in honor of the Queen of Desingh Raja.",
+    "history": "Industrial hub for leather goods, chemicals, and heavy manufacturing on the banks of the Palar River. Home of BHEL and major leather garment export clusters.",
+    "vibe": "Royal, Industrial, Leather, Palar",
+    "companies": "BHEL, leather garment exporters, chemical processing complexes",
+    "culture": "Desingh Raja queen legend, Palar river basin, Vellore fort proximity",
+    "itHub": false,
+    "keywords": [
+      "Rani",
+      "Palar",
+      "Thozhil",
+      "Ranipet"
+    ],
+    "brandMood": "Industrial royalty, built by hand, river-bound persistence",
+    "namingInspiration": [
+      "Palar",
+      "Rani",
+      "Desingh",
+      "Thozhil",
+      "Kola"
+    ]
+  },
+  "TIR": {
+    "name": "Tirupattur",
+    "tamilName": "திருப்பத்தூர்",
+    "meaning": "Town of ten holy settlements, from Tiru-pathu-oor.",
+    "history": "A fragrant sandalwood processing hub located near the Yelagiri hills. Rich in Chola-era history and rare Jain cave temples.",
+    "vibe": "Sandalwood, Hills, Ancient, Calm",
+    "companies": "Sandalwood processing plants, Yelagiri hill tourism developers, floriculture exporters",
+    "culture": "Yelagiri hill ecology, ancient Jain cave history, sandalwood trade routes",
+    "itHub": false,
+    "keywords": [
+      "Santhanam",
+      "Oor",
+      "Yelagiri",
+      "Koil"
+    ],
+    "brandMood": "Fragrant, calming, elevated, rare, crafted slowly with care",
+    "namingInspiration": [
+      "Santhanam",
+      "Yelagiri",
+      "Thiru",
+      "Oor",
+      "Malar"
+    ]
+  },
+  "KAL": {
+    "name": "Kallakurichi",
+    "tamilName": "கள்ளக்குறிச்சி",
+    "meaning": "Chieftain's settlement or place of stones.",
+    "history": "Rich agricultural district on the Kalrayan hills. Known for traditional wood carving crafts and dense sugarcane and paddy cultivation.",
+    "vibe": "Carved, Green, Stone, Mountain",
+    "companies": "Sugar mills, wood carving workshops, paddy trading firms",
+    "culture": "Kalrayan hills tribal communities, traditional wood carving craft, forest produce heritage",
+    "itHub": false,
+    "keywords": [
+      "Kalrayan",
+      "Kala",
+      "Maram",
+      "Paddy"
+    ],
+    "brandMood": "Carved by hand, forest-rooted, slow craft, mountain-born",
+    "namingInspiration": [
+      "Kalrayan",
+      "Maram",
+      "Kurai",
+      "Kal",
+      "Veli"
+    ]
+  },
+  "MAY": {
+    "name": "Mayiladuthurai",
+    "tamilName": "மயிலாடுதுறை",
+    "meaning": "Place where the peacock danced, from Mayil meaning peacock, adum meaning dances, and thurai meaning port.",
+    "history": "A sacred Kaveri delta town with historic temples. The name comes from the legend of Lord Murugan's peacock dancing here. A centre of Saiva devotional tradition.",
+    "vibe": "Peacock, Dance, River, Sacred",
+    "companies": "Agro processing mills, temple tourism, Kaveri delta farming cooperatives",
+    "culture": "Peacock dance mythology, Kaveri delta Shaiva worship, ancient music and natyam temples",
+    "itHub": false,
+    "keywords": [
+      "Mayil",
+      "Thurai",
+      "Kaveri",
+      "Aadal"
+    ],
+    "brandMood": "Graceful, dance-like, colourful, sacred movement, river-fed beauty",
+    "namingInspiration": [
+      "Mayil",
+      "Aadal",
+      "Thurai",
+      "Kaveri",
+      "Kuruvi"
+    ]
+  },
+  "NAG": {
+    "name": "Nagapattinam",
+    "tamilName": "நாகப்பட்டினம்",
+    "meaning": "Sea-town of Nagas (serpent beings), referring to the ancient Naga worship culture of the coastal region.",
+    "history": "A key medieval Chola maritime port for trade with East Asia, Sri Lanka, and Southeast Asia. Famous today for the Velankanni Basilica pilgrimage and Nagore Dargah.",
+    "vibe": "Port, Confluence, Maritime, Coast",
+    "companies": "Nagapattinam port authority, marine fishing companies, CPCL petrochemicals",
+    "culture": "Velankanni Basilica international pilgrimage, Nagore Dargah, Chola maritime trade legacy",
+    "itHub": false,
+    "keywords": [
+      "Kadal",
+      "Thurai",
+      "Naga",
+      "Patnam"
+    ],
+    "brandMood": "Open to the world, ancient port spirit, many faiths and one shore",
+    "namingInspiration": [
+      "Patnam",
+      "Naga",
+      "Kadal",
+      "Thurai",
+      "Vellai"
+    ]
+  },
+  "THI": {
+    "name": "Thiruvarur",
+    "tamilName": "திருவாரூர்",
+    "meaning": "The place of holy chariots or divine assemblies, where god arrives in procession.",
+    "history": "Birthplace of the Trinity of Carnatic Music: Thyagaraja, Muthuswami Dikshitar, and Syama Sastri. Home to the Thyagaraja Temple and its enormous festival chariot.",
+    "vibe": "Musical, Chariot, Divine, Artistic",
+    "companies": "Thyagaraja Temple tourism management, Carnatic music institutions, agricultural trading",
+    "culture": "Thyagaraja Temple, world's largest temple chariot festival, Carnatic Music Trinity birthplace",
+    "itHub": false,
+    "keywords": [
+      "Ther",
+      "Isai",
+      "Chola",
+      "Arur",
+      "Koil"
+    ],
+    "brandMood": "Harmonious, deeply classical, procession-like, built with reverence",
+    "namingInspiration": [
+      "Isai",
+      "Ther",
+      "Arur",
+      "Thyaga",
+      "Nada"
+    ]
+  },
+  "CUD": {
+    "name": "Cuddalore",
+    "tamilName": "கடலூர்",
+    "meaning": "Derived from Kadal-ur meaning sea town or confluence of waters.",
+    "history": "A historic port city on the Bay of Bengal. It was a major trading center for the East India Company and is famous for Fort St. David, port trade, and cashew processing.",
+    "vibe": "Coastal, Historic, Port, Resilient",
+    "companies": "SIPCOT Industrial Complex, Chemplast Sanmar, local port and logistics operations, cashew processing units",
+    "culture": "Silver Beach, historic Pataleeswarar Temple, colonial Fort St. David ruins, rich maritime trading folklore",
+    "itHub": false,
+    "keywords": [
+      "Kadal",
+      "Thurai",
+      "Nagar",
+      "Keezh",
+      "Mugam"
+    ],
+    "brandMood": "Maritime, adventurous, resilient, and open to global tides",
+    "namingInspiration": [
+      "Nava",
+      "Kadal",
+      "Nithila",
+      "Thurai",
+      "Mugam"
+    ]
+  },
+  "KAR": {
+    "name": "Karur",
+    "tamilName": "கரூர்",
+    "meaning": "Derived from Karuvoor, meaning the place of womb/creation.",
+    "history": "An ancient capital of the Early Cheras during the Sangam period, mentioned as a major gemstone trading hub (especially beryl) with the Roman Empire. Now famous for home textiles exports and bus body building.",
+    "vibe": "Artisanal, Export-driven, Ancient, Industrious",
+    "companies": "Karur Vysya Bank (KVB), Asian Fabricx, bus body manufacturing units, Chentex",
+    "culture": "Pasupatheeswarar Temple, ancient Chera coins and gemstone mining history, rich handloom weaving traditions",
+    "itHub": false,
+    "keywords": [
+      "Chera",
+      "Manal",
+      "Karu",
+      "Thozhil",
+      "Poli"
+    ],
+    "brandMood": "Crafted, export-ready, ancient pedigree, and transactional trust",
+    "namingInspiration": [
+      "Chera",
+      "Karu",
+      "Pasupathy",
+      "Saman",
+      "Beryl"
+    ]
+  },
+  "THE": {
+    "name": "Theni",
+    "tamilName": "தேனி",
+    "meaning": "Likely derived from Thenee (honey bee) or reference to the fertile valleys.",
+    "history": "A mountainous and highly fertile region nestled in the Western Ghats. Known as the Garlic City and Cardamom hub, it is a major producer of cotton, grapes, and cardamom.",
+    "vibe": "Fertile, Natural, Scenic, Organic",
+    "companies": "Cardamom and tea estates, spice export houses, cotton spinning mills",
+    "culture": "Suruli Falls, Vaigai Dam, Western Ghats ecology, rich farming traditions, and local country music",
+    "itHub": false,
+    "keywords": [
+      "Malai",
+      "Thola",
+      "Pasi",
+      "Theni",
+      "Kaanal"
+    ],
+    "brandMood": "Organic, fresh, close to nature, green, and growth-oriented",
+    "namingInspiration": [
+      "Kaanal",
+      "Malai",
+      "Vaigai",
+      "Chinna",
+      "Valavu"
+    ]
+  },
+  "TVL": {
+    "name": "Tiruvallur",
+    "tamilName": "திருவள்ளூர்",
+    "meaning": "Derived from Thiru-evvul-ur, meaning the town where Lord Veeraraghava asked 'where to sleep?'.",
+    "history": "Strategically located adjacent to Chennai. Grown into a major industrial corridor for automotive manufacturing and engineering, while maintaining its rich heritage around the Veeraraghava Temple.",
+    "vibe": "Industrial, Strategic, Manufacturing, Legacy",
+    "companies": "Caterpillar India, Mitsubishi, TI Cycles, Hyundai suppliers, SIPCOT Industrial Park",
+    "culture": "Sri Veeraraghava Swamy Temple, ancient stone inscriptions, proximity to Pulicat Lake and maritime trade",
+    "itHub": false,
+    "keywords": [
+      "Thiru",
+      "Kottai",
+      "Veli",
+      "Viri",
+      "Aatral"
+    ],
+    "brandMood": "Industrial strength, reliable infrastructure, expansive, and high-performance",
+    "namingInspiration": [
+      "Veera",
+      "Kottai",
+      "Valavan",
+      "Thiru",
+      "Aalayam"
+    ]
+  },
+  "TVM": {
+    "name": "Tiruvannamalai",
+    "tamilName": "திருவண்ணாமலை",
+    "meaning": "Named after the sacred mountain Annamalai (Thiru-Annamalai).",
+    "history": "One of the most sacred spiritual hubs in South India, centered around the ancient Arunachaleswarar Temple at the foot of Mount Arunachala. A center of meditation, philosophy, and history since Sangam times.",
+    "vibe": "Spiritual, Sacred, Eternal, Philosophical",
+    "companies": "Agro-industries, essential oil distilleries, tourism and hospitality networks",
+    "culture": "Karthigai Deepam festival, Mount Arunachala Girivalam path, Ramana Maharshi Ashram, Sangam literature references",
+    "itHub": false,
+    "keywords": [
+      "Annam",
+      "Deepam",
+      "Sudar",
+      "Giri",
+      "Aruna"
+    ],
+    "brandMood": "Deeply philosophical, eternal, peaceful, and centered around purpose",
+    "namingInspiration": [
+      "Arunam",
+      "Deepam",
+      "Sudar",
+      "Giri",
+      "Annam"
+    ]
+  },
+  "VIL": {
+    "name": "Viluppuram",
+    "tamilName": "விழுப்புரம்",
+    "meaning": "Derived from Vizhupuram meaning the town of prominent citizens or warriors.",
+    "history": "A historically important district bridging northern and central Tamil Nadu. Famous for Gingee Fort (the Troy of the East), ancient rock-cut cave temples, and agricultural richness.",
+    "vibe": "Fortified, Historic, Agricultural, Resilient",
+    "companies": "Sugar mills, chemical manufacturing, agricultural trading guilds",
+    "culture": "Gingee Fort, ancient Jain rock caves, Mandagapattu cave temple (first rock-cut temple in TN), rich historical folklore",
+    "itHub": false,
+    "keywords": [
+      "Kottai",
+      "Vizhu",
+      "Veeram",
+      "Senji",
+      "Maanil"
+    ],
+    "brandMood": "Fortified security, courageous legacy, enduring foundations, and organic growth",
+    "namingInspiration": [
+      "Gingee",
+      "Senji",
+      "Veeram",
+      "Vizhu",
+      "Kottai"
+    ]
+  }
+}

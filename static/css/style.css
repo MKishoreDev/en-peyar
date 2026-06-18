@@ -1,0 +1,521 @@
+/* ============================================================
+   EN PEYAR — Design System
+   Tamil-rooted startup branding platform
+   ============================================================ */
+
+/* ── Google Fonts ────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap');
+
+/* ── CSS Variables — Light Mode ──────────────────────────── */
+:root {
+  --background:         0 0% 99%;
+  --foreground:         20 8% 8%;
+  --card:               0 0% 100%;
+  --card-foreground:    20 8% 8%;
+  --primary:            5 70% 32%;      /* Deep kumkum red */
+  --primary-foreground: 0 0% 100%;
+  --secondary:          30 12% 94%;
+  --secondary-foreground: 20 8% 20%;
+  --muted:              30 8% 95%;
+  --muted-foreground:   20 5% 48%;
+  --accent:             28 65% 38%;     /* Temple copper */
+  --accent-foreground:  0 0% 100%;
+  --border:             30 10% 88%;
+  --input:              30 10% 88%;
+  --ring:               5 70% 32%;
+  --gold:               42 80% 48%;     /* Temple gold */
+  --bronze:             28 55% 35%;     /* Aged bronze */
+  --terracotta:         16 65% 42%;     /* Terracotta */
+  --radius:             0.75rem;
+}
+
+/* ── CSS Variables — Dark Mode ───────────────────────────── */
+.dark {
+  --background:         20 8% 5%;
+  --foreground:         30 10% 95%;
+  --card:               20 8% 8%;
+  --card-foreground:    30 10% 92%;
+  --primary:            5 65% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary:          20 8% 12%;
+  --secondary-foreground: 30 10% 80%;
+  --muted:              20 8% 12%;
+  --muted-foreground:   30 8% 52%;
+  --accent:             28 60% 52%;
+  --accent-foreground:  0 0% 100%;
+  --border:             20 8% 18%;
+  --input:              20 8% 18%;
+  --ring:               5 65% 52%;
+  --gold:               42 75% 55%;
+  --bronze:             28 50% 48%;
+  --terracotta:         16 60% 52%;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Tamil Typography ────────────────────────────────────── */
+.tamil, [lang="ta"], [data-tamil] {
+  font-family: 'Noto Sans Tamil', 'Latha', system-ui, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.font-display { font-family: 'Fraunces', Georgia, serif; }
+
+/* ── Colour Utilities ────────────────────────────────────── */
+.text-gradient-tamil {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gold)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Layout ──────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+.section-padding { padding-block: 5rem; }
+@media (max-width: 768px) { .section-padding { padding-block: 3rem; } }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px hsl(var(--primary)/0.3), 0 4px 12px hsl(var(--primary)/0.15);
+}
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px hsl(var(--primary)/0.35), 0 8px 20px hsl(var(--primary)/0.2);
+}
+
+.btn-secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--border));
+}
+.btn-secondary:hover:not(:disabled) {
+  background: hsl(var(--muted));
+  transform: translateY(-1px);
+}
+
+/* ── Form Inputs ─────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.form-input:focus {
+  border-color: hsl(var(--primary)/0.6);
+  box-shadow: 0 0 0 3px hsl(var(--primary)/0.1);
+}
+.form-input::placeholder { color: hsl(var(--muted-foreground)); }
+select.form-input { cursor: pointer; }
+textarea.form-input { resize: vertical; }
+
+/* ── Cards & Hover Effects ───────────────────────────────── */
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px hsl(var(--foreground)/0.08);
+}
+
+/* ── Shimmer Skeleton ────────────────────────────────────── */
+.shimmer {
+  background: linear-gradient(90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--border)) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ── Hero wash ───────────────────────────────────────────── */
+.hero-wash {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 70% at 50% 0%,
+    hsl(var(--primary)/0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 80%,
+    hsl(var(--gold)/0.04) 0%, transparent 70%);
+}
+
+/* ── Kolam background pattern ────────────────────────────── */
+.bg-kolam {
+  background-image:
+    radial-gradient(circle, hsl(var(--primary)/0.08) 1px, transparent 1px),
+    radial-gradient(circle, hsl(var(--gold)/0.05) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+}
+
+.bg-kolam-fine {
+  background-image:
+    radial-gradient(circle, hsl(var(--foreground)/0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* ── Divider — Sangam manuscript style ──────────────────── */
+.divider-sangam {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: hsl(var(--accent)/0.8);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.divider-sangam::before, .divider-sangam::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsl(var(--accent)/0.4), transparent);
+}
+
+/* ── Logo hover ──────────────────────────────────────────── */
+.logo-hover { transition: opacity 0.2s ease; }
+.logo-hover:hover { opacity: 0.85; }
+
+/* ── Floating animation ──────────────────────────────────── */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* ── Fade up ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* ── Tamil Kolam Spinner ─────────────────────────────────── */
+@keyframes kolam-outer {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -200; }
+}
+@keyframes kolam-inner {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 130; }
+}
+@keyframes kolam-dot-pulse {
+  0%,100% { opacity: 0.5; r: 2; }
+  50%     { opacity: 1;   r: 3; }
+}
+@keyframes kolam-centre-pulse {
+  0%,100% { r: 4; opacity: 0.8; }
+  50%     { r: 5.5; opacity: 1; }
+}
+.kolam-dot { animation: kolam-dot-pulse 2s ease-in-out infinite; }
+.kolam-dot:nth-child(2) { animation-delay: 0.5s; }
+.kolam-dot:nth-child(3) { animation-delay: 1s; }
+.kolam-dot:nth-child(4) { animation-delay: 1.5s; }
+.kolam-centre { animation: kolam-centre-pulse 2s ease-in-out infinite; }
+.kolam-ring-outer {
+  stroke-dasharray: 55 146;
+  animation: kolam-outer 2.4s linear infinite;
+}
+.kolam-ring-inner {
+  stroke-dasharray: 38 100;
+  animation: kolam-inner 1.8s linear infinite;
+}
+
+/* ── Best pick card shimmer border ───────────────────────── */
+@keyframes bestPickReveal {
+  from { opacity:0; transform: translateY(18px) scale(0.97); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
+.best-pick-reveal { animation: bestPickReveal 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* ── Result card left accent bar ────────────────────────── */
+.result-name-card { position: relative; }
+.result-name-card::before {
+  content: ""; position: absolute; left:0; top:0; bottom:0; width:3px;
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--gold)));
+  border-radius: 3px 0 0 3px; opacity:0.5; transition: opacity 0.3s, width 0.3s;
+}
+.result-name-card:hover::before { opacity:1; width:4px; }
+
+/* ── Loading fade ────────────────────────────────────────── */
+.loading-fade { animation: fadeUp 0.5s ease both; }
+
+/* ── Kural card ──────────────────────────────────────────── */
+.kural-card { position: relative; overflow: hidden; }
+.kural-card::before {
+  content: ""; position: absolute; inset:0;
+  background: radial-gradient(ellipse 100% 80% at 50% -10%,
+    hsl(var(--gold)/0.07), transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Tamil Nadu Map ──────────────────────────────────────── */
+.tn-map-container {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .tn-map-container { grid-template-columns: 1fr 1.1fr; }
+}
+
+.map-wrapper {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 1.25rem;
+  padding: 1rem;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-svg-element {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.district-info-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+  min-height: 420px;
+}
+
+/* ── Thesaurus grid ──────────────────────────────────────── */
+#thesaurus-grid .thesaurus-category h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* ── Details modal ───────────────────────────────────────── */
+#details-modal { animation: fadeUp 0.2s ease both; }
+
+/* ── Mobile bottom nav ───────────────────────────────────── */
+@media (max-width: 767px) {
+  body { padding-bottom: 4.5rem; }
+  #mobile-bottom-nav {
+    position: fixed; bottom:0; left:0; right:0; z-index:60;
+    display: flex; justify-content: space-around; align-items: center;
+    background: hsl(var(--card)/0.96);
+    backdrop-filter: blur(20px) saturate(1.5);
+    border-top: 1px solid hsl(var(--border));
+    padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom));
+  }
+  #mobile-bottom-nav a, #mobile-bottom-nav button {
+    display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+    font-size: 0.6rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: hsl(var(--muted-foreground));
+    padding: 0.4rem 0.75rem; border-radius: 0.75rem;
+    transition: color 0.2s, background 0.2s;
+    text-decoration: none; background: none; border: none; cursor: pointer;
+  }
+  #mobile-bottom-nav a:hover, #mobile-bottom-nav button:hover,
+  #mobile-bottom-nav a.active {
+    color: hsl(var(--primary));
+    background: hsl(var(--primary)/0.08);
+  }
+  #toast-container { bottom: 5.5rem; }
+}
+@media (min-width: 768px) { #mobile-bottom-nav { display: none !important; } }
+
+/* ── Toast ───────────────────────────────────────────────── */
+.toast-item {
+  pointer-events: auto;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  box-shadow: 0 8px 30px hsl(var(--foreground)/0.12);
+  animation: fadeUp 0.3s cubic-bezier(0.16,1,0.3,1) both;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 280px;
+}
+.toast-success::before { content:"✦"; color: hsl(var(--gold)); }
+.toast-error::before   { content:"⚠"; color: hsl(var(--primary)); }
+
+/* ── Active style button ─────────────────────────────────── */
+.style-btn.active {
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border-color: hsl(var(--primary)) !important;
+  font-weight: 700;
+}
+
+/* ── Score bar fill ──────────────────────────────────────── */
+.score-bar-fill {
+  transition: width 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s;
+}
+
+/* ── Heritage word cards ─────────────────────────────────── */
+.heritage-card { position: relative; overflow: hidden; }
+.heritage-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    hsl(var(--primary)/0.04),
+    hsl(var(--gold)/0.03));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.heritage-card:hover::after { opacity: 1; }
+
+/* ── Prose styles for About page ─────────────────────────── */
+.prose { max-width: 70ch; }
+.prose h2 { font-family: 'Fraunces', serif; font-size: 1.875rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.prose p  { margin-bottom: 1.25rem; color: hsl(var(--muted-foreground)); line-height: 1.8; }
+.prose blockquote {
+  border-left: 3px solid hsl(var(--accent));
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: hsl(var(--foreground)/0.8);
+  font-style: italic;
+}
+.prose ul { list-style: none; padding-left: 0; margin-bottom: 1.25rem; }
+.prose ul li { padding-left: 1.25rem; position: relative; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+.prose ul li::before { content:"✦"; position:absolute; left:0; color:hsl(var(--accent)/0.6); font-size:0.6rem; top:0.35rem; }
+
+/* ── Refine button glow on focus ─────────────────────────── */
+#refine-context-btn:hover {
+  background: hsl(var(--accent)/0.08);
+  border-radius: 0.5rem;
+}
+#refine-context-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Accessibility: reduced motion ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+
+/* ---------- INSPIRATION PANEL ────────────────────── */
+#inspiration-panel {
+  position: relative;
+  z-index: 10;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  box-shadow: 0 8px 30px hsl(var(--foreground)/0.08);
+}
+
+#inspiration-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inspiration-root {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inspiration-root:hover {
+  background: hsl(var(--muted));
+  border-color: hsl(var(--accent));
+  transform: translateX(4px);
+}
+
+.inspiration-root-word {
+  font-display: font-family;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  margin-bottom: 0.25rem;
+}
+
+.inspiration-root-tamil {
+  font-family: 'Noto Sans Tamil', system-ui;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--gold));
+}
+
+.inspiration-root-meaning {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.inspiration-root-concept {
+  font-size: 0.75rem;
+  color: hsl(var(--accent));
+  margin-top: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.inspiration-root:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--border)/0.5);
+  padding-bottom: 1rem;
+}

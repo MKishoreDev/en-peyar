@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>En Peyar — From Sangam to Startup.</title>
+  <meta name="description" content="Tamil-rooted naming for founders, creators, and startups. Find names with real meaning from one of the world's oldest living languages." />
+  <meta name="author" content="En Peyar — MKishoreDev" />
+  <meta name="keywords" content="Tamil startup names, brand name generator, Tamil naming, En Peyar, startup naming, Tamil language, open source" />
+
+  <meta property="og:site_name" content="En Peyar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="En Peyar — From Sangam to Startup." />
+  <meta property="og:description" content="Tamil-rooted naming for founders, creators, and startups. Meaningful names from 2000 years of Tamil literature." />
+  <meta property="og:url" content="https://github.com/MKishoreDev/en-peyar" />
+  <meta property="og:image" content="/static/images/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/static/images/logo.png" />
+  <meta name="theme-color" content="#0F0D0B" />
+
+  <link rel="icon" href="/static/images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/static/images/logo.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background:            'hsl(var(--background))',
+            foreground:            'hsl(var(--foreground))',
+            card:                  'hsl(var(--card))',
+            'card-foreground':     'hsl(var(--card-foreground))',
+            primary:               'hsl(var(--primary))',
+            'primary-foreground':  'hsl(var(--primary-foreground))',
+            secondary:             'hsl(var(--secondary))',
+            'secondary-foreground':'hsl(var(--secondary-foreground))',
+            muted:                 'hsl(var(--muted))',
+            'muted-foreground':    'hsl(var(--muted-foreground))',
+            accent:                'hsl(var(--accent))',
+            'accent-foreground':   'hsl(var(--accent-foreground))',
+            border:                'hsl(var(--border))',
+            input:                 'hsl(var(--input))',
+            ring:                  'hsl(var(--ring))',
+            gold:                  'hsl(var(--gold))',
+            bronze:                'hsl(var(--bronze))',
+            terracotta:            'hsl(var(--terracotta))',
+          },
+          fontFamily: {
+            sans:    ['Inter', 'sans-serif'],
+            display: ['Fraunces', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="bg-background text-foreground transition-colors duration-300">
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<header class="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 logo-hover" aria-label="En Peyar home">
+      <img src="/static/images/logo.png" alt="En Peyar" class="h-9 w-9 object-contain" />
+      <div class="flex flex-col leading-none">
+        <span class="font-display text-[15px] font-bold tracking-tight">En Peyar</span>
+        <span class="tamil text-[10px] text-muted-foreground">என் பெயர்</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden items-center gap-1 md:flex">
+      <a href="/"          class="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" data-i18n="nav.home"></a>
+      <a href="#generator" class="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" data-i18n="nav.generate"></a>
+      <a href="/about"     class="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" data-i18n="nav.about"></a>
+    </div>
+
+    <!-- Controls -->
+    <div class="flex items-center gap-1">
+      <!-- Language -->
+      <button id="lang-toggle-btn" aria-label="Switch language"
+        class="hidden items-center gap-1.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m5 8 6 6"/><path d="m4 14 6-6 8 8"/><path d="M2 5h12"/>
+          <path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>
+        </svg>
+        <span id="lang-btn-text">தமிழ்</span>
+      </button>
+
+      <!-- Theme -->
+      <button id="theme-toggle-btn" aria-label="Toggle theme"
+        class="grid h-9 w-9 place-items-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+
+      <!-- CTA pill -->
+      <a href="#generator"
+        class="ml-2 hidden rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:inline-flex"
+        data-i18n="nav.generate"></a>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle-btn" aria-label="Menu"
+        class="grid h-9 w-9 place-items-center rounded-md text-muted-foreground md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="6"  y2="6"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden border-t border-border bg-background md:hidden">
+    <div class="flex flex-col space-y-1 p-4">
+      <a href="/"          class="rounded-lg px-3 py-2.5 text-sm hover:bg-muted" data-i18n="nav.home"></a>
+      <a href="#generator" class="rounded-lg px-3 py-2.5 text-sm hover:bg-muted" data-i18n="nav.generate"></a>
+      <a href="/about"     class="rounded-lg px-3 py-2.5 text-sm hover:bg-muted" data-i18n="nav.about"></a>
+      <button onclick="window.app && window.app.toggleLanguage()"
+        class="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm hover:bg-muted text-left"
+        data-i18n="nav.languageToggle">
+        <span class="tamil text-accent">தமிழில் காண்க</span> / English
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════════════════════ -->
+<main class="flex-1">
+<div class="relative overflow-hidden bg-background">
+
+<!-- ─── HERO ─────────────────────────────── -->
+<section class="relative section-padding border-b border-border/60 overflow-hidden">
+  <div class="hero-wash"></div>
+  <div class="bg-kolam absolute inset-0 opacity-20 pointer-events-none"></div>
+
+  <div class="container relative z-10">
+    <div class="mx-auto max-w-3xl text-center">
+
+      <!-- Eyebrow pill -->
+      <div class="animate-fade-up mx-auto flex w-fit items-center gap-2 rounded-full border border-border/80 bg-card/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-accent"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span data-i18n="hero.eyebrow">Tamil-rooted naming</span>
+      </div>
+
+      <!-- Logo float -->
+      <div class="flex justify-center mt-8 animate-fade-up">
+        <div class="relative h-28 w-28 sm:h-36 sm:w-36 animate-float flex items-center justify-center">
+          <img src="/static/images/logo.png" alt="En Peyar" class="h-24 w-24 sm:h-32 sm:w-32 object-contain drop-shadow-lg" />
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="animate-fade-up mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl">
+        <span data-i18n="hero.title.prefix">From Sangam. </span><span class="text-gradient-tamil italic" data-i18n="hero.title.gradient">To Startup.</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="animate-fade-up mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg" data-i18n="hero.subtitle">
+        Names rooted in 2000 years of Tamil literature — built for global brands, founders, and creators.
+      </p>
+
+      <!-- CTAs -->
+      <div class="animate-fade-up mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#generator" class="btn btn-primary w-full sm:w-auto px-7 py-3.5 text-sm rounded-full shadow-lg">
+          <span data-i18n="hero.cta">Generate Names</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/about" class="btn btn-secondary w-full sm:w-auto px-7 py-3.5 text-sm rounded-full" data-i18n="hero.ctaSecondary">Learn the Philosophy</a>
+      </div>
+
+      <!-- Trust badges -->
+      <ul class="animate-fade-up mt-9 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="hero.trust.0">No login required</span></li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="hero.trust.1">Open source</span></li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="hero.trust.2">Tamil + English naming</span></li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="hero.trust.3">Free forever</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY TAMIL ─────────────────────────── -->
+<section class="section-padding border-b border-border/60 bg-card relative overflow-hidden">
+  <div class="bg-kolam-fine absolute inset-0 opacity-10 pointer-events-none"></div>
+  <div class="container relative z-10">
+    <div class="grid gap-14 lg:grid-cols-2 items-center">
+
+      <div>
+        <div class="divider-sangam max-w-[140px] text-xs uppercase tracking-[0.3em] mb-5">
+          <span class="tamil" data-i18n="whytamil.eyebrow">ஏன் தமிழ்?</span>
+        </div>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl" data-i18n="whytamil.title">Why Tamil?</h2>
+        <p class="mt-4 text-base text-muted-foreground leading-relaxed" data-i18n="whytamil.body">
+          Tamil has one of the world's oldest continuous literary traditions. For centuries, words carried identity, place, values, and memory. En Peyar brings that tradition into modern naming.
+        </p>
+        <p class="mt-3 text-sm text-muted-foreground" data-i18n="whytamil.body2">Inspired by Tamil words, history, literature, and sound. Not trends.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-border/80 bg-background p-5 hover-lift">
+          <div class="tamil text-2xl font-bold text-gradient-tamil mb-3" data-i18n="whytamil.principle1.label">பொருள்</div>
+          <h3 class="font-display font-bold text-foreground" data-i18n="whytamil.principle1.title">Meaning</h3>
+          <p class="mt-1 text-xs text-muted-foreground" data-i18n="whytamil.principle1.desc">Every name should say something.</p>
+        </div>
+        <div class="rounded-2xl border border-border/80 bg-background p-5 hover-lift">
+          <div class="tamil text-2xl font-bold text-gradient-tamil mb-3" data-i18n="whytamil.principle2.label">ஒலி</div>
+          <h3 class="font-display font-bold text-foreground" data-i18n="whytamil.principle2.title">Sound</h3>
+          <p class="mt-1 text-xs text-muted-foreground" data-i18n="whytamil.principle2.desc">Easy to say. Easy to remember.</p>
+        </div>
+        <div class="rounded-2xl border border-border/80 bg-background p-5 hover-lift">
+          <div class="tamil text-2xl font-bold text-gradient-tamil mb-3" data-i18n="whytamil.principle3.label">வேர்</div>
+          <h3 class="font-display font-bold text-foreground" data-i18n="whytamil.principle3.title">Roots</h3>
+          <p class="mt-1 text-xs text-muted-foreground" data-i18n="whytamil.principle3.desc">Connected to history and culture.</p>
+        </div>
+        <div class="rounded-2xl border border-border/80 bg-background p-5 hover-lift">
+          <div class="tamil text-2xl font-bold text-gradient-tamil mb-3" data-i18n="whytamil.principle4.label">எதிர்காலம்</div>
+          <h3 class="font-display font-bold text-foreground" data-i18n="whytamil.principle4.title">Future</h3>
+          <p class="mt-1 text-xs text-muted-foreground" data-i18n="whytamil.principle4.desc">Works globally. Feels local.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HERITAGE WORDS ─────────────────────── -->
+<section class="section-padding border-b border-border/60">
+  <div class="container">
+    <div class="max-w-2xl mb-12">
+      <div class="divider-sangam max-w-[140px] text-xs uppercase tracking-[0.3em] mb-5">
+        <span class="tamil" data-i18n="heritage.eyebrow">மரபு</span>
+      </div>
+      <h2 class="font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl" data-i18n="heritage.title">A language with thousands of years of inspiration.</h2>
+      <p class="mt-4 text-base text-muted-foreground sm:text-lg" data-i18n="heritage.body">Tamil is one of the world's oldest living languages. Every word carries meaning. Every name carries identity.</p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">நயம்</div>
+        <div class="mt-3 font-display text-lg font-bold">Nayam</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word1.desc">Premium value, goodness</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word1.tag">Elegant, refined</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">ஆழி</div>
+        <div class="mt-3 font-display text-lg font-bold">Aazhi</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word2.desc">Ocean, infinite deep</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word2.tag">Vast, scalable</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">விழுது</div>
+        <div class="mt-3 font-display text-lg font-bold">Vizhuthu</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word3.desc">Banyan root, foundation</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word3.tag">Strong, supportive</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">செம்மை</div>
+        <div class="mt-3 font-display text-lg font-bold">Semmai</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word4.desc">Excellence, perfection</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word4.tag">Premium, pure</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">மரபு</div>
+        <div class="mt-3 font-display text-lg font-bold">Marabu</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word5.desc">Heritage, lineage</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word5.tag">Timeless, trusted</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">முனை</div>
+        <div class="mt-3 font-display text-lg font-bold">Munai</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word6.desc">Pioneer, vanguard edge</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word6.tag">Sharp, innovative</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">ஏற்றம்</div>
+        <div class="mt-3 font-display text-lg font-bold">Aetram</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word7.desc">Elevation, progress</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word7.tag">Ambitious, growth</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">அகம்</div>
+        <div class="mt-3 font-display text-lg font-bold">Agam</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word8.desc">Home, inner self</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word8.tag">Core, essential</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">மொழி</div>
+        <div class="mt-3 font-display text-lg font-bold">Mozhi</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word9.desc">Language, voice</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word9.tag">Clear, expressive</p>
+      </article>
+      <article class="group hover-lift relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer">
+        <div class="tamil text-3xl text-gradient-tamil font-bold">வேர்</div>
+        <div class="mt-3 font-display text-lg font-bold">Ver</div>
+        <p class="mt-1 text-sm text-muted-foreground" data-i18n="heritage.word10.desc">Root, origin</p>
+        <p class="mt-3 text-[10px] uppercase tracking-wider text-accent/80 font-bold" data-i18n="heritage.word10.tag">Authentic, grounded</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GENERATOR ─────────────────────────── -->
+<section id="generator" class="section-padding scroll-mt-16 border-b border-border/60 bg-muted/30">
+  <div class="container max-w-4xl">
+
+    <div class="text-center mb-10">
+      <div class="divider-sangam mx-auto max-w-[120px] text-xs uppercase tracking-[0.3em] mb-4">
+        <span data-i18n="nav.generate">உருவாக்கு</span>
+      </div>
+      <h2 class="font-display text-3xl font-bold tracking-tight sm:text-5xl" data-i18n="generator.title">Generate your பெயர்</h2>
+      <p class="mx-auto mt-3 max-w-xl text-sm sm:text-base text-muted-foreground" data-i18n="generator.subtitle">Describe what you're building. We'll find names that feel right.</p>
+    </div>
+
+    <!-- Generator card -->
+    <div class="rounded-2xl border border-border bg-card shadow-lg overflow-hidden">
+
+      <!-- Card top bar -->
+      <div class="flex items-center gap-2 px-5 py-3 border-b border-border/60 bg-muted/30">
+        <span class="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-yellow-400/70"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-green-400/70"></span>
+        <span class="ml-3 text-[11px] text-muted-foreground font-mono">en-peyar · name generator</span>
+      </div>
+
+      <form id="generator-form" class="p-5 sm:p-7 space-y-6">
+
+        <!-- Context -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-xs font-semibold uppercase tracking-wider text-muted-foreground" data-i18n="generator.context">Detailed Context / Vision</label>
+            <button type="button" id="refine-context-btn" class="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-primary transition-colors px-2.5 py-1 rounded-lg hover:bg-muted">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              <span data-i18n="generator.refine">AI Refine</span>
+            </button>
+          </div>
+          <textarea id="context-input" rows="3" data-i18n-placeholder="generator.contextPlaceholder"
+            placeholder="Describe your startup, values, and core features..."
+            class="form-input resize-none text-sm"></textarea>
+          <div id="refine-loading" class="hidden mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+            <svg class="animate-spin h-3 w-3" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <span data-i18n="generator.refining">Refining your description…</span>
+          </div>
+          <div id="keyword-suggestions" class="hidden mt-3 space-y-2">
+            <p class="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold" data-i18n="generator.suggestedKeywords">Suggested keywords</p>
+            <div id="keyword-chips" class="flex flex-wrap gap-1.5"></div>
+          </div>
+        </div>
+
+        <!-- Keywords -->
+        <div>
+          <div class="flex items-center justify-between">
+            <label class="text-xs font-semibold uppercase tracking-wider text-muted-foreground" data-i18n="generator.keywords">Keywords</label>
+            <button type="button" id="clear-keywords-btn" class="text-xs text-muted-foreground hover:text-red-500 transition-colors hidden" data-i18n="generator.clearKeywords">
+              Clear All
+            </button>
+          </div>
+          <div id="keyword-tags-wrapper" class="form-input mt-2 flex flex-wrap gap-2 items-center cursor-text min-h-[46px] py-1.5 px-3">
+            <div id="keyword-tags-list" class="flex flex-wrap gap-1.5"></div>
+            <input id="keywords-input-field" data-i18n-placeholder="generator.keywordsPlaceholder"
+              placeholder="e.g. food delivery in Tirunelveli"
+              class="flex-1 bg-transparent outline-none border-none text-sm min-w-[150px] text-foreground placeholder-muted-foreground" />
+          </div>
+          <input type="hidden" id="keywords-input" name="keywords" />
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <!-- Style -->
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground" data-i18n="generator.style">Style</span>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <button type="button" data-style="Tamil"    class="style-btn rounded-full border border-border bg-background px-3.5 py-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors" data-i18n="generator.style.tamil">Tamil</button>
+              <button type="button" data-style="Global Tamil" class="style-btn rounded-full border border-foreground bg-foreground text-background px-3.5 py-1.5 text-xs font-semibold active" data-i18n="generator.style.globaltamil">Global Tamil</button>
+              <button type="button" data-style="English"  class="style-btn rounded-full border border-border bg-background px-3.5 py-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors" data-i18n="generator.style.english">English</button>
+              <button type="button" data-style="Contextual Heritage" class="style-btn rounded-full border border-border bg-background px-3.5 py-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors" data-i18n="generator.style.heritage">Contextual Heritage</button>
+            </div>
+            <p id="style-desc-text" class="text-xs text-muted-foreground mt-2 min-h-[1.5rem] italic"></p>
+          </div>
+
+          <!-- Industry -->
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground" data-i18n="generator.industry">Industry</span>
+            <select id="industry-select" class="form-input mt-2 text-sm">
+              <option value="Startup"             data-i18n="industry.startup">Startup</option>
+              <option value="AI"                  data-i18n="industry.ai">AI</option>
+              <option value="Climate"             data-i18n="industry.climate">Climate</option>
+              <option value="Community"           data-i18n="industry.community">Community</option>
+              <option value="Company"             data-i18n="industry.company">Company</option>
+              <option value="Consumer Brand"      data-i18n="industry.consumerbrand">Consumer Brand</option>
+              <option value="Creator Brand"       data-i18n="industry.creatorbrand">Creator Brand</option>
+              <option value="Developer Tool"      data-i18n="industry.devtool">Developer Tool</option>
+              <option value="E-commerce"          data-i18n="industry.ecommerce">E-commerce</option>
+              <option value="Education"           data-i18n="industry.education">Education</option>
+              <option value="Event"               data-i18n="industry.event">Event</option>
+              <option value="Fintech"             data-i18n="industry.fintech">Fintech</option>
+              <option value="Food"                data-i18n="industry.food">Food</option>
+              <option value="Gaming"              data-i18n="industry.gaming">Gaming</option>
+              <option value="General"             data-i18n="industry.general">General</option>
+              <option value="Healthcare"          data-i18n="industry.healthcare">Healthcare</option>
+              <option value="Media"               data-i18n="industry.media">Media</option>
+              <option value="Mobile App"          data-i18n="industry.mobileapp">Mobile App</option>
+              <option value="Nonprofit"           data-i18n="industry.nonprofit">Nonprofit</option>
+              <option value="Open Source Project" data-i18n="industry.opensource">Open Source Project</option>
+              <option value="Robotics"            data-i18n="industry.robotics">Robotics</option>
+              <option value="SaaS"                data-i18n="industry.saas">SaaS</option>
+              <option value="Space"               data-i18n="industry.space">Space</option>
+              <option value="Custom"              data-i18n="industry.custom">Custom...</option>
+            </select>
+            <input id="custom-industry-input" type="text" class="form-input mt-2 text-sm hidden" data-i18n-placeholder="generator.customIndustryPlaceholder" placeholder="e.g. Space Exploration" />
+          </div>
+        </div>
+
+        <!-- Buttons row -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button type="submit" id="generator-submit-btn" class="btn btn-primary sm:w-auto px-7 py-3.5 text-sm rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span data-i18n="generator.submit">Generate names</span>
+          </button>
+          <button type="button" id="inspire-btn" class="btn btn-secondary sm:w-auto px-7 py-3.5 text-sm rounded-full border border-border">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-accent"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <span data-i18n="generator.inspire">Inspire Me</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Inspiration panel -->
+    <div id="inspiration-panel" class="mt-5 hidden rounded-2xl border border-border bg-card p-6 shadow-xl relative z-30 animate-fade-up max-h-96 overflow-y-auto">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-display text-base font-bold text-gradient-tamil" data-i18n="inspire.title">Tamil Inspiration</h3>
+        <button id="inspire-close-btn" class="text-xs text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Close">✕</button>
+      </div>
+      <div id="inspiration-content" class="space-y-4"></div>
+    </div>
+
+    <!-- Shortlist (Favorites) -->
+    <div id="shortlist-container" class="mt-8 hidden rounded-2xl border border-border bg-card p-5 shadow-md animate-fade-up">
+      <div class="flex items-center justify-between mb-3.5">
+        <h3 class="font-display text-sm font-bold text-gradient-tamil flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-accent"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span data-i18n="shortlist.title">My Shortlist</span>
+        </h3>
+        <button id="clear-shortlist-btn" class="text-xs text-muted-foreground hover:text-red-500 transition-colors" data-i18n="shortlist.clearAll">
+          Clear All
+        </button>
+      </div>
+      <div id="shortlist-list" class="flex flex-wrap gap-2"></div>
+    </div>
+
+    <!-- Results -->
+    <div id="generator-results" class="mt-10 hidden"></div>
+
+
+
+  </div>
+</section>
+
+<!-- ─── DISTRICT MAP ───────────────────────── -->
+<section class="section-padding border-b border-border/60">
+  <div class="container">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="divider-sangam mx-auto max-w-[140px] text-xs uppercase tracking-[0.3em] mb-4">
+        <span class="tamil" data-i18n="map.eyebrow">வரைபடம்</span>
+      </div>
+      <h2 class="font-display text-3xl font-bold tracking-tight sm:text-5xl" data-i18n="map.title">Tamil Nadu District Explorer</h2>
+      <p class="mt-3 text-sm sm:text-base text-muted-foreground" data-i18n="map.subtitle">Click any district on the map to discover its rich history, name origin, and cultural branding inspiration.</p>
+    </div>
+
+    <div class="tn-map-container mt-8">
+      <div class="flex flex-col h-full gap-4">
+        <!-- Search -->
+        <div class="relative w-full max-w-sm">
+          <input id="district-search" type="text" data-i18n-placeholder="map.searchPlaceholder" placeholder="Search district..." class="form-input text-xs pl-8 bg-card border border-border/80 shadow-sm" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="absolute left-2.5 top-3 text-muted-foreground"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+          <div id="search-suggestions" class="absolute top-full left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-card border border-border rounded-xl shadow-lg z-40 hidden text-xs"></div>
+        </div>
+
+        <div class="map-wrapper relative">
+          <div id="map-tooltip" class="absolute pointer-events-none hidden bg-card/95 backdrop-blur border border-border px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md z-30 transition-opacity text-foreground"></div>
+          <div class="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-accent/40 rounded-tl"></div>
+          <div class="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-accent/40 rounded-tr"></div>
+          <div class="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-accent/40 rounded-bl"></div>
+          <div class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-accent/40 rounded-br"></div>
+          <object id="tn-map-svg-object" type="image/svg+xml" data="/static/images/tamilnadu_map.svg" class="map-svg-element w-full h-full"></object>
+        </div>
+      </div>
+
+      <div class="flex flex-col h-full">
+        <div id="district-details" class="district-info-card shadow-md flex-1">
+          <div class="flex flex-col items-center justify-center text-center py-20 text-muted-foreground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-accent mb-4 opacity-75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
+            <p data-i18n="map.prompt">Click a district to begin exploring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THIRUKKURAL ───────────────────────── -->
+<section class="section-padding bg-muted/20 border-b border-border/60 relative">
+  <div class="bg-kolam-fine absolute inset-0 opacity-20 pointer-events-none"></div>
+  <div class="container relative z-10">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.3fr] items-center">
+      <div>
+        <div class="divider-sangam max-w-[140px] text-xs uppercase tracking-[0.3em] mb-4">
+          <span class="tamil" data-i18n="sangam.eyebrow">இலக்கியம்</span>
+        </div>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl" data-i18n="sangam.title">Inspired by 2000+ years of literature.</h2>
+        <p class="mt-4 text-sm sm:text-base text-muted-foreground" data-i18n="sangam.body">From Thirukkural to Sangam poetry — timeless words make timeless brands.</p>
+        <div class="mt-6 border-l-2 border-accent pl-5 max-w-sm">
+          <p class="tamil text-lg italic text-foreground/90">"அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு."</p>
+          <footer class="mt-2 text-xs text-muted-foreground">— Thirukkural, Verse 1</footer>
+        </div>
+      </div>
+      <div>
+        <div class="kural-card rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <h3 class="font-display text-xs uppercase tracking-[0.25em] text-accent/80 font-bold mb-6" data-i18n="kural.title">Thirukkural of the Moment</h3>
+          <div id="kural-display"></div>
+          <button id="next-kural-btn" class="btn btn-secondary mt-6 text-xs px-5 py-2.5 rounded-full border border-border">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <span data-i18n="kural.next">Get Another Kural</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ──────────────────────────── -->
+<section class="section-padding bg-card border-b border-border/60 relative overflow-hidden">
+  <div class="bg-kolam-fine absolute inset-0 opacity-10 pointer-events-none"></div>
+  <div class="container relative z-10">
+
+    <!-- Philosophy -->
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.2fr] items-center mb-20">
+      <div>
+        <div class="divider-sangam max-w-[140px] text-xs uppercase tracking-[0.3em] mb-4">
+          <span class="tamil" data-i18n="philosophy.eyebrow">விழுமியம்</span>
+        </div>
+        <h2 class="font-display text-3xl font-bold tracking-tight sm:text-5xl text-gradient-tamil mb-6" data-i18n="philosophy.title">Why Naming Matters</h2>
+        <p class="text-base text-muted-foreground leading-relaxed mb-4" data-i18n="philosophy.body1">Before code is written or capital is raised, naming is the first act of creation. It shapes your team's focus, defines your vision, and lays the absolute foundation of your brand identity.</p>
+        <p class="text-base text-muted-foreground leading-relaxed" data-i18n="philosophy.body2">In Tamil culture, a name is not just a label — it is a vessel of values, carrying thousands of years of etymological depth and historical resonance.</p>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/30 to-accent/30 opacity-30 blur"></div>
+        <blockquote class="relative p-8 rounded-2xl border border-border bg-card shadow-lg flex flex-col justify-between min-h-[200px]">
+          <span class="text-5xl font-serif text-accent/20 absolute top-4 left-4">"</span>
+          <p class="tamil text-xl leading-relaxed text-foreground font-semibold italic relative z-10 pt-4" data-i18n="philosophy.quote">"சொல்லின் சிறப்புப் பயம் சிறப்பு."</p>
+          <footer class="mt-6 text-xs text-muted-foreground font-medium tracking-wide text-right" data-i18n="philosophy.quoteAuthor">— A word's true worth is the worth it carries forward.</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <hr class="border-border/60 mb-20" />
+
+    <!-- Feature grid -->
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <div class="divider-sangam mx-auto max-w-[140px] text-xs uppercase tracking-[0.3em] mb-4">
+        <span class="tamil" data-i18n="features.eyebrow">சிறப்புகள்</span>
+      </div>
+      <h2 class="font-display text-3xl font-bold tracking-tight sm:text-5xl text-gradient-tamil" data-i18n="features.title">Features</h2>
+      <p class="mt-4 text-base text-muted-foreground" data-i18n="features.subtitle">Everything an idea needs to become a brand.</p>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+      <article class="hover-lift p-6 rounded-2xl bg-background border border-border flex flex-col gap-4">
+        <div class="p-3 bg-primary/10 rounded-xl text-primary w-fit border border-primary/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display text-lg font-bold" data-i18n="features.ai.title">Name generation</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed" data-i18n="features.ai.desc">10 brandable names per query, tuned for global memorability and local meaning.</p>
+        </div>
+      </article>
+
+      <article class="hover-lift p-6 rounded-2xl bg-background border border-border flex flex-col gap-4">
+        <div class="p-3 bg-primary/10 rounded-xl text-primary w-fit border border-primary/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display text-lg font-bold" data-i18n="features.roots.title">Tamil root discovery</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed" data-i18n="features.roots.desc">Every generated name is mapped to its core Tamil etymological roots with references.</p>
+        </div>
+      </article>
+
+      <article class="hover-lift p-6 rounded-2xl bg-background border border-border flex flex-col gap-4">
+        <div class="p-3 bg-primary/10 rounded-xl text-primary w-fit border border-primary/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display text-lg font-bold" data-i18n="features.story.title">Brand story & tagline</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed" data-i18n="features.story.desc">Contextual taglines and narrative vibes alongside every name.</p>
+        </div>
+      </article>
+
+      <article class="hover-lift p-6 rounded-2xl bg-background border border-border flex flex-col gap-4">
+        <div class="p-3 bg-primary/10 rounded-xl text-primary w-fit border border-primary/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display text-lg font-bold" data-i18n="features.pronunciation.title">Pronunciation guide</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed" data-i18n="features.pronunciation.desc">Phonetic spellings so founders, customers, and investors can say it right.</p>
+        </div>
+      </article>
+
+      <article class="hover-lift p-6 rounded-2xl bg-background border border-border flex flex-col gap-4">
+        <div class="p-3 bg-primary/10 rounded-xl text-primary w-fit border border-primary/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display text-lg font-bold" data-i18n="features.score.title">Brand score engine</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed" data-i18n="features.score.desc">Scored locally on length, simplicity, letters, and phonetics.</p>
+        </div>
+      </article>
+
+      <article class="hover-lift p-6 rounded-2xl bg-background border border-border flex flex-col gap-4">
+        <div class="p-3 bg-primary/10 rounded-xl text-primary w-fit border border-primary/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display text-lg font-bold" data-i18n="features.opensource.title">Open Source</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed" data-i18n="features.opensource.desc">MIT licensed naming engine. Hosted transparently, ready for community expansion.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── OPEN SOURCE ───────────────────────── -->
+<section class="section-padding border-b border-border/60">
+  <div class="container">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="divider-sangam mx-auto max-w-[160px] text-xs uppercase tracking-[0.3em] mb-4">
+        <span class="tamil" data-i18n="opensource.eyebrow">திறந்த மூலம்</span>
+      </div>
+      <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="opensource.title">Open Source & Community</h2>
+      <p class="mt-4 text-base text-muted-foreground max-w-xl mx-auto" data-i18n="opensource.body">En Peyar is open source. Tamil words belong to everyone. Anyone can contribute roots, improve translations, or expand the naming engine.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://github.com/MKishoreDev/en-peyar" target="_blank" rel="noreferrer" class="btn btn-primary px-7 py-3 text-sm rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <span data-i18n="opensource.github">View on GitHub</span>
+        </a>
+        <a href="/about#license" class="btn btn-secondary px-7 py-3 text-sm rounded-full border border-border">
+          <span data-i18n="opensource.license">MIT License</span>
+        </a>
+      </div>
+      <div class="mt-10 grid grid-cols-3 gap-6 text-center border-t border-border/60 pt-8">
+        <div><div class="font-display text-2xl font-bold text-gradient-tamil">MIT</div><div class="text-xs text-muted-foreground mt-1" data-i18n="opensource.stat1">License</div></div>
+        <div><div class="font-display text-2xl font-bold text-gradient-tamil tamil">தமிழ்</div><div class="text-xs text-muted-foreground mt-1" data-i18n="opensource.stat2">Language</div></div>
+        <div><div class="font-display text-2xl font-bold text-gradient-tamil">∞</div><div class="text-xs text-muted-foreground mt-1" data-i18n="opensource.stat3">Roots to explore</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="border-t border-border/60 bg-background relative overflow-hidden">
+  <div class="bg-kolam-fine absolute inset-0 opacity-10 pointer-events-none"></div>
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8 relative z-10">
+
+    <div>
+      <a href="/" class="flex items-center gap-2.5 logo-hover w-fit">
+        <img src="/static/images/logo.png" alt="En Peyar" class="h-10 w-10 object-contain" />
+        <div class="flex flex-col leading-tight">
+          <span class="font-display text-lg font-bold">En Peyar</span>
+          <span class="tamil text-xs text-muted-foreground">என் பெயர்</span>
+        </div>
+      </a>
+      <p class="mt-4 max-w-sm text-sm text-muted-foreground" data-i18n="footer.tagline"></p>
+      <p class="mt-3 text-xs text-accent" data-i18n="footer.builtIn"></p>
+    </div>
+
+    <div>
+      <h4 class="text-xs font-bold uppercase tracking-wider text-foreground" data-i18n="footer.product">Product</h4>
+      <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+        <li><a href="/#generator" class="hover:text-foreground transition-colors" data-i18n="footer.generator">Generator</a></li>
+        <li><a href="/about"      class="hover:text-foreground transition-colors" data-i18n="nav.about"></a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs font-bold uppercase tracking-wider text-foreground" data-i18n="footer.opensource">Open Source</h4>
+      <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+        <li><a href="https://github.com/MKishoreDev/en-peyar" target="_blank" rel="noreferrer" class="hover:text-foreground transition-colors" data-i18n="footer.github">GitHub</a></li>
+        <li><a href="https://github.com/MKishoreDev/en-peyar/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer" class="hover:text-foreground transition-colors" data-i18n="footer.contribute">Contribute</a></li>
+        <li><a href="/about#license" class="hover:text-foreground transition-colors" data-i18n="footer.mitLicense">MIT License</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-border/60 relative z-10 bg-background/50">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-xs text-muted-foreground sm:flex-row lg:px-8">
+      <span>© <span id="current-year"></span> En Peyar · <span data-i18n="footer.craftedBy">Crafted by</span>
+        <a href="https://github.com/MKishoreDev/" target="_blank" rel="noreferrer"
+           class="font-semibold text-foreground hover:text-accent transition-colors">Kishore</a>
+      </span>
+      <span class="tamil text-gradient-tamil font-bold text-sm" data-i18n="footer.tamilVazhga">தமிழ் வாழ்க</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBILE BOTTOM NAV
+════════════════════════════════════════════════════════════ -->
+<nav id="mobile-bottom-nav" aria-label="Mobile navigation" class="relative z-30">
+  <a href="/" class="active">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    <span data-i18n="nav.home">Home</span>
+  </a>
+  <a href="#generator">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+    <span data-i18n="nav.generate">Generate</span>
+  </a>
+  <a href="/about">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+    <span data-i18n="nav.about">About</span>
+  </a>
+  <button onclick="window.app && window.app.toggleLanguage()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m5 8 6 6"/><path d="m4 14 6-6 8 8"/><path d="M2 5h12"/>
+      <path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>
+    </svg>
+    <span data-i18n="nav.mobileLang">Lang</span>
+  </button>
+</nav>
+
+<!-- Toast -->
+<div id="toast-container" class="fixed bottom-20 right-4 z-50 flex flex-col gap-2 pointer-events-none md:bottom-4"></div>
+
+<!-- Details modal -->
+<div id="details-modal" class="hidden fixed inset-0 z-40 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4">
+  <div class="bg-card text-card-foreground border border-border shadow-2xl rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative">
+    <button onclick="window.closeModal()"
+      class="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div id="details-modal-content" class="p-6"></div>
+  </div>
+</div>
+
+<script src="/static/js/i18n.js"></script>
+<script src="/static/js/map.js"></script>
+<script src="/static/js/generator.js"></script>
+<script src="/static/js/main.js"></script>
+<script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Config secrets
+.env
+.env.local
+.env.production
+.env.development
+.env.staging
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Project IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Archive/Legacy
+.archive/

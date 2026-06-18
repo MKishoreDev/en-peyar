@@ -1,5 +1,8 @@
+# README.md
+
+````md
 <p align="center">
-  <img src="static/images//banner.png" alt="En Peyar Banner" width="100%" />
+  <img src="static/images/banner.png" alt="En Peyar Banner" width="100%" />
 </p>
 
 <h1 align="center">என் பெயர் • En Peyar</h1>
@@ -13,11 +16,16 @@
 </p>
 
 <p align="center">
-  <a href="https://enpeyar.com">Website</a> •
-  <a href="#features">Features</a> •
-  <a href="#philosophy">Philosophy</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#contributing">Contributing</a>
+  Transform Tamil roots, literature, culture, and history into meaningful modern brands.
+</p>
+
+<p align="center">
+  <a href="https://yen-peyar.indevs.in">
+    <img src="https://img.shields.io/badge/Visit-Website-B22222?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/MKishoreDev/en-peyar">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge" />
+  </a>
 </p>
 
 <p align="center">
@@ -29,12 +37,8 @@
 </p>
 
 <p align="center">
-  <a href="https://enpeyar.com">
-    <img src="https://img.shields.io/badge/Visit%20Website-Live-success?style=for-the-badge" />
-  </a>
-  <a href="https://github.com/MKishoreDev/en-peyar">
-    <img src="https://img.shields.io/badge/View%20Source-GitHub-black?style=for-the-badge" />
-  </a>
+  <img src="https://img.shields.io/badge/Hosted%20on-indevs.in-B22222?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Powered%20by-Stackryze%20Domains-D4A017?style=for-the-badge" />
 </p>
 
 ---
@@ -43,15 +47,15 @@
 
 Naming is the first act of creation.
 
-Before the first line of code.
+Before code is written.
 
-Before the first customer.
+Before customers arrive.
 
-Before the first investment.
+Before investments are raised.
 
 A name becomes identity.
 
-Tamil is one of the world's oldest living languages with more than two millennia of literary heritage. Every word carries memory, philosophy, culture, and meaning.
+Tamil is one of the world's oldest living languages with more than 2000 years of literary heritage. Every word carries meaning, memory, philosophy, and culture.
 
 En Peyar helps founders discover names inspired by Tamil language, literature, history, and regional heritage while remaining modern, memorable, and globally usable.
 
@@ -77,90 +81,76 @@ Instead of choosing between heritage and reach, En Peyar helps you have both.
 
 ## Features
 
-### AI-Powered Naming
+### 🤖 AI-Powered Naming
 
 Generate startup-ready names using your idea, keywords, industry, and vision.
 
----
-
-### Global Tamil Naming
+### 🌍 Global Tamil Naming
 
 Create modern brand names inspired by Tamil roots while remaining globally pronounceable.
 
-Examples of concepts include:
+Examples of naming concepts:
 
-* Aram (Virtue)
-* Aazhi (Ocean)
-* Munai (Frontier)
-* Semmai (Excellence)
-* Ver (Root)
+- Aram (Virtue)
+- Aazhi (Ocean)
+- Munai (Frontier)
+- Semmai (Excellence)
+- Ver (Root)
 
----
-
-### Tamil Root Discovery
+### 📖 Tamil Root Discovery
 
 Every generated name is connected to its linguistic roots and meaning.
 
 Discover the story behind every word.
 
----
-
-### Tamil Nadu District Explorer
+### 🗺️ Tamil Nadu District Explorer
 
 Explore Tamil Nadu through an interactive district map.
 
 Discover:
 
-* Name origins
-* Historical significance
-* Cultural identity
-* Regional branding inspiration
-* Notable businesses
+- Name origins
+- Historical significance
+- Cultural identity
+- Regional branding inspiration
+- Notable businesses
 
 Powered by:
 
 https://www.npmjs.com/package/svgmap-tamilnadu
 
----
-
-### Thirukkural Inspiration
+### 📜 Thirukkural Inspiration
 
 Receive timeless wisdom from Thiruvalluvar while exploring names and ideas.
 
-The project integrates Thirukkural as a source of inspiration for founders and creators.
+Integrated directly into the platform as a source of inspiration for builders and creators.
 
----
-
-### Brand Toolkit
+### 🎨 Brand Toolkit
 
 Every generated name includes:
 
-* Meaning
-* Pronunciation
-* Tagline
-* Brand Score
-* Brand Preview
-* Logo Prompt
-* Domain Availability Estimate
+- Meaning
+- Pronunciation
+- Tagline
+- Brand Score
+- Brand Preview
+- Logo Prompt
+- Domain Availability Estimate
 
----
+### 🎯 Multiple Naming Styles
 
-### Multiple Naming Styles
+Generate names using:
 
-Generate names using different approaches:
+- Tamil
+- Global Tamil
+- English
+- Contextual Heritage
 
-* Tamil
-* Global Tamil
-* English
-* Contextual Heritage
-
----
-
-### Open Source
+### 🔓 Open Source
 
 Built openly for the community.
 
-Contributions, improvements, and new ideas are welcome.
+Contributions, improvements, and ideas are always welcome.
 
 ---
 
@@ -172,13 +162,13 @@ A great brand name is not chosen because it is ancient.
 
 It is chosen because it is meaningful.
 
-Names should:
+A strong name should:
 
-* Communicate something
-* Be easy to remember
-* Be easy to pronounce
-* Scale globally
-* Stay authentic
+- Communicate something
+- Be easy to remember
+- Be easy to pronounce
+- Scale globally
+- Remain authentic
 
 En Peyar combines:
 
@@ -190,7 +180,7 @@ to create names that feel timeless rather than trendy.
 
 ## Inspiration
 
-Projects like **Arattai** demonstrate how a native Tamil word can become a memorable modern product.
+Projects like **Arattai** demonstrate how native Tamil words can become memorable modern products.
 
 En Peyar explores the same belief:
 
@@ -204,13 +194,13 @@ They are building blocks for the future.
 
 ## Technology Stack
 
-* HTML
-* CSS
-* JavaScript
-* AI-powered naming workflows
-* SVG-based district explorer
-* Tamil linguistic datasets
-* Modern frontend architecture
+- HTML
+- CSS
+- JavaScript
+- AI-assisted naming workflows
+- Tamil linguistic datasets
+- SVG district explorer
+- Modern frontend architecture
 
 ---
 
@@ -224,23 +214,21 @@ cd en-peyar
 npm install
 
 npm run dev
-```
+````
 
 ---
 
 ## Data Sources & Credits
 
-En Peyar stands on the shoulders of centuries of Tamil literary heritage and open-source contributions.
-
 ### Thirukkural API
 
-Used for Thirukkural discovery and inspiration:
+Used for Thirukkural discovery and inspiration.
 
 https://tamil-kural-api.vercel.app
 
-### Tamil Nadu District Explorer
+### Tamil Nadu SVG Map
 
-Interactive map support:
+Interactive district explorer powered by:
 
 https://www.npmjs.com/package/svgmap-tamilnadu
 
@@ -257,6 +245,42 @@ Inspired by:
 
 ---
 
+## Acknowledgements
+
+### Stackryze Domains
+
+Special thanks to **Stackryze Domains** for providing the official project subdomain:
+
+**https://yen-peyar.indevs.in**
+
+Managed under the **indevs.in** namespace.
+
+Stackryze Domains provides secure, free subdomains for developers, students, startups, and open-source projects.
+
+Their support helps independent builders launch projects without infrastructure barriers.
+
+Project by:
+
+**Stackryze (Registered MSME India)**
+
+Website:
+https://stackryze.com
+
+Contact:
+
+* [support@stackryze.com](mailto:support@stackryze.com)
+* [contact@stackryze.com](mailto:contact@stackryze.com)
+* [legal@stackryze.com](mailto:legal@stackryze.com)
+* [security@stackryze.com](mailto:security@stackryze.com)
+
+### Open Source Community
+
+Thanks to every contributor, translator, researcher, maintainer, and builder helping preserve and modernize Tamil knowledge on the internet.
+
+Projects like En Peyar exist because of the open-source community.
+
+---
+
 ## Contributing
 
 Contributions are welcome.
@@ -265,17 +289,17 @@ You can help by:
 
 * Adding Tamil roots
 * Improving translations
-* Expanding district information
 * Enhancing prompts
+* Expanding district information
 * Reporting bugs
-* Suggesting features
+* Suggesting new features
 * Improving documentation
 
 ---
 
 ## Built in Tamil Nadu
 
-Tamil Nadu has always been a place where language, trade, knowledge, and creativity meet.
+Tamil Nadu has always been a place where language, trade, creativity, and innovation meet.
 
 From ancient literary academies and maritime trade routes to modern startups and open-source communities, innovation has always had roots here.
 
@@ -296,6 +320,10 @@ Improve it.
 Share it.
 
 ---
+
+<p align="center">
+  <strong>Hosted on indevs.in • Powered by Stackryze Domains</strong>
+</p>
 
 <p align="center">
   <strong>Every company begins with a name.</strong>

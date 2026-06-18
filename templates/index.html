@@ -484,7 +484,7 @@
     </div>
 
     <div class="tn-map-container mt-8">
-      <div class="flex flex-col h-full gap-4">
+      <div class="flex flex-col h-full gap-4 min-w-0">
         <!-- Search -->
         <div class="relative w-full max-w-sm">
           <input id="district-search" type="text" data-i18n-placeholder="map.searchPlaceholder" placeholder="Search district..." class="form-input text-xs pl-8 bg-card border border-border/80 shadow-sm" />
@@ -502,8 +502,8 @@
         </div>
       </div>
 
-      <div class="flex flex-col h-full">
-        <div id="district-details" class="district-info-card shadow-md flex-1">
+      <div class="flex flex-col h-full min-w-0">
+        <div id="district-details" class="district-info-card shadow-md flex-1 min-w-0">
           <div class="flex flex-col items-center justify-center text-center py-20 text-muted-foreground">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-accent mb-4 opacity-75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
             <p data-i18n="map.prompt">Click a district to begin exploring</p>
@@ -519,7 +519,7 @@
   <div class="bg-kolam-fine absolute inset-0 opacity-20 pointer-events-none"></div>
   <div class="container relative z-10">
     <div class="grid gap-12 lg:grid-cols-[1fr_1.3fr] items-center">
-      <div>
+      <div class="min-w-0">
         <div class="divider-sangam max-w-[140px] text-xs uppercase tracking-[0.3em] mb-4">
           <span class="tamil" data-i18n="sangam.eyebrow">இலக்கியம்</span>
         </div>
@@ -530,7 +530,7 @@
           <footer class="mt-2 text-xs text-muted-foreground">— Thirukkural, Verse 1</footer>
         </div>
       </div>
-      <div>
+      <div class="min-w-0">
         <div class="kural-card rounded-2xl border border-border bg-card p-6 shadow-sm">
           <h3 class="font-display text-xs uppercase tracking-[0.25em] text-accent/80 font-bold mb-6" data-i18n="kural.title">Thirukkural of the Moment</h3>
           <div id="kural-display"></div>
@@ -551,7 +551,7 @@
 
     <!-- Philosophy -->
     <div class="grid gap-12 lg:grid-cols-[1fr_1.2fr] items-center mb-20">
-      <div>
+      <div class="min-w-0">
         <div class="divider-sangam max-w-[140px] text-xs uppercase tracking-[0.3em] mb-4">
           <span class="tamil" data-i18n="philosophy.eyebrow">விழுமியம்</span>
         </div>
@@ -559,7 +559,7 @@
         <p class="text-base text-muted-foreground leading-relaxed mb-4" data-i18n="philosophy.body1">Before code is written or capital is raised, naming is the first act of creation. It shapes your team's focus, defines your vision, and lays the absolute foundation of your brand identity.</p>
         <p class="text-base text-muted-foreground leading-relaxed" data-i18n="philosophy.body2">In Tamil culture, a name is not just a label — it is a vessel of values, carrying thousands of years of etymological depth and historical resonance.</p>
       </div>
-      <div class="relative">
+      <div class="relative min-w-0">
         <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/30 to-accent/30 opacity-30 blur"></div>
         <blockquote class="relative p-8 rounded-2xl border border-border bg-card shadow-lg flex flex-col justify-between min-h-[200px]">
           <span class="text-5xl font-serif text-accent/20 absolute top-4 left-4">"</span>

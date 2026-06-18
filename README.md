@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/banner.png" alt="En Peyar Banner" width="100%" />
+  <img src="static/images//banner.png" alt="En Peyar Banner" width="100%" />
 </p>
 
 <h1 align="center">என் பெயர் • En Peyar</h1>
@@ -62,15 +62,15 @@ Instead of choosing between heritage and reach, En Peyar helps you have both.
 ## Screenshots
 
 <p align="center">
-  <img src="docs/home.png" width="90%" />
+  <img src="static/images/home.png" width="90%" />
 </p>
 
 <p align="center">
-  <img src="docs/generator.png" width="90%" />
+  <img src="static/images/generator.png" width="90%" />
 </p>
 
 <p align="center">
-  <img src="docs/map.png" width="90%" />
+  <img src="static/images/map.png" width="90%" />
 </p>
 
 ---

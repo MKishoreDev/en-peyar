@@ -98,6 +98,10 @@ Every generated name is connected to its linguistic roots and meaning.
 
 Discover the story behind every word.
 
+### ⚡ PWA (Progressive Web App) Ready
+
+Install En Peyar directly to your home screen or desktop. Works seamlessly as a native-feeling application with offline capabilities and improved performance.
+
 ### 🗺️ Tamil Nadu District Explorer
 
 Explore Tamil Nadu through an interactive district map.

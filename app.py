@@ -40,6 +40,16 @@ def home(): return render_template('index.html')
 @app.route('/about')
 def about(): return render_template('about.html')
 
+@app.route('/manifest.json')
+def manifest():
+    return send_file('static/manifest.json')
+
+@app.route('/sw.js')
+def service_worker():
+    response = send_file('static/sw.js')
+    response.headers['Cache-Control'] = 'no-cache'
+    return response
+
 # ────────────────────────────────────────────────────────────
 # GROQ CALLS
 # ────────────────────────────────────────────────────────────

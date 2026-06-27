@@ -1,0 +1,25 @@
+{
+  "name": "en-peyar",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <img src=\"static/images/banner.png\" alt=\"En Peyar Banner\" width=\"100%\" />\r </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKishoreDev/en-peyar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MKishoreDev/en-peyar/issues"
+  },
+  "homepage": "https://github.com/MKishoreDev/en-peyar#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

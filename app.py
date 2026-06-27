@@ -1,6 +1,8 @@
 import os, io, json, requests, logging
 from flask import Flask, render_template, request, jsonify, send_file
 from dotenv import load_dotenv
+from flask_compress import Compress
+from flask_talisman import Talisman
 
 try:
     from gtts import gTTS; GTTS_AVAILABLE = True
@@ -10,7 +12,21 @@ except ImportError:
 load_dotenv()
 app = Flask(__name__)
 app.logger.setLevel(logging.INFO)
-# Caching disabled to avoid storage limits
+
+# Performance: Compression & Caching
+Compress(app)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000 # 1 year caching for static files
+
+# Security: HTTP Headers
+csp = {
+    'default-src': ['\'self\''],
+    'script-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\''],
+    'style-src': ['\'self\'', '\'unsafe-inline\''],
+    'img-src': ['\'self\'', 'data:', 'https://img.shields.io'],
+    'connect-src': ['\'self\''],
+    'font-src': ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com']
+}
+Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'], force_https=False)
 
 GROQ_MODELS = [
     "llama-3.3-70b-versatile",

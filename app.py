@@ -70,6 +70,14 @@ def service_worker():
     response.headers['Cache-Control'] = 'no-cache'
     return response
 
+@app.route('/robots.txt')
+def robots():
+    return send_file('static/robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_file('static/sitemap.xml')
+
 # ────────────────────────────────────────────────────────────
 # GROQ CALLS
 # ────────────────────────────────────────────────────────────

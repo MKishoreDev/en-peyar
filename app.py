@@ -21,12 +21,12 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000 # 1 year caching for static f
 csp = {
     'default-src': ['\'self\''],
     'script-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\''],
-    'style-src': ['\'self\'', '\'unsafe-inline\''],
+    'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com'],
     'img-src': ['\'self\'', 'data:', 'https://img.shields.io'],
-    'connect-src': ['\'self\''],
+    'connect-src': ['\'self\'', 'https://tamil-kural-api.vercel.app'],
     'font-src': ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com']
 }
-Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'], force_https=False)
+Talisman(app, content_security_policy=csp, force_https=False)
 
 GROQ_MODELS = [
     "llama-3.3-70b-versatile",

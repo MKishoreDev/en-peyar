@@ -226,12 +226,81 @@ class MapManager {
       const data = await response.json();
       this.renderKural(data);
     } catch (err) {
-      console.error("Thirukkural API failed:", err);
-      kuralContainer.innerHTML = `
-        <div class="flex flex-col items-center justify-center min-h-[160px] py-4 text-center">
-          <p class="text-xs text-muted-foreground">${t("kural.error", "Could not fetch Thirukkural. Try again.")}</p>
-        </div>
-      `;
+      console.error("Thirukkural API failed, using local fallback:", err);
+      const fallbacks = [
+        {
+          number: 1,
+          line1: "அகர முதல எழுத்தெல்லாம் ஆதி",
+          line2: "பகவன் முதற்றே உலகு.",
+          tam_exp: "எழுத்துக்கள் எல்லாம் அகரத்தை முதலாகக் கொண்டிருக்கின்றன; அதுபோல உலகம் ஆதி பகவனை முதலாகக் கொண்டிருக்கிறது.",
+          translation: "As the letter A is the first of all letters, so the eternal God is first in the world."
+        },
+        {
+          number: 2,
+          line1: "கற்றதனால் ஆய பயனென்கொல் வாலறிவன்",
+          line2: "நற்றாள் தொழாஅர் எனின்.",
+          tam_exp: "தூய அறிவு வடிவாக விளங்கும் இறைவனுடைய நல்ல திருவடிகளைத் தொழாமல் இருப்பாரானால், அவர் கற்ற கல்வியினால் ஆகிய பயன் என்ன?",
+          translation: "What fruit have they of their learning who worship not the good feet of Him who is possessed of pure knowledge?"
+        },
+        {
+          number: 7,
+          line1: "தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க்கு அல்லால்",
+          line2: "மனக்கவலை மாற்றல் அரிது.",
+          tam_exp: "தனக்கு ஒப்புமை இல்லாத தலைவனுடைய திருவடிகளைப் பொருந்தி நினைக்கின்றவர்கற்கல்லாமல், மற்றவர்களுக்கு மனக்கவலையை மாற்றுவது அரிது.",
+          translation: "Anxiety of mind cannot be removed, except for those who are united to the feet of Him who has no equal."
+        },
+        {
+          number: 391,
+          line1: "கற்க கசடறக் கற்பவை கற்றபின்",
+          line2: "நிற்க அதற்குத் தக.",
+          tam_exp: "கற்கத் தகுந்த நூல்களைக் குற்றமறக் கற்க வேண்டும்; அவ்வாறு கற்ற பிறகு, கற்ற கல்விக்குத் தக்கவாறு நெறியில் நிற்க வேண்டும்.",
+          translation: "Let a man learn thoroughly whatever he may learn, and let his conduct be worthy of his learning."
+        },
+        {
+          number: 392,
+          line1: "எண்ணென்ப ஏனை எழுத்தென்ப இவ்விரண்டும்",
+          line2: "கண்ணென்ப வாழும் உயிர்க்கு.",
+          tam_exp: "எண்கள் என்று சொல்லப்படுபவை, எழுத்துக்கள் என்று சொல்லப்படுபவை ஆகிய இவ்விரண்டையும் வாழும் மக்களுக்கு இரு கண்கள் என்று கூறுவர்.",
+          translation: "Numbers and letters, they say, are the two eyes of living beings."
+        },
+        {
+          number: 394,
+          line1: "உவப்பத் தலைக்கூடி உள்ளப் பிரிதல்",
+          line2: "அனைத்தே புலவர் தொழில்.",
+          tam_exp: "மகிழுமாறு கூடிப் பழகி, இனி இவரை எப்போது காண்போம் என்று வருந்துமாறு பிரிவது அறிஞர்களின் தொழிலாகும்.",
+          translation: "The office of the learned is to meet with joy, and depart with regretful longing."
+        },
+        {
+          number: 396,
+          line1: "தொட்டனைத் தூறும் மணற்கேணி மாந்தர்க்குக்",
+          line2: "கற்றனைத் தூறும் அறிவு.",
+          tam_exp: "மணற்பாங்கான இடத்தில் தோண்டத் தோண்ட நீர் ஊறும்; அதுபோல மக்களுக்குக் கற்கக் கற்க அறிவு வளரும்.",
+          translation: "Water will flow from a sandy well in proportion to the depth to which it is dug, and knowledge will flow in proportion to learning."
+        },
+        {
+          number: 397,
+          line1: "யாதானும் நாடாமல் ஊராமால் என்னொருவன்",
+          line2: "சாந்துணையும் கல்லாத வாறு.",
+          tam_exp: "கற்றவனுக்கு எந்த நாடும் சொந்த நாடாகும், எந்த ஊரும் சொந்த ஊராகும்; அப்படியிருக்க ஒருவன் சாகும் வரையில் கற்காமல் காலம் கழிப்பது ஏன்?",
+          translation: "Why should any man remain unlearned till his death, when every land and city is his own?"
+        },
+        {
+          number: 411,
+          line1: "செல்வத்துள் செல்வம் செவிச்செல்வம் அச்செல்வம்",
+          line2: "செல்வத்துள் எல்லாம் தலை.",
+          tam_exp: "செல்வங்கள் பலவற்றுள்ளும் சிறந்த செல்வம் செவியால் கேட்டுப் பெறும் செல்வமாகும்; அந்தச் செல்வம் பிற செல்வங்கள் எல்லாவற்றிலும் முதன்மையானதாகும்.",
+          translation: "Wealth of the ear is the chief wealth; it is the head of all wealth."
+        },
+        {
+          number: 781,
+          line1: "செயற்கரிய யாவுள நட்பின் அதுபோல்",
+          line2: "வினைக்கரிய யாவுள காப்பு.",
+          tam_exp: "நட்பைப்போலச் செய்து கொள்வதற்கரிய அரிய செயல்கள் எவை உள்ளன? அதுபோலத் தொழிலுக்குச் சிறந்த பாதுகாப்பாக இருப்பவை எவை உள்ளன?",
+          translation: "What is so difficult to acquire as friendship? What guard is so secure against the efforts of enemies?"
+        }
+      ];
+      const randomKural = fallbacks[Math.floor(Math.random() * fallbacks.length)];
+      this.renderKural(randomKural);
     } finally {
       kuralContainer.classList.remove("opacity-40", "pointer-events-none");
       if (nextKuralBtn) {

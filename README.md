@@ -124,6 +124,10 @@ Receive timeless wisdom from Thiruvalluvar while exploring names and ideas.
 
 Integrated directly into the platform as a source of inspiration for builders and creators.
 
+Powered by:
+
+https://github.com/nramc/thirukkural-api
+
 ### 🎨 Brand Toolkit
 
 Every generated name includes:

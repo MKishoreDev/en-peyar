@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/MKishoreDev/en-peyar#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^4.0.0"
   }
 }

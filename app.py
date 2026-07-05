@@ -23,7 +23,7 @@ csp = {
     'script-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\''],
     'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com'],
     'img-src': ['\'self\'', 'data:', 'https://img.shields.io'],
-    'connect-src': ['\'self\'', 'https://tamil-kural-api.vercel.app'],
+    'connect-src': ['\'self\'', 'https://tamil-kural-api.vercel.app', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com'],
     'font-src': ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com']
 }
 Talisman(app, content_security_policy=csp, force_https=False)

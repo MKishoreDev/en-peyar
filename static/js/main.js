@@ -612,3 +612,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// Hide Page Loader when all resources are ready
+window.addEventListener("load", () => {
+  const loader = document.getElementById("page-loader");
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 450);
+  }
+});

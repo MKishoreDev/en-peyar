@@ -76,6 +76,47 @@
 </head>
 <body class="bg-background text-foreground transition-colors duration-300">
 
+<!-- ─── Fullscreen Page Loader ─── -->
+<div id="page-loader">
+  <div class="flex flex-col items-center gap-6 text-center select-none">
+    <!-- Tamil Kolam Spinner -->
+    <div class="relative w-24 h-24 mx-auto">
+      <svg viewBox="0 0 96 96" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="klg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="hsl(var(--primary))"/>
+            <stop offset="100%" stop-color="hsl(var(--gold))"/>
+          </linearGradient>
+          <linearGradient id="klg2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="hsl(var(--gold))"/>
+            <stop offset="100%" stop-color="hsl(var(--bronze))"/>
+          </linearGradient>
+        </defs>
+        <circle cx="48" cy="48" r="42" fill="none" stroke="hsl(var(--border))" stroke-width="1.5"/>
+        <circle cx="48" cy="48" r="42" fill="none" stroke="url(#klg1)" stroke-width="3" stroke-linecap="round" class="kolam-ring-outer"/>
+        <circle cx="48" cy="48" r="28" fill="none" stroke="hsl(var(--border))" stroke-width="1"/>
+        <circle cx="48" cy="48" r="28" fill="none" stroke="url(#klg2)" stroke-width="2" stroke-linecap="round" class="kolam-ring-inner"/>
+        <circle cx="48" cy="5"  r="2.5" fill="hsl(var(--gold))" class="kolam-dot"/>
+        <circle cx="91" cy="48" r="2.5" fill="hsl(var(--primary))" class="kolam-dot"/>
+        <circle cx="48" cy="91" r="2.5" fill="hsl(var(--gold))" class="kolam-dot"/>
+        <circle cx="5"  cy="48" r="2.5" fill="hsl(var(--primary))" class="kolam-dot"/>
+        <circle cx="19" cy="19" r="1.5" fill="hsl(var(--bronze)/0.6)" class="kolam-dot"/>
+        <circle cx="77" cy="19" r="1.5" fill="hsl(var(--bronze)/0.6)" class="kolam-dot"/>
+        <circle cx="77" cy="77" r="1.5" fill="hsl(var(--bronze)/0.6)" class="kolam-dot"/>
+        <circle cx="19" cy="77" r="1.5" fill="hsl(var(--bronze)/0.6)" class="kolam-dot"/>
+        <circle cx="48" cy="48" r="7" fill="hsl(var(--primary)/0.15)"/>
+        <circle cx="48" cy="48" r="4" fill="hsl(var(--primary))" class="kolam-centre"/>
+        <circle cx="48" cy="48" r="2" fill="hsl(var(--gold))"/>
+      </svg>
+    </div>
+    <!-- Brand Label -->
+    <div class="space-y-1.5 animate-pulse">
+      <p class="font-display text-xl font-bold text-gradient-tamil">En Peyar</p>
+      <p class="tamil text-xs text-muted-foreground">என் பெயர்</p>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════════════════════
      NAVBAR
 ════════════════════════════════════════════════════════════ -->

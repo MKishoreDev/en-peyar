@@ -69,6 +69,9 @@ class TranslationManager {
     });
     
     this.updateStyleDescription();
+    if (this.app && typeof this.app.updateNavbarActiveState === "function") {
+      this.app.updateNavbarActiveState();
+    }
   }
 
   // Update description text for hovered or active naming style

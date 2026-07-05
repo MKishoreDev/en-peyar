@@ -591,4 +591,29 @@ select.form-input option {
   100% { transform: scale(1) rotate(0deg); }
 }
 
+/* ── Active Navbar Indicator Underlines ──────────────────── */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--gold)));
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-link.nav-active {
+  color: hsl(var(--foreground)) !important;
+  font-weight: 600;
+}
+.nav-link.nav-active::after {
+  width: 70%;
+}
+
+
 

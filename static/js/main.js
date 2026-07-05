@@ -619,6 +619,47 @@ document.addEventListener("DOMContentLoaded", () => {
       revealElements.forEach(el => el.classList.add("revealed"));
     }
   }
+
+  // Dynamic Navbar Active Underlines
+  const path = window.location.pathname;
+  const navLinks = document.querySelectorAll(".nav-link");
+  if (path === "/about") {
+    navLinks.forEach(link => {
+      const isAbout = link.getAttribute("href") === "/about" || link.getAttribute("data-i18n") === "nav.about";
+      link.classList.toggle("nav-active", isAbout);
+    });
+  } else if (path === "/" || path === "") {
+    const generatorSection = document.getElementById("generator");
+    const homeLink = Array.from(navLinks).find(l => l.getAttribute("href") === "/" || l.getAttribute("data-i18n") === "nav.home");
+    const genLink = Array.from(navLinks).find(l => l.getAttribute("href") === "#generator" || l.getAttribute("data-i18n") === "nav.generate");
+    const aboutLink = Array.from(navLinks).find(l => l.getAttribute("href") === "/about" || l.getAttribute("data-i18n") === "nav.about");
+
+    if (aboutLink) aboutLink.classList.remove("nav-active");
+
+    if (generatorSection && homeLink && genLink) {
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              genLink.classList.add("nav-active");
+              homeLink.classList.remove("nav-active");
+            } else {
+              homeLink.classList.add("nav-active");
+              genLink.classList.remove("nav-active");
+            }
+          });
+        }, {
+          threshold: 0.2,
+          rootMargin: "-20% 0px -50% 0px"
+        });
+        observer.observe(generatorSection);
+      } else {
+        homeLink.classList.add("nav-active");
+      }
+    } else {
+      if (homeLink) homeLink.classList.add("nav-active");
+    }
+  }
 });
 
 // ── Unified Site Initialization & Helpers ───────────────────

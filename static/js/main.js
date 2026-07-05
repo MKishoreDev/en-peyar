@@ -704,25 +704,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (aboutLink) aboutLink.classList.remove("nav-active");
 
     if (generatorSection && homeLink && genLink) {
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              genLink.classList.add("nav-active");
-              homeLink.classList.remove("nav-active");
-            } else {
-              homeLink.classList.add("nav-active");
-              genLink.classList.remove("nav-active");
-            }
-          });
-        }, {
-          threshold: 0.2,
-          rootMargin: "-20% 0px -50% 0px"
-        });
-        observer.observe(generatorSection);
-      } else {
-        homeLink.classList.add("nav-active");
-      }
+      const handleScroll = () => {
+        const scrollPos = window.scrollY || window.pageYOffset;
+        const generatorTop = generatorSection.offsetTop - 140; // offset for sticky header
+        
+        if (scrollPos >= generatorTop) {
+          genLink.classList.add("nav-active");
+          homeLink.classList.remove("nav-active");
+        } else {
+          homeLink.classList.add("nav-active");
+          genLink.classList.remove("nav-active");
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Trigger initial state
     } else {
       if (homeLink) homeLink.classList.add("nav-active");
     }

@@ -6,7 +6,11 @@
 
   <title>About En Peyar — Tamil Naming Platform</title>
   <meta name="description" content="En Peyar is the digital naming home for Tamil founders — culturally rooted, globally usable." />
-  <meta name="author" content="En Peyar — MKishoreDev" />
+  <meta name="author" content="Kishore M (MKishoreDev)" />
+  <meta name="creator" content="Kishore M" />
+  <meta name="publisher" content="Kishore M" />
+  <link rel="me" href="https://github.com/MKishoreDev" />
+  <link rel="me" href="https://www.linkedin.com/in/kishore-m-developer" />
 
   <!-- ── Open Graph ────────────────────────────────────────── -->
   <meta property="og:site_name" content="En Peyar" />
@@ -46,6 +50,20 @@
       "@type": "WebSite",
       "name": "En Peyar",
       "url": "https://en-peyar.indevs.in/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Kishore M",
+      "url": "https://github.com/MKishoreDev",
+      "sameAs": [
+        "https://github.com/MKishoreDev",
+        "https://www.linkedin.com/in/kishore-m-developer"
+      ]
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Kishore M",
+      "url": "https://github.com/MKishoreDev"
     }
   }
   </script>
@@ -295,29 +313,5 @@
 <script src="/static/js/map.js?v=1.0.2"></script>
 <script src="/static/js/generator.js?v=1.0.2"></script>
 <script src="/static/js/main.js?v=1.0.2"></script>
-<script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-<script>
-  (function() {
-    var loader = document.getElementById("page-loader");
-    if (loader) {
-      var hideLoader = function() {
-        if (loader.style.display !== "none") {
-          loader.style.transition = "opacity 0.4s ease, visibility 0.4s ease";
-          loader.style.opacity = "0";
-          loader.style.visibility = "hidden";
-          loader.style.pointerEvents = "none";
-          setTimeout(function() {
-            loader.style.display = "none";
-          }, 450);
-        }
-      };
-      window.addEventListener("load", hideLoader);
-      document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(hideLoader, 600);
-      });
-      setTimeout(hideLoader, 1500);
-    }
-  })();
-</script>
 </body>
 </html>

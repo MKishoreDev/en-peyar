@@ -613,16 +613,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Hide Page Loader when all resources are ready
-window.addEventListener("load", () => {
+// ── Unified Site Initialization & Helpers ───────────────────
+
+// Set Current Footer Year
+const yearEl = document.getElementById('current-year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// Register PWA Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('ServiceWorker registered'))
+      .catch(err => console.log('ServiceWorker registration failed: ', err));
+  });
+}
+
+// Fullscreen Page Loader dismiss controller with fallback timers
+(function() {
   const loader = document.getElementById("page-loader");
   if (loader) {
-    loader.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
-    loader.style.opacity = "0";
-    loader.style.visibility = "hidden";
-    loader.style.pointerEvents = "none";
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 550);
+    const hideLoader = () => {
+      if (loader.style.display !== "none") {
+        loader.style.transition = "opacity 0.4s ease, visibility 0.4s ease";
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        loader.style.pointerEvents = "none";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 450);
+      }
+    };
+    window.addEventListener("load", hideLoader);
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(hideLoader, 600);
+    });
+    setTimeout(hideLoader, 1500); // Safety Timeout fallback
   }
-});
+})();
+

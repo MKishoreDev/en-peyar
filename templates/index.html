@@ -794,10 +794,10 @@
   </div>
 </div>
 
-<script src="/static/js/i18n.js"></script>
-<script src="/static/js/map.js"></script>
-<script src="/static/js/generator.js"></script>
-<script src="/static/js/main.js"></script>
+<script src="/static/js/i18n.js?v=1.0.2"></script>
+<script src="/static/js/map.js?v=1.0.2"></script>
+<script src="/static/js/generator.js?v=1.0.2"></script>
+<script src="/static/js/main.js?v=1.0.2"></script>
 <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 <script>
   if ('serviceWorker' in navigator) {
@@ -807,6 +807,29 @@
         .catch(err => console.log('ServiceWorker registration failed: ', err));
     });
   }
+</script>
+<script>
+  (function() {
+    var loader = document.getElementById("page-loader");
+    if (loader) {
+      var hideLoader = function() {
+        if (loader.style.display !== "none") {
+          loader.style.transition = "opacity 0.4s ease, visibility 0.4s ease";
+          loader.style.opacity = "0";
+          loader.style.visibility = "hidden";
+          loader.style.pointerEvents = "none";
+          setTimeout(function() {
+            loader.style.display = "none";
+          }, 450);
+        }
+      };
+      window.addEventListener("load", hideLoader);
+      document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(hideLoader, 600);
+      });
+      setTimeout(hideLoader, 1500);
+    }
+  })();
 </script>
 </body>
 </html>

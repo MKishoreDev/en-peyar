@@ -617,8 +617,12 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   const loader = document.getElementById("page-loader");
   if (loader) {
+    loader.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden";
+    loader.style.pointerEvents = "none";
     setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 450);
+      loader.style.display = "none";
+    }, 550);
   }
 });

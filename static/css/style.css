@@ -501,3 +501,33 @@ textarea.form-input { resize: vertical; }
   border-bottom: 1px solid hsl(var(--border)/0.5);
   padding-bottom: 1rem;
 }
+
+/* ── Custom Selection Highlight ──────────────────────────── */
+::selection {
+  background-color: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+::-moz-selection {
+  background-color: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+/* ── Form Select Option Custom styling ───────────────────── */
+select.form-input option {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+}
+
+/* ── Scroll Reveal ───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+

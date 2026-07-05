@@ -690,12 +690,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dynamic Navbar Active Underlines
   const path = window.location.pathname;
   const navLinks = document.querySelectorAll(".nav-link");
-  if (path === "/about") {
+  const isAbout = path.includes("/about");
+
+  if (isAbout) {
     navLinks.forEach(link => {
-      const isAbout = link.getAttribute("href") === "/about" || link.getAttribute("data-i18n") === "nav.about";
-      link.classList.toggle("nav-active", isAbout);
+      const isAboutLink = link.getAttribute("href") === "/about" || link.getAttribute("data-i18n") === "nav.about";
+      link.classList.toggle("nav-active", isAboutLink);
     });
-  } else if (path === "/" || path === "") {
+  } else {
     const generatorSection = document.getElementById("generator");
     const homeLink = Array.from(navLinks).find(l => l.getAttribute("href") === "/" || l.getAttribute("data-i18n") === "nav.home");
     const genLink = Array.from(navLinks).find(l => l.getAttribute("href") === "#generator" || l.getAttribute("data-i18n") === "nav.generate");
@@ -708,7 +710,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const scrollPos = window.scrollY || window.pageYOffset;
         const generatorTop = generatorSection.offsetTop - 140; // offset for sticky header
         
-        if (scrollPos >= generatorTop) {
+        if (scrollPos < 50) {
+          homeLink.classList.add("nav-active");
+          genLink.classList.remove("nav-active");
+        } else if (scrollPos >= generatorTop) {
           genLink.classList.add("nav-active");
           homeLink.classList.remove("nav-active");
         } else {
@@ -717,6 +722,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
       window.addEventListener("scroll", handleScroll);
+      window.addEventListener("load", handleScroll);
+      setTimeout(handleScroll, 100);
       handleScroll(); // Trigger initial state
     } else {
       if (homeLink) homeLink.classList.add("nav-active");

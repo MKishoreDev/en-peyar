@@ -175,7 +175,11 @@ class AppController {
   playPronunciation(text, lang) {
     let cleanText = text.split("(")[0].replace(/[““”"]/g, "").trim();
     
-    if (lang === "ta") {
+    // Check if there is Tamil script
+    const hasTamil = /[\u0B80-\u0BFF]/.test(cleanText);
+    
+    // Extract Tamil characters if lang is 'ta' and Tamil exists
+    if (lang === "ta" && hasTamil) {
        const tamilMatch = text.match(/[\u0B80-\u0BFF]+/g);
        if (tamilMatch) {
           cleanText = tamilMatch.join(" ");
@@ -185,12 +189,95 @@ class AppController {
     if (!cleanText) {
        this.toast("No text to speak", "error");
        return;
-     }
+    }
     
+    // Determine language: Use 'ta' for Tanglish (Tamil root in English letters) unless purely English
+    let ttsLang = "en";
+    if (hasTamil) {
+      ttsLang = "ta";
+    } else {
+      const currentStyle = this.currentStyle || "Tamil";
+      if (currentStyle === "English") {
+        ttsLang = "en";
+      } else {
+        ttsLang = "ta"; // Tanglish name (e.g. Nayam) pronounced as Tamil
+      }
+    }
+
     const speakLabel = this.translations["generator.label.speaking"] || "Speaking";
     this.toast(`${speakLabel}: "${cleanText}"`, "success");
+
+    // Prefer Web Speech API for high quality native male voices
+    if ('speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel();
+        
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.lang = ttsLang === "ta" ? "ta-IN" : "en-IN";
+        
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+          const langPrefix = ttsLang === "ta" ? "ta" : "en";
+          let bestVoice = null;
+          
+          if (ttsLang === "en") {
+            // Find natural/human-like English MALE voices
+            bestVoice = voices.find(v => 
+              v.lang.startsWith("en") && 
+              (v.name.includes("Male") || 
+               v.name.includes("David") || 
+               v.name.includes("Ravi") || 
+               v.name.includes("Rishi") || 
+               v.name.includes("Mark") || 
+               v.name.includes("Alex") ||
+               v.name.includes("Google UK English Male") || 
+               v.name.includes("Google US English Male") ||
+               v.name.includes("Microsoft Ravi"))
+            );
+          } else {
+            // Find Tamil voices (default or male/natural if available)
+            bestVoice = voices.find(v => 
+              v.lang.startsWith("ta") && 
+              (v.name.includes("Male") || 
+               v.name.includes("Valluvar") || 
+               v.name.includes("Natural") || 
+               v.name.includes("Google"))
+            );
+          }
+          
+          // Fallback 1: Any Natural/Premium/Google voice in target language
+          if (!bestVoice) {
+            bestVoice = voices.find(v => v.lang.startsWith(langPrefix) && (v.name.includes("Natural") || v.name.includes("Premium") || v.name.includes("Google")));
+          }
+          // Fallback 2: Any voice in target language
+          if (!bestVoice) {
+            bestVoice = voices.find(v => v.lang.startsWith(langPrefix));
+          }
+          
+          if (bestVoice) {
+            utterance.voice = bestVoice;
+          }
+        }
+        
+        utterance.rate = ttsLang === "ta" ? 0.90 : 0.95;
+        
+        utterance.onerror = (e) => {
+          console.error("SpeechSynthesis error, falling back to server:", e);
+          this._speakUsingServer(cleanText, ttsLang);
+        };
+        
+        window.speechSynthesis.speak(utterance);
+        return;
+      } catch (err) {
+        console.error("Web Speech API error, falling back to server:", err);
+      }
+    }
     
-    const ttsLang = lang === "ta" ? "ta" : "en";
+    // Fallback to server gTTS
+    this._speakUsingServer(cleanText, ttsLang);
+  }
+
+  _speakUsingServer(cleanText, ttsLang) {
     try {
       if (this._currentAudio) {
         this._currentAudio.pause();
@@ -199,30 +286,10 @@ class AppController {
       const url = `/api/tts?text=${encodeURIComponent(cleanText)}&lang=${ttsLang}`;
       const audio = new Audio(url);
       this._currentAudio = audio;
-      audio.onerror = () => this._fallbackSpeak(cleanText, lang);
-      audio.play().catch(() => this._fallbackSpeak(cleanText, lang));
+      audio.play().catch(e => console.error("Server audio playback failed:", e));
     } catch (e) {
-      this._fallbackSpeak(cleanText, lang);
+      console.error("Server audio fallback failed:", e);
     }
-  }
-
-  _fallbackSpeak(cleanText, lang) {
-    if (!('speechSynthesis' in window)) {
-      this.toast("Speech not supported in your browser.", "error");
-      return;
-    }
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = lang === "ta" ? "ta-IN" : "en-IN";
-    const voices = window.speechSynthesis.getVoices();
-    if (voices.length > 0) {
-      const langPrefix = lang === "ta" ? "ta" : "en-IN";
-      let bestVoice = voices.find(v => v.lang.startsWith(langPrefix) && (v.name.includes("Natural") || v.name.includes("Premium") || v.name.includes("Google")));
-      if (!bestVoice) bestVoice = voices.find(v => v.lang.startsWith(langPrefix));
-      if (bestVoice) utterance.voice = bestVoice;
-    }
-    utterance.rate = 0.92;
-    window.speechSynthesis.speak(utterance);
   }
 
   // Toast helper

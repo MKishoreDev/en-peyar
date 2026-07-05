@@ -554,3 +554,41 @@ select.form-input option {
   pointer-events: none;
 }
 
+/* ── Navbar Toggle Animations ────────────────────────────── */
+#theme-toggle-btn, #lang-toggle-btn {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+#theme-toggle-btn svg, #lang-toggle-btn svg {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#theme-toggle-btn:hover svg {
+  transform: scale(1.15) rotate(18deg);
+}
+#lang-toggle-btn:hover svg {
+  transform: scale(1.1) rotate(-12deg);
+}
+#theme-toggle-btn:active, #lang-toggle-btn:active {
+  transform: scale(0.92);
+}
+
+/* Theme Spin Click Animation */
+.theme-spin svg {
+  animation: theme-spin-kf 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes theme-spin-kf {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(0.7) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+/* Language Click Animation */
+.lang-click svg {
+  animation: lang-click-kf 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes lang-click-kf {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(0.8) rotate(-25deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+

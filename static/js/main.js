@@ -299,13 +299,21 @@ class AppController {
     // Theme switch
     const themeBtn = document.getElementById("theme-toggle-btn");
     if (themeBtn) {
-      themeBtn.addEventListener("click", () => this.toggleTheme());
+      themeBtn.addEventListener("click", () => {
+        themeBtn.classList.add("theme-spin");
+        setTimeout(() => themeBtn.classList.remove("theme-spin"), 500);
+        this.toggleTheme();
+      });
     }
 
     // Language switch
     const langBtn = document.getElementById("lang-toggle-btn");
     if (langBtn) {
-      langBtn.addEventListener("click", () => this.i18n.toggleLanguage());
+      langBtn.addEventListener("click", () => {
+        langBtn.classList.add("lang-click");
+        setTimeout(() => langBtn.classList.remove("lang-click"), 400);
+        this.i18n.toggleLanguage();
+      });
     }
 
     // Mobile menu toggle

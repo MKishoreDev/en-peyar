@@ -78,6 +78,10 @@ def robots():
 def sitemap():
     return send_file('static/sitemap.xml')
 
+@app.route('/llm.txt')
+def llmtxt():
+    return send_file('static/llm.txt')
+
 # ────────────────────────────────────────────────────────────
 # GROQ CALLS
 # ────────────────────────────────────────────────────────────

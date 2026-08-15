@@ -348,6 +348,14 @@ class MapManager {
     
     let engExp = kural.eng_exp || kural.eng_explanation || "";
 
+    if (typeof DOMPurify !== "undefined") {
+      line1 = DOMPurify.sanitize(line1);
+      line2 = DOMPurify.sanitize(line2);
+      translation = DOMPurify.sanitize(translation);
+      tamExp = DOMPurify.sanitize(tamExp);
+      engExp = DOMPurify.sanitize(engExp);
+    }
+
     kuralContainer.innerHTML = `
       <div class="animate-fade-up relative">
         <button class="absolute top-0 right-0 p-1 text-muted-foreground hover:text-accent transition-colors" onclick="window.app.map.copyKuralText('${line1.replace(/'/g, "\\'")} ${line2.replace(/'/g, "\\'")}', '${translation.replace(/'/g, "\\'")}')" title="Copy couplet">

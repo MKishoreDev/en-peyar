@@ -28,7 +28,7 @@
 <p align="center">
   <img src="https://img.shields.io/github/license/MKishoreDev/en-peyar?style=for-the-badge" />
   <img src="https://img.shields.io/github/stars/MKishoreDev/en-peyar?style=for-the-badge" />
-  <img src="https://img.shields.io/github/forks/MKishoreDev/en-peyar?style=for-the-badge" />
+  <img src="https://img.shields.io/github/actions/workflow/status/MKishoreDev/en-peyar/ci.yml?branch=main&style=for-the-badge" />
   <img src="https://img.shields.io/badge/Tamil-தமிழ்-C1272D?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Open%20Source-MIT-B8860B?style=for-the-badge" />
 </p>
@@ -214,10 +214,10 @@ git clone https://github.com/MKishoreDev/en-peyar.git
 
 cd en-peyar
 
-npm install
+pip install -r requirements.txt
 
-npm run dev
-````
+python app.py
+```
 
 ---
 

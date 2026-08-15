@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, jsonify, send_file
 from dotenv import load_dotenv
 from flask_compress import Compress
 from flask_talisman import Talisman
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 try:
     from gtts import gTTS; GTTS_AVAILABLE = True
@@ -17,10 +19,18 @@ app.logger.setLevel(logging.INFO)
 Compress(app)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000 # 1 year caching for static files
 
+# Rate Limiting
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://"
+)
+
 # Security: HTTP Headers
 csp = {
     'default-src': ['\'self\''],
-    'script-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\''],
+    'script-src': ['\'self\'', '\'unsafe-inline\''],
     'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com'],
     'img-src': ['\'self\'', 'data:', 'https://img.shields.io'],
     'connect-src': ['\'self\'', 'https://tamil-kural-api.vercel.app', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com'],
@@ -156,12 +166,16 @@ Return ONLY valid JSON."""
 # /api/generate
 # ────────────────────────────────────────────────────────────
 @app.route('/api/generate', methods=['POST'])
+@limiter.limit("15 per minute")
 def generate_names():
     data = request.get_json() or {}
     keywords = data.get('keywords','').strip()
     style = data.get('style','Tamil')
     industry = data.get('industry','Project')
     context = data.get('context','').strip()
+
+    if len(keywords) > 500 or len(context) > 1000:
+        return jsonify({"error": "Input too long."}), 400
 
     if not keywords and not context:
         return jsonify({"error":"Description or Keywords required"}), 400
@@ -380,16 +394,18 @@ Roots: {roots_str}"""
         return jsonify(response_data)
     except Exception as e:
         app.logger.error(f"Error in multi-stage generate pipeline: {e}")
-        return api_error(e)
+        return jsonify({"error": "AI Provider temporarily unavailable or encountered an error."}), 500
 
 # ────────────────────────────────────────────────────────────
 # /api/tts
 # ────────────────────────────────────────────────────────────
 @app.route('/api/tts')
+@limiter.limit("20 per minute")
 def tts():
     text = request.args.get('text','').strip()
     lang = request.args.get('lang','en').strip()
     if not text: return "No text", 400
+    if len(text) > 200: return "Text too long", 400
     if not GTTS_AVAILABLE:
         return jsonify({"error":"TTS unavailable"}), 503
         
@@ -402,7 +418,7 @@ def tts():
         return send_file(fp, mimetype='audio/mpeg', as_attachment=False, download_name='tts.mp3')
     except Exception as e:
         app.logger.error(f"TTS Error: {e}")
-        return str(e), 500
+        return "Audio generation failed. Please try again later.", 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

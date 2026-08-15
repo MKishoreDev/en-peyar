@@ -47,6 +47,9 @@ class NamingGeneratorManager {
     const parts = tag.split(",");
     parts.forEach(part => {
       let clean = part.trim().replace(/\s+/g, " ");
+      if (typeof DOMPurify !== "undefined") {
+        clean = DOMPurify.sanitize(clean);
+      }
       if (clean.startsWith("#")) {
         clean = clean.substring(1).trim();
       }
@@ -295,6 +298,16 @@ class NamingGeneratorManager {
       if (resultsContainer && resultsContainer._stageTimer) clearInterval(resultsContainer._stageTimer);
 
       const result = await response.json();
+      if (result.names && Array.isArray(result.names) && typeof DOMPurify !== "undefined") {
+        result.names = result.names.map(n => ({
+          name: DOMPurify.sanitize(n.name || ""),
+          meaning: DOMPurify.sanitize(n.meaning || ""),
+          pronunciation: DOMPurify.sanitize(n.pronunciation || ""),
+          tagline: DOMPurify.sanitize(n.tagline || ""),
+          tamilRoot: DOMPurify.sanitize(n.tamilRoot || ""),
+          territory: DOMPurify.sanitize(n.territory || "")
+        }));
+      }
       this.renderGeneratedNames(result.names);
     } catch (err) {
       if (resultsContainer && resultsContainer._stageTimer) clearInterval(resultsContainer._stageTimer);

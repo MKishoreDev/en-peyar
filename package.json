@@ -4,7 +4,7 @@
   "description": "<p align=\"center\">\r   <img src=\"static/images/banner.png\" alt=\"En Peyar Banner\" width=\"100%\" />\r </p>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No JS tests specified; using pytest for backend\" && exit 0",
     "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --minify"
   },
   "repository": {
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/MKishoreDev/en-peyar/issues"

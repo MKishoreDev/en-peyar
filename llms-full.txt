@@ -1,3 +1,35 @@
+# En Peyar - Tamil Startup Name Generator
+
+> A specialized AI naming engine designed to help founders discover culturally rich, modern brand names inspired by Tamil linguistic heritage.
+
+## Overview
+En Peyar (meaning "My Name" in Tamil) is a web application that generates brand names using a multi-stage AI pipeline. It connects modern startup visions with ancient Tamil etymology, ensuring that brands are both globally pronounceable and culturally meaningful.
+
+## Core Features
+- **AI Name Generation:** Uses Groq's Llama models to generate startup-ready names.
+- **Tamil Root Discovery:** Maps generated names back to their linguistic roots.
+- **Brand Toolkit:** Provides taglines, pronunciation audio (gTTS), domain availability checks, and Midjourney logo prompts.
+- **Offline PWA:** Fully installable progressive web app.
+
+## Tech Stack
+- **Backend:** Python, Flask, Flask-Limiter, Flask-Talisman, gTTS
+- **Frontend:** HTML, JavaScript (Vanilla ES6), TailwindCSS, DOMPurify
+- **Infrastructure:** Vercel (Hosting), GitHub Actions (CI)
+- **AI Models:** Llama-3 (Groq API)
+
+## Documentation & Repository
+- **GitHub Repo:** https://github.com/MKishoreDev/en-peyar
+- **License:** MIT
+- **Contribution Guide:** Please refer to the `CONTRIBUTING.md` in the repository for setup instructions.
+
+## Security Context
+The application uses strict Content Security Policy (CSP) headers without `unsafe-inline` or `unsafe-eval`. All dynamic user inputs and API responses are sanitized using DOMPurify before being injected into the DOM via JavaScript event delegation.
+
+
+# Codebase Context
+
+## app.py
+\\python
 import os, io, json, requests, logging
 from flask import Flask, render_template, request, jsonify, send_file
 from dotenv import load_dotenv
@@ -15,17 +47,9 @@ load_dotenv()
 app = Flask(__name__)
 app.logger.setLevel(logging.INFO)
 
-import time
-
-BUILD_ID = str(int(time.time()))
-
 # Performance: Compression & Caching
 Compress(app)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000 # 1 year caching for static files
-
-@app.context_processor
-def inject_version():
-    return {'v': BUILD_ID}
 
 # Rate Limiting
 limiter = Limiter(
@@ -85,17 +109,7 @@ def manifest():
 @app.route('/sw.js')
 def service_worker():
     response = send_file('static/sw.js')
-    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
-    response.headers['Pragma'] = 'no-cache'
-    response.headers['Expires'] = '0'
-    return response
-
-@app.after_request
-def add_no_cache_headers(response):
-    if response.mimetype == 'text/html' or request.path == '/sw.js':
-        response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
-        response.headers['Pragma'] = 'no-cache'
-        response.headers['Expires'] = '0'
+    response.headers['Cache-Control'] = 'no-cache'
     return response
 
 @app.route('/robots.txt')
@@ -107,13 +121,8 @@ def sitemap():
     return send_file('static/sitemap.xml')
 
 @app.route('/llm.txt')
-@app.route('/llms.txt')
 def llmtxt():
-    return send_file('llms.txt')
-
-@app.route('/llms-full.txt')
-def llms_full_txt():
-    return send_file('llms-full.txt')
+    return send_file('static/llm.txt')
 
 # ────────────────────────────────────────────────────────────
 # GROQ CALLS
@@ -445,3 +454,4 @@ def tts():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+\\n

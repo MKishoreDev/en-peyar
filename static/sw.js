@@ -1,18 +1,48 @@
-const CACHE_NAME = 'en-peyar-cache-v2';
+const CACHE_NAME = 'en-peyar-cache-v4';
 const urlsToCache = [
   '/',
-  '/static/css/style.css?v=1.0.2',
+  '/static/css/tailwind.css',
+  '/static/css/style.css',
   '/static/images/logo.png',
-  '/static/images/favicon.png'
+  '/static/images/favicon.png',
+  '/static/images/banner.png',
+  '/static/images/home.png',
+  '/static/images/generator.png',
+  '/static/images/map.png',
+  '/static/images/tamilnadu_map.svg',
+  '/static/js/events.js',
+  '/static/js/generator_api.js',
+  '/static/js/generator_ui.js',
+  '/static/js/generator.js',
+  '/static/js/i18n.js',
+  '/static/js/main.js',
+  '/static/js/map.js',
+  '/static/data/districts.json',
+  '/static/locales/en.json',
+  '/static/locales/ta.json'
 ];
+
+self.addEventListener('message', event => {
+  if (event.data && event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});
 
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
-      })
+    caches.open(CACHE_NAME).then(cache => {
+      return Promise.all(
+        urlsToCache.map(url => {
+          const req = new Request(url, { cache: 'reload' });
+          return fetch(req).then(resp => {
+            if (resp.status === 200) {
+              return cache.put(req, resp);
+            }
+          }).catch(() => {});
+        })
+      );
+    })
   );
 });
 
@@ -34,14 +64,33 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
+  // Network-First for HTML/Navigation so updates immediately show up
+  if (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'))) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
           return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Stale-While-Revalidate for static assets
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+      const fetchPromise = fetch(event.request).then(networkResponse => {
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+          const cacheCopy = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, cacheCopy));
         }
-        return fetch(event.request);
-      })
+        return networkResponse;
+      }).catch(() => cachedResponse);
+
+      return cachedResponse || fetchPromise;
+    })
   );
 });
 

@@ -159,7 +159,7 @@ class MapManager {
           <span class="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold block mb-2">${t("map.details.inspirations", "Tamil Naming Inspirations")}</span>
           <div class="flex flex-wrap gap-1.5">
             ${info.keywords.map(kw => `
-              <span class="text-xs bg-muted border border-border px-2.5 py-1 rounded-full text-foreground/80 cursor-pointer hover:border-accent hover:text-accent transition-colors" onclick="window.app.generator.loadKeyword('${kw.replace(/'/g, "\\'")}'); document.getElementById('keywords-input-field').focus();">
+              <span class="text-xs bg-muted border border-border px-2.5 py-1 rounded-full text-foreground/80 cursor-pointer hover:border-accent hover:text-accent transition-colors" data-action="load-keyword-focus" data-word="${kw.replace(/'/g, "\\'")}">
                 ${kw}
               </span>
             `).join("")}
@@ -348,9 +348,17 @@ class MapManager {
     
     let engExp = kural.eng_exp || kural.eng_explanation || "";
 
+    if (typeof DOMPurify !== "undefined") {
+      line1 = DOMPurify.sanitize(line1);
+      line2 = DOMPurify.sanitize(line2);
+      translation = DOMPurify.sanitize(translation);
+      tamExp = DOMPurify.sanitize(tamExp);
+      engExp = DOMPurify.sanitize(engExp);
+    }
+
     kuralContainer.innerHTML = `
       <div class="animate-fade-up relative">
-        <button class="absolute top-0 right-0 p-1 text-muted-foreground hover:text-accent transition-colors" onclick="window.app.map.copyKuralText('${line1.replace(/'/g, "\\'")} ${line2.replace(/'/g, "\\'")}', '${translation.replace(/'/g, "\\'")}')" title="Copy couplet">
+        <button class="absolute top-0 right-0 p-1 text-muted-foreground hover:text-accent transition-colors" data-action="copy-kural" data-lines="${line1.replace(/'/g, "\\'")} ${line2.replace(/'/g, "\\'")}" data-trans="${translation.replace(/'/g, "\\'")}" title="Copy couplet">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>

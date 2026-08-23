@@ -430,17 +430,17 @@ class NamingGeneratorManager {
                 <div class="flex flex-wrap items-center gap-3">
                   <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-foreground">${best.name}</h2>
                   ${bestTamilDisplay ? `<span class="tamil text-2xl text-gradient-tamil font-bold">${bestTamilDisplay}</span>` : ""}
-                  <button class="p-1.5 rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-colors" onclick="window.app.playPronunciation('${best.name.replace(/'/g,"\\'")}','en')" title="Listen">
+                  <button class="p-1.5 rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-colors" data-action="play-pronunciation" data-name="${best.name}" data-lang="en" title="Listen">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                   </button>
-                  <button class="p-1.5 rounded-full text-muted-foreground hover:text-accent hover:bg-muted transition-colors" onclick="window.app.generator.toggleFavorite('${best.name.replace(/'/g,"\\'")}')">
+                  <button class="p-1.5 rounded-full text-muted-foreground hover:text-accent hover:bg-muted transition-colors" data-action="toggle-favorite" data-name="${best.name}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="favorite-icon-${best.name}"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   </button>
                 </div>
-                <p class="text-xs text-muted-foreground mt-1">${best.pronunciation}</p>
+                <p class="text-xs text-muted-foreground mt-1">${best.pronunciation || ''}</p>
               </div>
-              <p class="text-sm text-foreground/80 leading-relaxed max-w-prose">${best.meaning}</p>
-              <p class="text-sm italic text-accent/80 font-medium">"${best.tagline}"</p>
+              <p class="text-sm text-foreground/80 leading-relaxed max-w-prose">${best.meaning || ''}</p>
+              <p class="text-sm italic text-accent/80 font-medium">"${best.tagline || ''}"</p>
               <div class="flex flex-wrap gap-2">
                 ${bestTags.map(tag => `<span class="px-2.5 py-1 rounded-full text-[10px] font-semibold border border-accent/20 bg-accent/5 text-accent">${tag}</span>`).join("")}
                 ${best.territory ? `<span class="px-2.5 py-1 rounded-full text-[10px] font-semibold border border-border bg-muted/40 text-muted-foreground">${best.territory}</span>` : ""}
@@ -456,7 +456,7 @@ class NamingGeneratorManager {
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                   ${t("generator.showDetails","Full Details + Logo Prompt")}
                 </button>
-                <button class="btn btn-secondary text-xs px-5 py-2 rounded-full border border-border" onclick="copyName('${best.name.replace(/'/g,"\\'")}','${best.tagline.replace(/'/g,"\\'")}')">
+                <button class="btn btn-secondary text-xs px-5 py-2 rounded-full border border-border" data-action="copy-name" data-name="${best.name}" data-tagline="${best.tagline || ''}">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                   ${t("generator.copy","Copy")}
                 </button>
@@ -512,22 +512,22 @@ class NamingGeneratorManager {
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-2">
               <h3 class="font-display text-2xl font-bold tracking-tight">${n.name}${tamilDisplay ? ` <span class="tamil text-base text-gradient-tamil ml-1">${tamilDisplay}</span>` : ""}</h3>
-              <button class="p-1 text-muted-foreground hover:text-primary transition-colors" onclick="window.app.playPronunciation('${n.name.replace(/'/g,"\\'")}','en')" title="Listen">
+              <button class="p-1 text-muted-foreground hover:text-primary transition-colors" data-action="play-pronunciation" data-name="${n.name}" data-lang="en" title="Listen">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
               </button>
-              <button class="p-1 text-muted-foreground hover:text-accent transition-colors" onclick="window.app.generator.toggleFavorite('${n.name.replace(/'/g,"\\'")}')">
+              <button class="p-1 text-muted-foreground hover:text-accent transition-colors" data-action="toggle-favorite" data-name="${n.name}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="favorite-icon-${n.name}"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </button>
             </div>
-            <p class="text-[10px] text-muted-foreground">${n.pronunciation}</p>
+            <p class="text-[10px] text-muted-foreground">${n.pronunciation || ''}</p>
           </div>
           <div class="flex flex-col items-center gap-1 shrink-0">
             <div class="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-bold" style="background:linear-gradient(135deg,${palette.primary},${palette.accent});color:${palette.fg}">${initials}</div>
             <span class="font-display text-base font-bold ${scoreColor}">${score}</span>
           </div>
         </div>
-        <p class="text-xs text-foreground/75 leading-relaxed">${n.meaning}</p>
-        <p class="text-[11px] italic text-accent/70">"${n.tagline}"</p>
+        <p class="text-xs text-foreground/75 leading-relaxed">${n.meaning || ''}</p>
+        <p class="text-[11px] italic text-accent/70">"${n.tagline || ''}"</p>
         <div class="grid grid-cols-2 gap-x-4 gap-y-1.5">
           ${scoreBar(breakdown.mem, "Memory")}
           ${scoreBar(breakdown.pron, "Pronounce")}
@@ -542,7 +542,7 @@ class NamingGeneratorManager {
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
             ${t("generator.showDetails","Details")}
           </button>
-          <button class="flex-1 flex items-center justify-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg py-2 transition-colors" onclick="copyName('${n.name.replace(/'/g,"\\'")}','${n.tagline.replace(/'/g,"\\'")}')">
+          <button class="flex-1 flex items-center justify-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg py-2 transition-colors" data-action="copy-name" data-name="${n.name}" data-tagline="${n.tagline || ''}">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             ${t("generator.copy","Copy")}
           </button>
@@ -622,7 +622,7 @@ class NamingGeneratorManager {
         listEl.innerHTML = this.app.favorites.map(name => `
           <div class="inline-flex items-center gap-1.5 bg-card border border-border pl-3.5 pr-1.5 py-1 rounded-full text-xs font-semibold text-foreground shadow-sm animate-fade-up">
             <span>${name}</span>
-            <button class="p-0.5 text-muted-foreground hover:text-red-500 rounded-full transition-colors" onclick="window.app.generator.toggleFavorite('${name.replace(/'/g, "\\'")}')">
+            <button class="p-0.5 text-muted-foreground hover:text-red-500 rounded-full transition-colors" data-action="toggle-favorite" data-name="${name}">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/>
               </svg>

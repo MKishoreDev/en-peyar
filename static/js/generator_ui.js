@@ -19,14 +19,14 @@ window.openDetailsModal = (index) => {
   content.innerHTML = `
     <div class="mb-4">
       <h2 class="font-display text-3xl font-bold">${n.name}</h2>
-      <p class="text-sm text-muted-foreground italic">"${n.tagline}"</p>
+      <p class="text-sm text-muted-foreground italic">"${n.tagline || ''}"</p>
     </div>
     
     <!-- Tab Headers -->
     <div class="flex border-b border-border/40 gap-1.5 pb-1.5 mb-4 overflow-x-auto">
       <button type="button" class="px-3 py-1.5 rounded-md bg-muted font-bold text-primary${isTamil ? ' tamil' : ''}" id="tab-det-btn-${index}" data-action="switch-tab" data-idx="${index}" data-tab="det">${t("generator.tab.details", "Name Details")}</button>
       <button type="button" class="px-3 py-1.5 rounded-md text-muted-foreground font-semibold hover:text-foreground${isTamil ? ' tamil' : ''}" id="tab-mock-btn-${index}" data-action="switch-tab" data-idx="${index}" data-tab="mock">${t("generator.tab.brandPreview", "Brand Preview")}</button>
-      <button type="button" class="px-3 py-1.5 rounded-md text-muted-foreground font-semibold hover:text-foreground${isTamil ? ' tamil' : ''}" id="tab-dom-btn-${index}" onclick="switchDetailTab(${index}, 'dom'); checkDomainAvailability('${n.name.replace(/'/g, "\\'")}', ${index});">${t("generator.label.estimatedAvailability", "Estimated Availability")}</button>
+      <button type="button" class="px-3 py-1.5 rounded-md text-muted-foreground font-semibold hover:text-foreground${isTamil ? ' tamil' : ''}" id="tab-dom-btn-${index}" data-action="check-domain" data-idx="${index}" data-name="${n.name}">${t("generator.label.estimatedAvailability", "Estimated Availability")}</button>
       <button type="button" class="px-3 py-1.5 rounded-md text-muted-foreground font-semibold hover:text-foreground${isTamil ? ' tamil' : ''}" id="tab-logo-btn-${index}" data-action="switch-tab" data-idx="${index}" data-tab="logo">${t("generator.tab.logo", "Logo Prompt")}</button>
     </div>
 
@@ -37,7 +37,7 @@ window.openDetailsModal = (index) => {
           <span class="uppercase tracking-wider text-muted-foreground font-semibold${isTamil ? ' tamil' : ''}">${t("generator.label.tamilRoot", "Tamil Root")}</span>
           <span class="text-foreground/90 font-semibold flex items-center gap-1.5">
             <span class="tamil text-base">${n.tamilRoot}</span>
-            <button type="button" class="p-1 text-muted-foreground hover:text-primary transition-colors flex items-center" onclick="window.app.playPronunciation('${n.tamilRoot.replace(/'/g, "\\'")}', 'ta')" title="Listen (Tamil)">
+            <button type="button" class="p-1 text-muted-foreground hover:text-primary transition-colors flex items-center" data-action="play-pronunciation" data-name="${n.tamilRoot}" data-lang="ta" title="Listen (Tamil)">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
               </svg>
@@ -48,8 +48,8 @@ window.openDetailsModal = (index) => {
       <div class="grid grid-cols-[100px_1fr] gap-3 items-center">
         <span class="uppercase tracking-wider text-muted-foreground font-semibold${isTamil ? ' tamil' : ''}">${t("generator.label.pronounce", "Pronounce")}</span>
         <span class="text-foreground/90 flex items-center gap-1.5">
-          <span>${n.pronunciation}</span>
-          <button type="button" class="p-1 text-muted-foreground hover:text-primary transition-colors flex items-center" onclick="window.app.playPronunciation('${n.name.replace(/'/g, "\\'")}', 'en')" title="Listen (English)">
+          <span>${n.pronunciation || ''}</span>
+          <button type="button" class="p-1 text-muted-foreground hover:text-primary transition-colors flex items-center" data-action="play-pronunciation" data-name="${n.name}" data-lang="en" title="Listen (English)">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
             </svg>
@@ -58,7 +58,7 @@ window.openDetailsModal = (index) => {
       </div>
       <div class="grid grid-cols-[100px_1fr] gap-3">
         <span class="uppercase tracking-wider text-muted-foreground font-semibold${isTamil ? ' tamil' : ''}">Meaning</span>
-        <span class="text-foreground/90">${n.meaning}</span>
+        <span class="text-foreground/90">${n.meaning || ''}</span>
       </div>
       ${n.territory ? `
       <div class="grid grid-cols-[100px_1fr] gap-3">
@@ -66,7 +66,7 @@ window.openDetailsModal = (index) => {
         <span class="text-foreground/90 font-semibold text-accent">${n.territory}</span>
       </div>` : ""}
       <div class="flex gap-2 pt-4">
-        <button type="button" class="inline-flex items-center gap-1 rounded border border-border px-3 py-2 hover:bg-muted text-xs font-semibold transition-colors" onclick="copyName('${n.name.replace(/'/g, "\\'")}', '${n.tagline.replace(/'/g, "\\'")}')">
+        <button type="button" class="inline-flex items-center gap-1 rounded border border-border px-3 py-2 hover:bg-muted text-xs font-semibold transition-colors" data-action="copy-name" data-name="${n.name}" data-tagline="${n.tagline || ''}">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
@@ -86,13 +86,13 @@ window.openDetailsModal = (index) => {
           <div>
             <h4 class="font-display text-xl font-bold text-foreground leading-none flex items-center gap-2">
               ${n.name}
-              <button class="p-1 text-muted-foreground hover:text-primary transition-colors" onclick="window.app.playPronunciation('${n.name.replace(/'/g, "\'")}', 'en')" title="Listen (English)">
+              <button class="p-1 text-muted-foreground hover:text-primary transition-colors" data-action="play-pronunciation" data-name="${n.name}" data-lang="en" title="Listen (English)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
                 </svg>
               </button>
             </h4>
-            <p class="text-[10px] text-muted-foreground mt-1.5 tracking-wider uppercase">${n.tagline}</p>
+            <p class="text-[10px] text-muted-foreground mt-1.5 tracking-wider uppercase">${n.tagline || ''}</p>
           </div>
           <div class="mt-6 border-t border-border/60 pt-3 flex justify-between items-end text-[9px] text-muted-foreground font-mono">
             <div>
@@ -134,7 +134,7 @@ window.openDetailsModal = (index) => {
               <span class="font-display text-sm font-bold">${initials}</span>
             </div>
             <h5 class="font-display text-lg font-bold leading-tight">${n.name}</h5>
-            <p class="text-[10px] opacity-70 mt-0.5">${n.tagline}</p>
+            <p class="text-[10px] opacity-70 mt-0.5">${n.tagline || ''}</p>
             <span class="mt-3 inline-block px-3 py-1 rounded-full text-[10px] font-semibold" style="background:${palette.primary};color:${palette.fg};">Get started →</span>
           </div>
         </div>`;
@@ -163,12 +163,12 @@ window.openDetailsModal = (index) => {
       ${(() => {
         const palette = generateBrandPalette(n.name);
         const rootDisplay = n.tamilRoot && n.tamilRoot !== 'N/A' ? n.tamilRoot : n.name;
-        const logoPrompt = `Create a logo for '${n.name}' — a brand meaning ${n.meaning.split('.')[0]}.
+        const logoPrompt = `Create a logo for '${n.name}' — a brand meaning ${(n.meaning || '').split('.')[0]}.
 
 DESIGN BRIEF:
 Brand Name: ${n.name}
-Tagline: ${n.tagline}
-Meaning: ${n.meaning}
+Tagline: ${n.tagline || ''}
+Meaning: ${n.meaning || ''}
 Tamil Root: ${rootDisplay}
 
 ---

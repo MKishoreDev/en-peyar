@@ -648,7 +648,7 @@ class AppController {
 
 // Global functions for event handlers
 window.copyName = (name, tagline) => {
-  const text = `${name} — ${tagline}`;
+  const text = tagline && tagline !== 'undefined' ? `${name} — ${tagline}` : name;
   navigator.clipboard.writeText(text).then(() => {
     if (window.app) {
       const msg = window.app.translations["generator.label.copied"] || "Name and tagline copied to clipboard!";

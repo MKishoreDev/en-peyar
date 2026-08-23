@@ -48,9 +48,9 @@ Talisman(app, content_security_policy=csp, force_https=False)
 
 GROQ_MODELS = [
     "llama-3.3-70b-versatile",
-    "llama3-70b-8192",
-    "mixtral-8x7b-32768",
-    "gemma2-9b-it"
+    "llama-3.1-8b-instant",
+    "llama-3.2-3b-preview",
+    "llama-3.2-1b-preview"
 ]
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
@@ -136,7 +136,11 @@ def groq(system, user, temperature=0.85, timeout=30):
             if resp.status_code == 429:
                 last_err = "rate_limited"
                 continue
-            resp.raise_for_status()
+            if not resp.ok:
+                err_msg = f"Groq model {model} returned {resp.status_code}: {resp.text}"
+                app.logger.warning(err_msg)
+                last_err = err_msg
+                continue
             return json.loads(resp.json()["choices"][0]["message"]["content"])
         except Exception as e:
             last_err = str(e)

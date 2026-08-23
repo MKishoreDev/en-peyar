@@ -236,9 +236,9 @@ def generate_names():
     context = context or ""
 
     # ────────────────────────────────────────────────────────────
-    # Stage 1: Refinement (Naming Brief)
+    # Stage 1: Combined Refinement Brief & Tamil Root Extraction
     # ────────────────────────────────────────────────────────────
-    brief_sys = """You are a senior naming strategist. Given the project description, produce a concise naming brief as JSON with keys: purpose, coreEmotion, audience, constraints, domain, geography, activity, emotionalGoal, territories.
+    brief_sys = """You are a senior naming strategist and Tamil lexicographer. Given the project description, produce a concise naming brief and relevant Tamil roots as JSON with keys: purpose, coreEmotion, audience, constraints, domain, geography, activity, emotionalGoal, territories, roots.
 - purpose: 1-sentence project goal
 - coreEmotion: primary brand feeling (e.g. belonging, empowerment)
 - audience: list of target segments (in a few words)
@@ -247,122 +247,45 @@ def generate_names():
 - geography: intended geographical reach or target regions
 - activity: core business activity (what the startup actually does)
 - emotionalGoal: emotional feeling the brand seeks to inspire
-- territories: list of at least 3 distinct branding or positioning territories (e.g. functional/utility, metaphorical/organic, modern/invented, classical/literary)
+- territories: list of at least 3 distinct branding territories (e.g. functional/utility, metaphorical/organic, modern/invented, classical/literary)
+- roots: list of 15-20 relevant single-word Tamil roots/concepts directly matching the project purpose and vision.
 Return ONLY valid JSON."""
 
     brief_user = f"""Industry: {industry}
 Description: {context if context else 'A new innovative project'} {keywords}"""
 
     try:
-        naming_brief = groq(brief_sys, brief_user, temperature=0.7, timeout=30)
-        app.logger.info("Naming Brief generated successfully.")
+        naming_brief = groq(brief_sys, brief_user, temperature=0.7, timeout=25)
+        app.logger.info("Naming Brief and Roots generated successfully.")
     except Exception as e:
         app.logger.error(f"Error generating naming brief: {e}")
         return api_error(e)
 
     brief_str = json.dumps(naming_brief, indent=2, ensure_ascii=False)
-
-    # ────────────────────────────────────────────────────────────
-    # Stage 2: Tamil Root Extraction (for Tamil, Global Tamil, Contextual Heritage)
-    # ────────────────────────────────────────────────────────────
-    roots = []
-    if style in ["Tamil", "Global Tamil", "Contextual Heritage"]:
-        roots_sys = """You are a Tamil lexicographer and cultural expert. Extract at least 15-20 single-word Tamil roots/concepts directly related to the project purpose. 
-- Each root must be a meaningful Tamil word or root (noun/verb/adjective).
-- These should capture core ideas or emotions from the brief (purpose, emotion, audience).
-- Avoid generic Tamil words that add no meaning, and avoid irrelevant historical/place names unless clearly relevant.
-- Output JSON: {"roots":[ "root1", "root2", ... ]}."""
-        roots_user = brief_str
-        try:
-            roots_result = groq(roots_sys, roots_user, temperature=0.7, timeout=30)
-            roots = roots_result.get("roots", [])
-            app.logger.info(f"Extracted roots: {roots}")
-        except Exception as e:
-            app.logger.warning(f"Root extraction failed, fallback to empty list: {e}")
-            roots = []
-
+    roots = naming_brief.get("roots", [])
     roots_str = ", ".join(roots)
 
     # ────────────────────────────────────────────────────────────
-    # Stage 3-5 Helpers: Generation, Scoring, and Critique
+    # Stage 2: Fast Single-Pass Generation
     # ────────────────────────────────────────────────────────────
-    
-    score_sys = """You are an experienced naming judge. For each candidate name in the list, score it 0–10 on: 
- 1) Memorability 
- 2) Pronunciation ease 
- 3) Distinctiveness 
- 4) Brand friendliness 
- 5) Cultural fit (for Tamil/Global Tamil).
-Return JSON of only those names scoring >= 8 in each category (total >= 40), in array form inside a "names" key.
-Format output strictly as: {"names": [ {name, meaning, pronunciation, tamilRoot, tagline, territory} ]}"""
-
-    critique_sys = """You are a meticulous branding panel. For each candidate name in the list:
-Ask: "Would this name feel strong in 10 years? Can someone hear it once and spell it? Pronounce after seeing once? Look good in an icon? Could a founder love it?"
-Eliminate any name failing any check. 
-Return JSON array of the remaining top names with all fields under a "names" key.
-Format output strictly as: {"names": [ {name, meaning, pronunciation, tamilRoot, tagline, territory} ]}"""
-
     def generate_style_candidates(target_style, gen_sys, gen_user):
-        # First attempt
-        temp = 1.0 if target_style != "English" else 0.9
-        gen_res = None
+        temp = 0.85 if target_style != "English" else 0.75
         try:
-            gen_res = groq(gen_sys, gen_user, temperature=temp, timeout=40)
+            gen_res = groq(gen_sys, gen_user, temperature=temp, timeout=25)
+            if gen_res and isinstance(gen_res, dict) and "names" in gen_res and gen_res["names"]:
+                return gen_res["names"][:10]
         except Exception as e:
-            app.logger.warning(f"Initial groq generation failed for style {target_style}: {e}. Retrying with temp 0.72...")
+            app.logger.warning(f"Generation failed for style {target_style}: {e}. Retrying...")
         
-        # Check if we need to retry
-        if not gen_res or not isinstance(gen_res, dict) or "names" not in gen_res or not gen_res["names"]:
-            app.logger.info(f"Retrying generation for style {target_style} with temperature 0.72...")
-            try:
-                gen_res = groq(gen_sys, gen_user, temperature=0.72, timeout=40)
-            except Exception as retry_e:
-                app.logger.error(f"Retry groq generation also failed for style {target_style}: {retry_e}")
-                return []
-
-        if not gen_res or not isinstance(gen_res, dict) or "names" not in gen_res:
-            app.logger.warning(f"No valid JSON output for style {target_style} after retry.")
-            return []
-
-        candidates = gen_res.get("names", [])
-        if not candidates:
-            app.logger.warning(f"No names generated for style {target_style} after retry.")
-            return []
-        
-        # Now perform scoring
-        scored = []
+        # Retry with temp 0.7
         try:
-            score_user = json.dumps({"names": candidates}, ensure_ascii=False)
-            score_res = groq(score_sys, score_user, temperature=0.3, timeout=30)
-            scored = score_res.get("names", [])
-        except Exception as score_e:
-            app.logger.warning(f"Scoring step failed or returned invalid JSON: {score_e}. Proceeding with candidates.")
-            scored = []
-
-        # Perform critique
-        final_names = []
-        if scored:
-            try:
-                critique_user = json.dumps({"candidates": scored}, ensure_ascii=False)
-                critique_res = groq(critique_sys, critique_user, temperature=0.0, timeout=30)
-                final_names = critique_res.get("names", [])
-            except Exception as critique_e:
-                app.logger.warning(f"Critique step failed or returned invalid JSON: {critique_e}. Proceeding with scored/candidates.")
-                final_names = []
-        
-        result_list = list(final_names)
-        for item in scored:
-            if len(result_list) >= 10:
-                break
-            if not any(x.get("name") == item.get("name") for x in result_list):
-                result_list.append(item)
-        for item in candidates:
-            if len(result_list) >= 10:
-                break
-            if not any(x.get("name") == item.get("name") for x in result_list):
-                result_list.append(item)
-        
-        return result_list
+            gen_res = groq(gen_sys, gen_user, temperature=0.7, timeout=25)
+            if gen_res and isinstance(gen_res, dict) and "names" in gen_res:
+                return gen_res["names"][:10]
+        except Exception as retry_e:
+            app.logger.error(f"Retry generation failed for style {target_style}: {retry_e}")
+            
+        return []
 
     tamil_gen_sys = f"""You are a master Tamil naming expert. Using the provided naming brief and Tamil roots, create brand names in pure Tamil (only Tamil script).
 - You must generate 40 candidate names internally, score them on context relevance (weighted highest), memorability, pronunciation, distinctiveness, and brandability, and output only the best 10.

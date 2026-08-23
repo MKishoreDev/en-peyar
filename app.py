@@ -46,13 +46,28 @@ csp = {
 }
 Talisman(app, content_security_policy=csp, force_https=False)
 
-GROQ_MODELS = [
+FALLBACK_GROQ_MODELS = [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "llama-3.3-70b-versatile",
     "llama-3.1-8b-instant",
-    "llama-3.2-3b-preview",
-    "llama-3.2-1b-preview"
+    "qwen/qwen3.6-27b"
 ]
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+
+def get_active_groq_models(key):
+    try:
+        r = requests.get("https://api.groq.com/openai/v1/models",
+                         headers={"Authorization": f"Bearer {key}"},
+                         timeout=5)
+        if r.ok:
+            data = r.json()
+            active = [m["id"] for m in data.get("data", []) if "whisper" not in m["id"] and "safeguard" not in m["id"] and "guard" not in m["id"] and "orpheus" not in m["id"]]
+            if active:
+                return active
+    except Exception as e:
+        app.logger.warning(f"Failed to fetch dynamic Groq models: {e}")
+    return FALLBACK_GROQ_MODELS
 
 # Common JSON output schema for naming style prompts
 COMMON_OUTPUT_SCHEMA = """{
@@ -124,14 +139,24 @@ def groq(system, user, temperature=0.85, timeout=30):
     if not key:
         raise ValueError("no_api_key")
         
+    models = get_active_groq_models(key)
     last_err = None
-    for model in GROQ_MODELS:
+    for model in models:
         try:
+            payload = {
+                "model": model,
+                "temperature": temperature,
+                "messages": [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user}
+                ]
+            }
+            if "json" in system.lower() or "json" in user.lower():
+                payload["response_format"] = {"type": "json_object"}
+
             resp = requests.post(GROQ_URL,
-                headers={"Content-Type":"application/json","Authorization":f"Bearer {key}"},
-                json={"model":model,"temperature":temperature,
-                      "messages":[{"role":"system","content":system},{"role":"user","content":user}],
-                      "response_format":{"type":"json_object"}},
+                headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"},
+                json=payload,
                 timeout=timeout)
             if resp.status_code == 429:
                 last_err = "rate_limited"

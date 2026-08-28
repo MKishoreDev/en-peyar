@@ -9,11 +9,22 @@ Thank you for your interest in contributing. En Peyar is an open-source Tamil na
 ### Tamil Roots & Words
 The heart of En Peyar is its knowledge of Tamil roots. You can expand this by:
 
-- Adding new roots to `static/data/districts.json` (namingInspiration, brandMood fields)
+- Adding new roots to `static/data/tamil_roots.json` under one of the 20 thematic categories (`creation`, `connection`, `knowledge`, `growth`, `trade`, etc.)
+- Adding district-specific naming inspirations to `static/data/districts.json` (`namingInspiration`, `brandMood` fields)
 - Suggesting new entries for the `INSPIRE_ROOTS` array in `static/js/main.js`
 - Improving existing meanings, pronunciations, or etymologies
 
-**Format for a new inspire root:**
+**Format for a root in `static/data/tamil_roots.json`:**
+```json
+{
+  "tamil": "படைப்பு",
+  "roman": "Padaippu",
+  "meaning": "creation / invention",
+  "tone": "innovative"
+}
+```
+
+**Format for an inspire root in `static/js/main.js`:**
 ```js
 {
   word: "தேடல்",          // Tamil script
@@ -27,7 +38,7 @@ The heart of En Peyar is its knowledge of Tamil roots. You can expand this by:
 ### Translations
 All UI strings live in `static/locales/en.json` and `static/locales/ta.json`.
 
-- Both files must always have identical keys
+- Both files must always have 100% identical key structures
 - Tamil translations should be written by a native speaker — avoid machine translation
 - If you add a new key to `en.json`, add the corresponding key to `ta.json` in the same PR
 
@@ -49,9 +60,16 @@ Each district in `static/data/districts.json` has fields for history, brand mood
 
 ### Bug Fixes & Code Improvements
 - Open an issue first for any non-trivial change
-- Keep JS changes in `static/js/main.js` — do not break existing features
-- Keep Flask changes in `app.py` — do not remove working routes
-- Run a quick smoke test: start the app locally and check that the generator, map, thesaurus, and shortlist all work
+- Modular JavaScript architecture lives in `static/js/`:
+  - `events.js`: Central event delegation (CSP compliant `[data-action]` handlers)
+  - `generator_api.js`: API fetch client
+  - `generator_ui.js`: Brand toolkit modal, preview cards, RDAP domain availability, logo prompt generator
+  - `generator.js`: Main generator manager, client-side brand scoring engine, shortlist manager
+  - `i18n.js`: Client-side bilingual translation engine
+  - `main.js`: App controller, Web Speech TTS, theme manager, context refiner
+  - `map.js`: Interactive SVG district map & Thirukkural API integration
+- Keep Flask backend changes in `app.py` — ensure AI model failover and JSON schemas remain intact
+- Run automated tests before opening a PR: `pytest tests/`
 
 ---
 

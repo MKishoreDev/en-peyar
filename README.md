@@ -35,6 +35,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Hosted%20on-indevs.in-B22222?style=for-the-badge" />
+</p>
 
 ---
 
@@ -78,7 +79,7 @@ Instead of choosing between heritage and reach, En Peyar helps you have both.
 
 ### 🤖 AI-Powered Naming
 
-Generate startup-ready names using your idea, keywords, industry, and vision.
+Generate startup-ready names using your idea, keywords, industry, and vision. Powered by high-speed Groq inference models with custom brand strategy prompting and dynamic model failovers.
 
 ### 🌍 Global Tamil Naming
 
@@ -92,15 +93,17 @@ Examples of naming concepts:
 - Semmai (Excellence)
 - Ver (Root)
 
-### 📖 Tamil Root Discovery
+### 📖 Tamil Root Discovery & Etymology Dataset
 
 Every generated name is connected to its linguistic roots and meaning.
+
+Includes a curated dataset of over 200 Tamil root words organized across 20 business-relevant categories (`static/data/tamil_roots.json`), automatically injected into generation workflows.
 
 Discover the story behind every word.
 
 ### ⚡ PWA (Progressive Web App) Ready
 
-Install En Peyar directly to your home screen or desktop. Works seamlessly as a native-feeling application with offline capabilities and improved performance.
+Install En Peyar directly to your home screen or desktop. Works seamlessly as a native-feeling application with offline Service Worker caching (`v6`) and improved performance.
 
 ### 🗺️ Tamil Nadu District Explorer
 
@@ -132,22 +135,21 @@ https://github.com/nramc/thirukkural-api
 
 Every generated name includes:
 
-- Meaning
-- Pronunciation
-- Tagline
-- Brand Score
-- Brand Preview
-- Logo Prompt
-- Domain Availability Estimate
+- Etymological Meaning & Phonetic Pronunciation
+- Startup-ready Tagline
+- Algorithmic Brand Score & Breakdown (Memorability, Simplicity, Vowel Ratio)
+- Interactive Brand Preview (Mockups, HSL Color Palettes, Banner)
+- Ready-to-use Logo Prompt (Midjourney / DALL-E)
+- Real-time Domain Availability Estimate (RDAP protocol lookups)
 
 ### 🎯 Multiple Naming Styles
 
 Generate names using:
 
-- Tamil
-- Global Tamil
-- English
-- Contextual Heritage
+- Tamil (Pure Tamil script)
+- Global Tamil (Tamil roots in Latin script)
+- English (Pure English brand names)
+- Contextual Heritage (Sangam literature & historical Tamil tradition)
 
 ### 🔓 Open Source
 
@@ -197,25 +199,32 @@ They are building blocks for the future.
 
 ## Technology Stack
 
-- HTML
-- CSS
-- JavaScript
-- AI-assisted naming workflows
-- Tamil linguistic datasets
-- SVG district explorer
-- Modern frontend architecture
+- **Backend Framework**: Python 3.10+ & Flask 3.1
+- **AI Generation Engine**: Groq Cloud API (OpenAI-compatible protocol with dynamic model discovery & automatic failover)
+- **Frontend Architecture**: ES6+ Modular JavaScript (`events.js`, `generator.js`, `generator_ui.js`, `generator_api.js`, `i18n.js`, `main.js`, `map.js`)
+- **Styling**: Tailwind CSS v4 & Custom CSS Design System (Dual Theme HSL tokens, Kolam animations, Noto Sans Tamil typography)
+- **Security & Performance**: DOMPurify (XSS protection), Flask-Talisman (Content Security Policy), Flask-Limiter (Rate Limiting), Flask-Compress (Gzip/Brotli)
+- **Audio & TTS**: Web Speech API (`SpeechSynthesis`) with server-side in-memory `gTTS` audio stream fallback
+- **Data & Maps**: 38-District Tamil Nadu SVG vector map (`districts.json`), 200+ Tamil Root Etymology database (`tamil_roots.json`), Live Thirukkural API
 
 ---
 
 ## Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/MKishoreDev/en-peyar.git
 
 cd en-peyar
 
+# Install Python dependencies
 pip install -r requirements.txt
 
+# Configure Environment Variables
+cp .env.example .env
+# Edit .env and add your GROQ_API_KEY (Get one for free at https://console.groq.com/)
+
+# Run the application locally
 python app.py
 ```
 

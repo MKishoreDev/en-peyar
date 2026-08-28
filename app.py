@@ -109,25 +109,28 @@ COMMON_OUTPUT_SCHEMA = """{
 # Quality anchors injected into all naming prompts
 NAMING_PHILOSOPHY = """
 NAMING PHILOSOPHY — What makes a Tamil brand name GREAT:
-1. CAPTURE THE ESSENCE — The name should make someone who knows Tamil immediately understand what the business does.
-   Example: "Arattai" (அரட்டை) for a chat app — it literally means "casual banter." Hearing the name IS understanding the product.
-2. SINGLE CONCEPT — 1-2 words maximum. Never compound three words. The best names are ONE Tamil word.
-3. SOUND BEAUTIFUL — It should roll off the tongue in both Tamil and English. Avoid harsh consonant clusters.
-4. FEEL INEVITABLE — When someone hears the name, they should think "of course, that's perfect for this."
-5. AVOID THE OBVIOUS — Don't just translate the industry keyword into Tamil. Find the POETIC, unexpected Tamil word that captures the FEELING of the business.
+1. CAPTURE THE VIBE, NOT THE DICTIONARY — Do NOT output raw, literal dictionary nouns/adjectives like "Pasumai" (Greenness), "Payanam" (Travel), "Valimai" (Strength), "Elimai" (Simplicity), "Oli" (Light). In English, naming a bike brand "Travel" or "Greenness" sounds like a 1980s textbook, not a startup!
+2. COINED & DERIVED BRAND NAMES ARE BETTER — Evolve Tamil linguistic roots phonetically into sleek, modern brand names (e.g. "Vazhio", "Payan", "Sakkri", "Katru", "Kathiq", "Verai", "Moolis", "Aethra", "Velos").
+3. SINGLE CONCEPT & PUNCHY — 4-7 letters, 1-2 syllables. Easy to say globally, memorable, sleek on a product or app icon.
+4. EVOCATIVE METAPHORS — Use words of action, momentum, spirit, craft, and movement rather than flat descriptions.
+5. SOUND FOUNDER-GRADE — Ask: "Would a multi-million dollar startup actually launch with this name?" If it sounds like a government handbook title, REJECT IT.
 
-EXAMPLES OF EXCELLENT TAMIL BRAND NAMES:
-- "Arattai" (அரட்டை) = "casual chat/banter" → Used by Zoho for messaging. Why great: single word, instantly captures product essence, culturally authentic, globally pronounceable.
-- "Agam" (அகம்) = "inner self/home" → Deep Sangam literary root. Why great: emotionally resonant, short, memorable, works globally.
-- "Kural" (குறள்) = "couplet/verse" from Thirukkural → Why great: connects to Tamil literary heritage, implies wisdom and brevity.
-- "Mozhi" (மொழி) = "language/speech" → Why great: elegant, 2 syllables, deeply meaningful for communication products.
-- "Nayam" (நயம்) = "elegance/beauty/benefit" → Why great: multiple positive meanings, sounds premium, globally pronounceable.
+EXAMPLES OF BAD vs GREAT TAMIL BRAND NAMES:
+- ❌ BAD (Flat dictionary word): "Pasumai" (Greenness), "Elimai" (Simplicity), "Payanam" (Travel), "Valimai" (Strength) — Generic, boring, sounds like school handbook headings.
+- ✅ GREAT (Brandable Tamil Evolutions):
+  - "Arattai" (அரட்டை) = Casual banter → Used by Zoho for chat app. Punchy, authentic, modern.
+  - "Vazhio" / "Vazh" → Derived from "Vazhi" (path). Sleek, action-oriented, brandable.
+  - "Sakkri" / "Sakkra" → Evolved from "Sakkaram" (wheel/cyclical motion). Modern product feel.
+  - "Katru" / "Kaatru" → Wind/breeze. Dynamic metaphor for speed and cycling freedom.
+  - "Agam" (அகம்) = Inner self/home → Deep Sangam root, 4 letters, global appeal.
+  - "Kural" (குறள்) = Verse/Brevity → Crisp, literary, modern tech brand.
+  - "Kathiq" / "Kathi" → Momentum/Surge. Sharp, energetic.
 
-ANTI-PATTERNS — What NOT to do:
-- DON'T staple dynasty names onto English words (e.g. "Chola Express" for a delivery app — irrelevant)
-- DON'T use generic Tamil words that don't connect to the business (e.g. "Thamizh" for a fintech app)
-- DON'T combine 3+ words into unpronounceable compounds (e.g. "SemmaiVelaiArivuNilaiyam")
-- DON'T just transliterate the English business name into Tamil script
+ANTI-PATTERNS — Strictly Forbidden:
+- NEVER use flat dictionary nouns like Pasumai, Elimai, Payanam, Valimai, Oli as standalone brand names.
+- DON'T staple dynasty names onto English words (e.g. "Chola Express" — irrelevant)
+- DON'T combine 3+ words into unpronounceable compounds (e.g. "SemmaiVelaiArivu")
+- DON'T just transliterate English business keywords into Tamil script
 """
 
 @app.route('/')
@@ -389,28 +392,29 @@ TAMIL ROOTS TO EXPLORE: {roots_str}
 {curated_roots}"""
 
     # ── Global Tamil Style ──
-    global_tamil_gen_sys = f"""You are a master brand naming expert specializing in Global Tamil names — Tamil words rendered in Latin script that work as modern startup brands.
+    global_tamil_gen_sys = f"""You are a world-class brand naming strategist specializing in Global Tamil brand names — modern, founder-grade startup names derived from Tamil etymology, phonetically evolved for global markets.
 
 {NAMING_PHILOSOPHY}
 
 YOUR TASK:
-Create 10 globally pronounceable brand names rooted in Tamil meaning, written in Latin (English) characters.
+Create 10 globally pronounceable, modern startup brand names rooted in Tamil concepts, written in Latin (English) characters.
 
 PROCESS (use the "thinking" field):
-1. Understand the business deeply. What is the CORE ACTION or FEELING?
-2. Find the Tamil word(s) that capture that essence.
-3. Shape each name for global appeal: easy to spell, say, and remember in English.
+1. Understand the business deeply: What is the core action, feeling, or momentum?
+2. Identify Tamil roots and metaphors associated with this core action.
+3. Transform the roots into SLEEK BRAND NAMES by shaping endings, blending concepts, or choosing punchy, modern root words.
+4. CRITICAL CHECK: Is the candidate name a flat, boring dictionary word (like "Pasumai" or "Payanam")? If YES, REJECT IT and create a coined evolution (like "Vazhio", "Sakkri", "Payan", "Verai", "Katru").
 
-ALLOWED FORMATS (in order of preference):
-1. Pure Tamil words in Latin script — "Arattai", "Agam", "Kural", "Nayam", "Mozhi"
-2. Tamil-derived coined names — "Mozhio", "Sollio", "Ahamo", "Verai"
-3. Tamil + English minimal combos — "Sollcraft", "VeraHQ", "Kural Studio" (only if it adds real value)
+PREFERRED FORMATS:
+1. Coined Tamil Evolutions — "Vazhio", "Payan", "Sakkri", "Moolis", "Kathiq", "Verai", "Aethra", "Velos"
+2. Evocative Metaphor Words — "Katru" (Wind/Speed), "Kural" (Brevity/Verse), "Agam" (Core/Home), "Mozhi" (Voice)
+3. Minimal Blend Combos — "Vazhr", "Sollcraft", "VeraHQ" (only if crisp and natural)
 
 RULES:
-- Tamil meaning must be CLEAR and RELEVANT to the business.
-- NO generic tech suffixes (Labs, Tech, AI, Platform) unless deeply integrated.
-- NO historical dynasty names unless business is about heritage.
-- Every name must pass: "Can a non-Tamil speaker pronounce this on first try?"
+- Tamil etymology MUST be authentic and clearly explained in the 'meaning' field.
+- STRICTLY NO flat dictionary nouns/adjectives (No Pasumai, No Elimai, No Payanam, No Valimai, No Oli).
+- NO generic tech suffixes (Labs, Tech, AI, Platform).
+- 4-7 letters preferred. Easy to spell, say, and remember worldwide.
 - Assign each name to a territory from the brief.
 
 Format output as JSON:
@@ -499,6 +503,11 @@ TAMIL ROOTS TO EXPLORE: {roots_str}
             if name_lower in seen:
                 continue
             seen.add(name_lower)
+            
+            # Skip flat generic dictionary words in Global Tamil style
+            BANNED_GENERIC_WORDS = {"pasumai", "elimai", "payanam", "valimai", "oli", "thamizh", "tamil", "velai"}
+            if style == "Global Tamil" and name_lower in BANNED_GENERIC_WORDS:
+                continue
             
             # Skip names that are too long (more than 3 words in Latin, or more than 4 Tamil words)
             word_count = len(name.split())

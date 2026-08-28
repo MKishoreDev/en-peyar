@@ -3,7 +3,13 @@
 </p>
 
 <h1 align="center">என் பெயர் • En Peyar</h1>
+<h2 align="center">[UNSTABLE]</h2>
 
+---
+
+En peyar isn't not generating names like i expected I don't want this to beanother project/toll which uses ai to generate and doesn't make any sense or generating name for now working on things which can improve the naming engine and add some new features which make it more user friendly
+
+---
 <p align="center">
   AI-powered Tamil naming platform for founders, startups, creators, communities, and ambitious builders.
 </p>

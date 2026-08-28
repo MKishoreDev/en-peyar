@@ -290,15 +290,26 @@ class NamingGeneratorManager {
         body: JSON.stringify({ keywords, style, industry, context })
       });
 
+      const responseText = await response.text();
+      let result = null;
+      try {
+        result = JSON.parse(responseText);
+      } catch (jsonErr) {
+        console.error("Non-JSON response from /api/generate:", responseText.slice(0, 200));
+      }
+
       if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.error || "Name generation failed");
+        const errMsg = (result && (result.message || result.error)) || `Server returned status ${response.status}`;
+        throw new Error(errMsg);
+      }
+
+      if (!result || typeof result !== "object" || !Array.isArray(result.names)) {
+        throw new Error("Invalid response format from naming engine. Please try again.");
       }
 
       if (resultsContainer && resultsContainer._stageTimer) clearInterval(resultsContainer._stageTimer);
 
-      const result = await response.json();
-      if (result.names && Array.isArray(result.names) && typeof DOMPurify !== "undefined") {
+      if (result.names && typeof DOMPurify !== "undefined") {
         result.names = result.names.map(n => ({
           name: DOMPurify.sanitize(n.name || ""),
           meaning: DOMPurify.sanitize(n.meaning || ""),

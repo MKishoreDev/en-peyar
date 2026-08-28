@@ -46,6 +46,28 @@ csp = {
 }
 Talisman(app, content_security_policy=csp, force_https=False)
 
+# Custom JSON Error Handlers (Prevents HTML response crashes on client-side JS)
+@app.errorhandler(429)
+def ratelimit_handler(e):
+    return jsonify({
+        "error": "rate_limited",
+        "message": "Rate limit exceeded. Please wait a moment and try again."
+    }), 429
+
+@app.errorhandler(500)
+def internal_error_handler(e):
+    app.logger.error(f"Server 500 Error: {e}")
+    return jsonify({
+        "error": "internal_error",
+        "message": "AI Provider or server temporarily busy. Please try again in a few seconds."
+    }), 500
+
+@app.errorhandler(404)
+def not_found_handler(e):
+    if request.path.startswith('/api/'):
+        return jsonify({"error": "not_found", "message": "API endpoint not found."}), 404
+    return render_template('index.html'), 404
+
 FALLBACK_GROQ_MODELS = [
     "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",

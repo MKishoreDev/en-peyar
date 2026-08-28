@@ -1,4 +1,4 @@
-const CACHE_NAME = 'en-peyar-cache-v6';
+const CACHE_NAME = 'en-peyar-cache-v7';
 const urlsToCache = [
   '/',
   '/static/css/tailwind.css',

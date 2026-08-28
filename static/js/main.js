@@ -565,13 +565,22 @@ class AppController {
             })
           });
 
+          const text = await resp.text();
+          let data = null;
+          try {
+            data = JSON.parse(text);
+          } catch (e) {}
+
           if (!resp.ok) {
-            const err = await resp.json().catch(()=>({}));
-            this.toast(err.message || "Refine failed", "error");
+            const msg = (data && (data.message || data.error)) || `Refine failed (${resp.status})`;
+            this.toast(msg, "error");
             return;
           }
 
-          const data = await resp.json();
+          if (!data) {
+            this.toast("Invalid response from refiner", "error");
+            return;
+          }
 
           if (data.refined && ctxInput) {
             ctxInput.value = data.refined;

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'en-peyar-cache-v5';
+const CACHE_NAME = 'en-peyar-cache-v6';
 const urlsToCache = [
   '/',
   '/static/css/tailwind.css',
@@ -18,6 +18,7 @@ const urlsToCache = [
   '/static/js/main.js',
   '/static/js/map.js',
   '/static/data/districts.json',
+  '/static/data/tamil_roots.json',
   '/static/locales/en.json',
   '/static/locales/ta.json'
 ];

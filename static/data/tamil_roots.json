@@ -1,0 +1,1242 @@
+{
+  "creation": [
+    {
+      "tamil": "படைப்பு",
+      "roman": "Padaippu",
+      "meaning": "creation/invention",
+      "tone": "innovative"
+    },
+    {
+      "tamil": "ஆக்கம்",
+      "roman": "Aakkam",
+      "meaning": "creation/making",
+      "tone": "productive"
+    },
+    {
+      "tamil": "திறன்",
+      "roman": "Thiran",
+      "meaning": "skill/ability",
+      "tone": "capable"
+    },
+    {
+      "tamil": "உருவாக்கம்",
+      "roman": "Uruvaakkam",
+      "meaning": "formation/creation",
+      "tone": "constructive"
+    },
+    {
+      "tamil": "வடிவம்",
+      "roman": "Vadivam",
+      "meaning": "design/shape",
+      "tone": "artistic"
+    },
+    {
+      "tamil": "புனைவு",
+      "roman": "Punaivu",
+      "meaning": "fiction/creation",
+      "tone": "imaginative"
+    },
+    {
+      "tamil": "தோற்றம்",
+      "roman": "Thotram",
+      "meaning": "origin/appearance",
+      "tone": "foundational"
+    },
+    {
+      "tamil": "கண்டுபிடிப்பு",
+      "roman": "Kandupidippu",
+      "meaning": "discovery",
+      "tone": "pioneering"
+    },
+    {
+      "tamil": "புதுமை",
+      "roman": "Pudhumai",
+      "meaning": "novelty/innovation",
+      "tone": "fresh"
+    },
+    {
+      "tamil": "வினை",
+      "roman": "Vinai",
+      "meaning": "action/deed",
+      "tone": "dynamic"
+    }
+  ],
+  "connection": [
+    {
+      "tamil": "இணைப்பு",
+      "roman": "Inaippu",
+      "meaning": "connection/link",
+      "tone": "unifying"
+    },
+    {
+      "tamil": "உறவு",
+      "roman": "Uravu",
+      "meaning": "relationship",
+      "tone": "warm"
+    },
+    {
+      "tamil": "தொடர்பு",
+      "roman": "Thodarbu",
+      "meaning": "contact/network",
+      "tone": "engaging"
+    },
+    {
+      "tamil": "பாலம்",
+      "roman": "Paalam",
+      "meaning": "bridge",
+      "tone": "connecting"
+    },
+    {
+      "tamil": "பின்னல்",
+      "roman": "Pinnal",
+      "meaning": "weave/network",
+      "tone": "intricate"
+    },
+    {
+      "tamil": "பந்தம்",
+      "roman": "Bandham",
+      "meaning": "bond",
+      "tone": "strong"
+    },
+    {
+      "tamil": "நட்பு",
+      "roman": "Natpu",
+      "meaning": "friendship",
+      "tone": "friendly"
+    },
+    {
+      "tamil": "சங்கம்",
+      "roman": "Sangam",
+      "meaning": "assembly/gathering",
+      "tone": "collaborative"
+    },
+    {
+      "tamil": "கூட்டு",
+      "roman": "Koottu",
+      "meaning": "alliance/joint",
+      "tone": "cooperative"
+    },
+    {
+      "tamil": "ஐக்கியம்",
+      "roman": "Aikiyam",
+      "meaning": "unity",
+      "tone": "harmonious"
+    }
+  ],
+  "knowledge": [
+    {
+      "tamil": "அறிவு",
+      "roman": "Arivu",
+      "meaning": "knowledge/intellect",
+      "tone": "wise"
+    },
+    {
+      "tamil": "ஞானம்",
+      "roman": "Gnanam",
+      "meaning": "wisdom",
+      "tone": "profound"
+    },
+    {
+      "tamil": "விவேகம்",
+      "roman": "Vivekam",
+      "meaning": "prudence",
+      "tone": "sharp"
+    },
+    {
+      "tamil": "புத்தி",
+      "roman": "Puthi",
+      "meaning": "mind/intellect",
+      "tone": "clever"
+    },
+    {
+      "tamil": "தெளிவு",
+      "roman": "Thelivu",
+      "meaning": "clarity",
+      "tone": "lucid"
+    },
+    {
+      "tamil": "ஆய்வு",
+      "roman": "Aaivu",
+      "meaning": "research/analysis",
+      "tone": "analytical"
+    },
+    {
+      "tamil": "கற்றல்",
+      "roman": "Katral",
+      "meaning": "learning",
+      "tone": "progressive"
+    },
+    {
+      "tamil": "விளக்கம்",
+      "roman": "Vilakkam",
+      "meaning": "explanation",
+      "tone": "enlightening"
+    },
+    {
+      "tamil": "நுட்பம்",
+      "roman": "Nutpam",
+      "meaning": "nuance/technique",
+      "tone": "sophisticated"
+    },
+    {
+      "tamil": "தகவல்",
+      "roman": "Thagaval",
+      "meaning": "information",
+      "tone": "informative"
+    }
+  ],
+  "growth": [
+    {
+      "tamil": "வளர்ச்சி",
+      "roman": "Valarchi",
+      "meaning": "growth/development",
+      "tone": "thriving"
+    },
+    {
+      "tamil": "முன்னேற்றம்",
+      "roman": "Munnetram",
+      "meaning": "progress",
+      "tone": "forward-looking"
+    },
+    {
+      "tamil": "எழுச்சி",
+      "roman": "Ezhuchi",
+      "meaning": "rise/awakening",
+      "tone": "uplifting"
+    },
+    {
+      "tamil": "பெருக்கம்",
+      "roman": "Perukkam",
+      "meaning": "multiplication/abundance",
+      "tone": "bountiful"
+    },
+    {
+      "tamil": "உயர்வு",
+      "roman": "Uyarvu",
+      "meaning": "elevation/ascent",
+      "tone": "aspirational"
+    },
+    {
+      "tamil": "விளைச்சல்",
+      "roman": "Vilaichal",
+      "meaning": "yield/harvest",
+      "tone": "fruitful"
+    },
+    {
+      "tamil": "தளிர்",
+      "roman": "Thalir",
+      "meaning": "shoot/sprout",
+      "tone": "fresh"
+    },
+    {
+      "tamil": "வளம்",
+      "roman": "Valam",
+      "meaning": "resource/fertility",
+      "tone": "rich"
+    },
+    {
+      "tamil": "செழிப்பு",
+      "roman": "Sezhippu",
+      "meaning": "prosperity",
+      "tone": "abundant"
+    },
+    {
+      "tamil": "மேம்பாடு",
+      "roman": "Membaadu",
+      "meaning": "improvement",
+      "tone": "enhancing"
+    }
+  ],
+  "trade": [
+    {
+      "tamil": "வணிகம்",
+      "roman": "Vanigam",
+      "meaning": "trade/commerce",
+      "tone": "professional"
+    },
+    {
+      "tamil": "வியாபாரம்",
+      "roman": "Vyabaaram",
+      "meaning": "business",
+      "tone": "commercial"
+    },
+    {
+      "tamil": "சந்தை",
+      "roman": "Sandhai",
+      "meaning": "market",
+      "tone": "bustling"
+    },
+    {
+      "tamil": "பரிமாற்றம்",
+      "roman": "Parimaatram",
+      "meaning": "exchange",
+      "tone": "mutual"
+    },
+    {
+      "tamil": "முதல்",
+      "roman": "Mudhal",
+      "meaning": "capital/first",
+      "tone": "primary"
+    },
+    {
+      "tamil": "லாபம்",
+      "roman": "Laabam",
+      "meaning": "profit",
+      "tone": "lucrative"
+    },
+    {
+      "tamil": "வர்த்தகம்",
+      "roman": "Varthagam",
+      "meaning": "trade",
+      "tone": "formal"
+    },
+    {
+      "tamil": "விற்பனை",
+      "roman": "Virpanai",
+      "meaning": "sales",
+      "tone": "active"
+    },
+    {
+      "tamil": "பொருள்",
+      "roman": "Porul",
+      "meaning": "wealth/meaning",
+      "tone": "valuable"
+    },
+    {
+      "tamil": "பங்கு",
+      "roman": "Pangu",
+      "meaning": "share/role",
+      "tone": "inclusive"
+    }
+  ],
+  "speed": [
+    {
+      "tamil": "வேகம்",
+      "roman": "Vegam",
+      "meaning": "speed/velocity",
+      "tone": "swift"
+    },
+    {
+      "tamil": "விரைவு",
+      "roman": "Viraivu",
+      "meaning": "quickness/haste",
+      "tone": "prompt"
+    },
+    {
+      "tamil": "சுறுசுறுப்பு",
+      "roman": "Surusuruppu",
+      "meaning": "briskness",
+      "tone": "energetic"
+    },
+    {
+      "tamil": "பாய்ச்சல்",
+      "roman": "Paaichal",
+      "meaning": "leap/flow",
+      "tone": "dynamic"
+    },
+    {
+      "tamil": "திடீர்",
+      "roman": "Thideer",
+      "meaning": "sudden/instant",
+      "tone": "immediate"
+    },
+    {
+      "tamil": "முடுக்கம்",
+      "roman": "Mudukku",
+      "meaning": "acceleration",
+      "tone": "driving"
+    },
+    {
+      "tamil": "தீவிரம்",
+      "roman": "Theeviram",
+      "meaning": "intensity",
+      "tone": "focused"
+    },
+    {
+      "tamil": "கடுகதி",
+      "roman": "Kadugadhi",
+      "meaning": "rapid speed",
+      "tone": "fast-paced"
+    },
+    {
+      "tamil": "துரிதம்",
+      "roman": "Thuritham",
+      "meaning": "rapid/urgent",
+      "tone": "agile"
+    },
+    {
+      "tamil": "ஓட்டம்",
+      "roman": "Ootam",
+      "meaning": "run/flow",
+      "tone": "continuous"
+    }
+  ],
+  "trust": [
+    {
+      "tamil": "நம்பிக்கை",
+      "roman": "Nambikkai",
+      "meaning": "trust/hope",
+      "tone": "reliable"
+    },
+    {
+      "tamil": "உண்மை",
+      "roman": "Unmai",
+      "meaning": "truth",
+      "tone": "authentic"
+    },
+    {
+      "tamil": "சத்தியம்",
+      "roman": "Sathiyam",
+      "meaning": "promise/truth",
+      "tone": "solemn"
+    },
+    {
+      "tamil": "உறுதி",
+      "roman": "Uruthi",
+      "meaning": "certainty/firmness",
+      "tone": "steadfast"
+    },
+    {
+      "tamil": "மெய்",
+      "roman": "Mei",
+      "meaning": "truth/reality",
+      "tone": "genuine"
+    },
+    {
+      "tamil": "ஆதாரம்",
+      "roman": "Aadhaaram",
+      "meaning": "proof/basis",
+      "tone": "solid"
+    },
+    {
+      "tamil": "விசுவாசம்",
+      "roman": "Visuvasam",
+      "meaning": "loyalty",
+      "tone": "faithful"
+    },
+    {
+      "tamil": "பக்தி",
+      "roman": "Bhakthi",
+      "meaning": "devotion",
+      "tone": "dedicated"
+    },
+    {
+      "tamil": "நிலை",
+      "roman": "Nilai",
+      "meaning": "stability",
+      "tone": "enduring"
+    },
+    {
+      "tamil": "தரம்",
+      "roman": "Tharam",
+      "meaning": "quality",
+      "tone": "premium"
+    }
+  ],
+  "home": [
+    {
+      "tamil": "இல்லம்",
+      "roman": "Illam",
+      "meaning": "home",
+      "tone": "warm"
+    },
+    {
+      "tamil": "வீடு",
+      "roman": "Veedu",
+      "meaning": "house",
+      "tone": "comforting"
+    },
+    {
+      "tamil": "அகம்",
+      "roman": "Agam",
+      "meaning": "inner/home",
+      "tone": "intimate"
+    },
+    {
+      "tamil": "குடி",
+      "roman": "Kudi",
+      "meaning": "settlement/family",
+      "tone": "rooted"
+    },
+    {
+      "tamil": "மாளிகை",
+      "roman": "Maaligai",
+      "meaning": "mansion",
+      "tone": "grand"
+    },
+    {
+      "tamil": "வாசம்",
+      "roman": "Vaasam",
+      "meaning": "residence",
+      "tone": "peaceful"
+    },
+    {
+      "tamil": "அரண்",
+      "roman": "Aran",
+      "meaning": "fortress/shelter",
+      "tone": "secure"
+    },
+    {
+      "tamil": "குடில்",
+      "roman": "Kudil",
+      "meaning": "cottage",
+      "tone": "cozy"
+    },
+    {
+      "tamil": "முற்றம்",
+      "roman": "Mutram",
+      "meaning": "courtyard",
+      "tone": "open"
+    },
+    {
+      "tamil": "கூரகம்",
+      "roman": "Kooragam",
+      "meaning": "roof/shelter",
+      "tone": "protective"
+    }
+  ],
+  "art": [
+    {
+      "tamil": "கலை",
+      "roman": "Kalai",
+      "meaning": "art",
+      "tone": "creative"
+    },
+    {
+      "tamil": "ஓவியம்",
+      "roman": "Oviyam",
+      "meaning": "painting",
+      "tone": "visual"
+    },
+    {
+      "tamil": "சிற்பம்",
+      "roman": "Sirpam",
+      "meaning": "sculpture",
+      "tone": "crafted"
+    },
+    {
+      "tamil": "இசை",
+      "roman": "Isai",
+      "meaning": "music",
+      "tone": "melodious"
+    },
+    {
+      "tamil": "நடனம்",
+      "roman": "Nadanam",
+      "meaning": "dance",
+      "tone": "graceful"
+    },
+    {
+      "tamil": "கவிதை",
+      "roman": "Kavithai",
+      "meaning": "poetry",
+      "tone": "expressive"
+    },
+    {
+      "tamil": "நாடகம்",
+      "roman": "Naadagam",
+      "meaning": "drama",
+      "tone": "dramatic"
+    },
+    {
+      "tamil": "வண்ணம்",
+      "roman": "Vannam",
+      "meaning": "color",
+      "tone": "vibrant"
+    },
+    {
+      "tamil": "அழகு",
+      "roman": "Azhagu",
+      "meaning": "beauty",
+      "tone": "aesthetic"
+    },
+    {
+      "tamil": "ராகம்",
+      "roman": "Raagam",
+      "meaning": "melody",
+      "tone": "rhythmic"
+    }
+  ],
+  "nature": [
+    {
+      "tamil": "இயற்கை",
+      "roman": "Iyarkai",
+      "meaning": "nature",
+      "tone": "organic"
+    },
+    {
+      "tamil": "பூமி",
+      "roman": "Bhoomi",
+      "meaning": "earth",
+      "tone": "grounded"
+    },
+    {
+      "tamil": "காற்று",
+      "roman": "Kaatru",
+      "meaning": "wind/air",
+      "tone": "free"
+    },
+    {
+      "tamil": "நீர்",
+      "roman": "Neer",
+      "meaning": "water",
+      "tone": "flowing"
+    },
+    {
+      "tamil": "நெருப்பு",
+      "roman": "Neruppu",
+      "meaning": "fire",
+      "tone": "passionate"
+    },
+    {
+      "tamil": "மரம்",
+      "roman": "Maram",
+      "meaning": "tree",
+      "tone": "sturdy"
+    },
+    {
+      "tamil": "மலை",
+      "roman": "Malai",
+      "meaning": "mountain",
+      "tone": "majestic"
+    },
+    {
+      "tamil": "கடல்",
+      "roman": "Kadal",
+      "meaning": "ocean",
+      "tone": "vast"
+    },
+    {
+      "tamil": "வானம்",
+      "roman": "Vaanam",
+      "meaning": "sky",
+      "tone": "limitless"
+    },
+    {
+      "tamil": "ஒளி",
+      "roman": "Oli",
+      "meaning": "light",
+      "tone": "radiant"
+    }
+  ],
+  "technology": [
+    {
+      "tamil": "தொழில்நுட்பம்",
+      "roman": "Thozhilnutpam",
+      "meaning": "technology",
+      "tone": "modern"
+    },
+    {
+      "tamil": "கணினி",
+      "roman": "Kanini",
+      "meaning": "computer",
+      "tone": "digital"
+    },
+    {
+      "tamil": "மின்",
+      "roman": "Min",
+      "meaning": "electric",
+      "tone": "sparking"
+    },
+    {
+      "tamil": "பொறி",
+      "roman": "Pori",
+      "meaning": "machine/device",
+      "tone": "mechanical"
+    },
+    {
+      "tamil": "வலையமைப்பு",
+      "roman": "Valaiyamaippu",
+      "meaning": "network",
+      "tone": "connected"
+    },
+    {
+      "tamil": "தரவு",
+      "roman": "Tharavu",
+      "meaning": "data",
+      "tone": "informational"
+    },
+    {
+      "tamil": "செயலி",
+      "roman": "Seyali",
+      "meaning": "application/processor",
+      "tone": "functional"
+    },
+    {
+      "tamil": "கருவி",
+      "roman": "Karuvi",
+      "meaning": "tool",
+      "tone": "utilitarian"
+    },
+    {
+      "tamil": "யந்திரம்",
+      "roman": "Yandhiram",
+      "meaning": "machine",
+      "tone": "automated"
+    },
+    {
+      "tamil": "விஞ்ஞானம்",
+      "roman": "Vignanam",
+      "meaning": "science",
+      "tone": "advanced"
+    }
+  ],
+  "leadership": [
+    {
+      "tamil": "தலைமை",
+      "roman": "Thalaimai",
+      "meaning": "leadership",
+      "tone": "commanding"
+    },
+    {
+      "tamil": "வழிகாட்டி",
+      "roman": "Vazhikaatti",
+      "meaning": "guide",
+      "tone": "directing"
+    },
+    {
+      "tamil": "ஆளுமை",
+      "roman": "Aalumai",
+      "meaning": "personality/governance",
+      "tone": "charismatic"
+    },
+    {
+      "tamil": "அதிகாரம்",
+      "roman": "Adhigaaram",
+      "meaning": "power/authority",
+      "tone": "authoritative"
+    },
+    {
+      "tamil": "முன்னோடி",
+      "roman": "Munnodi",
+      "meaning": "pioneer",
+      "tone": "leading"
+    },
+    {
+      "tamil": "நிர்வாகம்",
+      "roman": "Nirvaagam",
+      "meaning": "management",
+      "tone": "organized"
+    },
+    {
+      "tamil": "ஆட்சி",
+      "roman": "Aatchi",
+      "meaning": "rule",
+      "tone": "sovereign"
+    },
+    {
+      "tamil": "திறமை",
+      "roman": "Thiramai",
+      "meaning": "talent/capability",
+      "tone": "competent"
+    },
+    {
+      "tamil": "வீரம்",
+      "roman": "Veeram",
+      "meaning": "bravery",
+      "tone": "courageous"
+    },
+    {
+      "tamil": "மகுடம்",
+      "roman": "Magudam",
+      "meaning": "crown",
+      "tone": "regal"
+    }
+  ],
+  "community": [
+    {
+      "tamil": "சமூகம்",
+      "roman": "Samoogam",
+      "meaning": "society/community",
+      "tone": "inclusive"
+    },
+    {
+      "tamil": "மக்கள்",
+      "roman": "Makkal",
+      "meaning": "people",
+      "tone": "populace"
+    },
+    {
+      "tamil": "குழு",
+      "roman": "Kuzhu",
+      "meaning": "group",
+      "tone": "collective"
+    },
+    {
+      "tamil": "மன்றம்",
+      "roman": "Mandram",
+      "meaning": "forum/club",
+      "tone": "communal"
+    },
+    {
+      "tamil": "ஊர்",
+      "roman": "Oor",
+      "meaning": "town/village",
+      "tone": "local"
+    },
+    {
+      "tamil": "குலம்",
+      "roman": "Kulam",
+      "meaning": "clan/lineage",
+      "tone": "familial"
+    },
+    {
+      "tamil": "இனம்",
+      "roman": "Inam",
+      "meaning": "race/kind",
+      "tone": "diverse"
+    },
+    {
+      "tamil": "பொது",
+      "roman": "Podhu",
+      "meaning": "public/common",
+      "tone": "shared"
+    },
+    {
+      "tamil": "தொண்டு",
+      "roman": "Thondu",
+      "meaning": "service",
+      "tone": "altruistic"
+    },
+    {
+      "tamil": "கூட்டம்",
+      "roman": "Koottam",
+      "meaning": "crowd/gathering",
+      "tone": "bustling"
+    }
+  ],
+  "health": [
+    {
+      "tamil": "சுகாதாரம்",
+      "roman": "Sugaadhaaram",
+      "meaning": "health/hygiene",
+      "tone": "clean"
+    },
+    {
+      "tamil": "நலம்",
+      "roman": "Nalam",
+      "meaning": "wellness",
+      "tone": "wholesome"
+    },
+    {
+      "tamil": "ஆரோக்கியம்",
+      "roman": "Arokkiyam",
+      "meaning": "health",
+      "tone": "vital"
+    },
+    {
+      "tamil": "மருத்துவம்",
+      "roman": "Maruthuvam",
+      "meaning": "medicine",
+      "tone": "healing"
+    },
+    {
+      "tamil": "உயிர்",
+      "roman": "Uyir",
+      "meaning": "life",
+      "tone": "essential"
+    },
+    {
+      "tamil": "சக்தி",
+      "roman": "Sakthi",
+      "meaning": "energy/power",
+      "tone": "vigorous"
+    },
+    {
+      "tamil": "சுமை",
+      "roman": "Sumai",
+      "meaning": "balance/load",
+      "tone": "stable"
+    },
+    {
+      "tamil": "குணம்",
+      "roman": "Gunam",
+      "meaning": "cure/character",
+      "tone": "restorative"
+    },
+    {
+      "tamil": "மூலிகை",
+      "roman": "Mooligai",
+      "meaning": "herb",
+      "tone": "natural"
+    },
+    {
+      "tamil": "உடல்",
+      "roman": "Udal",
+      "meaning": "body",
+      "tone": "physical"
+    }
+  ],
+  "food": [
+    {
+      "tamil": "உணவு",
+      "roman": "Unavu",
+      "meaning": "food",
+      "tone": "nourishing"
+    },
+    {
+      "tamil": "சுவை",
+      "roman": "Suvai",
+      "meaning": "taste",
+      "tone": "delicious"
+    },
+    {
+      "tamil": "அமுதம்",
+      "roman": "Amudham",
+      "meaning": "nectar/ambrosia",
+      "tone": "divine"
+    },
+    {
+      "tamil": "விருந்து",
+      "roman": "Virundhu",
+      "meaning": "feast",
+      "tone": "celebratory"
+    },
+    {
+      "tamil": "பசி",
+      "roman": "Pasi",
+      "meaning": "hunger",
+      "tone": "appetizing"
+    },
+    {
+      "tamil": "சோறு",
+      "roman": "Soru",
+      "meaning": "rice/meal",
+      "tone": "comforting"
+    },
+    {
+      "tamil": "பானம்",
+      "roman": "Paanam",
+      "meaning": "drink",
+      "tone": "refreshing"
+    },
+    {
+      "tamil": "இனிப்பு",
+      "roman": "Inippu",
+      "meaning": "sweetness",
+      "tone": "pleasant"
+    },
+    {
+      "tamil": "காரம்",
+      "roman": "Kaaram",
+      "meaning": "spice/heat",
+      "tone": "bold"
+    },
+    {
+      "tamil": "சமையல்",
+      "roman": "Samaiyal",
+      "meaning": "cooking",
+      "tone": "culinary"
+    }
+  ],
+  "education": [
+    {
+      "tamil": "கல்வி",
+      "roman": "Kalvi",
+      "meaning": "education",
+      "tone": "enlightening"
+    },
+    {
+      "tamil": "பள்ளி",
+      "roman": "Palli",
+      "meaning": "school",
+      "tone": "foundational"
+    },
+    {
+      "tamil": "பாடம்",
+      "roman": "Paadam",
+      "meaning": "lesson",
+      "tone": "instructive"
+    },
+    {
+      "tamil": "ஆசிரியர்",
+      "roman": "Aasiriyar",
+      "meaning": "teacher",
+      "tone": "guiding"
+    },
+    {
+      "tamil": "மாணவர்",
+      "roman": "Maanavar",
+      "meaning": "student",
+      "tone": "learning"
+    },
+    {
+      "tamil": "புத்தகம்",
+      "roman": "Puthagam",
+      "meaning": "book",
+      "tone": "knowledgeable"
+    },
+    {
+      "tamil": "பயிற்சி",
+      "roman": "Payirchi",
+      "meaning": "training/practice",
+      "tone": "disciplined"
+    },
+    {
+      "tamil": "தேர்வு",
+      "roman": "Thervu",
+      "meaning": "exam/choice",
+      "tone": "evaluative"
+    },
+    {
+      "tamil": "கலைகழகம்",
+      "roman": "Kalaikazhagam",
+      "meaning": "university",
+      "tone": "academic"
+    },
+    {
+      "tamil": "ஆராய்ச்சி",
+      "roman": "Aaraaichi",
+      "meaning": "research",
+      "tone": "exploratory"
+    }
+  ],
+  "finance": [
+    {
+      "tamil": "நிதி",
+      "roman": "Nidhi",
+      "meaning": "finance/fund",
+      "tone": "secure"
+    },
+    {
+      "tamil": "பணம்",
+      "roman": "Panam",
+      "meaning": "money",
+      "tone": "liquid"
+    },
+    {
+      "tamil": "செல்வம்",
+      "roman": "Selvam",
+      "meaning": "wealth",
+      "tone": "prosperous"
+    },
+    {
+      "tamil": "முதலீடு",
+      "roman": "Mudhaleedu",
+      "meaning": "investment",
+      "tone": "growing"
+    },
+    {
+      "tamil": "வங்கி",
+      "roman": "Vangi",
+      "meaning": "bank",
+      "tone": "reliable"
+    },
+    {
+      "tamil": "செலவு",
+      "roman": "Selavu",
+      "meaning": "expense",
+      "tone": "calculated"
+    },
+    {
+      "tamil": "சேமிப்பு",
+      "roman": "Semippu",
+      "meaning": "savings",
+      "tone": "prudent"
+    },
+    {
+      "tamil": "கடன்",
+      "roman": "Kadan",
+      "meaning": "debt/loan",
+      "tone": "leveraged"
+    },
+    {
+      "tamil": "காப்பீடு",
+      "roman": "Kaappeedu",
+      "meaning": "insurance",
+      "tone": "protective"
+    },
+    {
+      "tamil": "பொருளாதாரம்",
+      "roman": "Porulaadhaaram",
+      "meaning": "economy",
+      "tone": "macro"
+    }
+  ],
+  "communication": [
+    {
+      "tamil": "தொடர்பு",
+      "roman": "Thodarbu",
+      "meaning": "communication/link",
+      "tone": "connected"
+    },
+    {
+      "tamil": "பேச்சு",
+      "roman": "Pechu",
+      "meaning": "speech/talk",
+      "tone": "vocal"
+    },
+    {
+      "tamil": "மொழி",
+      "roman": "Mozhi",
+      "meaning": "language",
+      "tone": "expressive"
+    },
+    {
+      "tamil": "சொல்",
+      "roman": "Sol",
+      "meaning": "word",
+      "tone": "articulate"
+    },
+    {
+      "tamil": "குரல்",
+      "roman": "Kural",
+      "meaning": "voice",
+      "tone": "resonant"
+    },
+    {
+      "tamil": "கடிதம்",
+      "roman": "Kaditham",
+      "meaning": "letter",
+      "tone": "written"
+    },
+    {
+      "tamil": "செய்தி",
+      "roman": "Seidhi",
+      "meaning": "news/message",
+      "tone": "informative"
+    },
+    {
+      "tamil": "அறிவிப்பு",
+      "roman": "Arivippu",
+      "meaning": "announcement",
+      "tone": "loud"
+    },
+    {
+      "tamil": "உரையாடல்",
+      "roman": "Uraiyaadal",
+      "meaning": "conversation",
+      "tone": "interactive"
+    },
+    {
+      "tamil": "ஒலி",
+      "roman": "Oli",
+      "meaning": "sound",
+      "tone": "audible"
+    }
+  ],
+  "travel": [
+    {
+      "tamil": "பயணம்",
+      "roman": "Payanam",
+      "meaning": "journey/travel",
+      "tone": "adventurous"
+    },
+    {
+      "tamil": "வழி",
+      "roman": "Vazhi",
+      "meaning": "path/way",
+      "tone": "navigational"
+    },
+    {
+      "tamil": "பாதை",
+      "roman": "Paadhai",
+      "meaning": "route/road",
+      "tone": "directional"
+    },
+    {
+      "tamil": "ஊர்தி",
+      "roman": "Oorthi",
+      "meaning": "vehicle",
+      "tone": "mobile"
+    },
+    {
+      "tamil": "விமானம்",
+      "roman": "Vimaanam",
+      "meaning": "airplane",
+      "tone": "soaring"
+    },
+    {
+      "tamil": "கப்பல்",
+      "roman": "Kappal",
+      "meaning": "ship",
+      "tone": "voyaging"
+    },
+    {
+      "tamil": "சுற்றுலா",
+      "roman": "Sutrula",
+      "meaning": "tourism",
+      "tone": "exploring"
+    },
+    {
+      "tamil": "பயணிகள்",
+      "roman": "Payanigal",
+      "meaning": "passengers",
+      "tone": "moving"
+    },
+    {
+      "tamil": "திசை",
+      "roman": "Thisai",
+      "meaning": "direction",
+      "tone": "oriented"
+    },
+    {
+      "tamil": "உலகம்",
+      "roman": "Ulagam",
+      "meaning": "world",
+      "tone": "global"
+    }
+  ],
+  "craft": [
+    {
+      "tamil": "கைவினை",
+      "roman": "Kaivinai",
+      "meaning": "handicraft",
+      "tone": "artisanal"
+    },
+    {
+      "tamil": "நெசவு",
+      "roman": "Nesavu",
+      "meaning": "weaving",
+      "tone": "intricate"
+    },
+    {
+      "tamil": "மட்பாண்டம்",
+      "roman": "Matpaandam",
+      "meaning": "pottery",
+      "tone": "earthen"
+    },
+    {
+      "tamil": "செதுக்கு",
+      "roman": "Sedhukku",
+      "meaning": "carving",
+      "tone": "detailed"
+    },
+    {
+      "tamil": "தச்சு",
+      "roman": "Thachu",
+      "meaning": "carpentry",
+      "tone": "structured"
+    },
+    {
+      "tamil": "உலோகம்",
+      "roman": "Ulogam",
+      "meaning": "metal",
+      "tone": "strong"
+    },
+    {
+      "tamil": "நூல்",
+      "roman": "Nool",
+      "meaning": "thread",
+      "tone": "delicate"
+    },
+    {
+      "tamil": "ஆபரணம்",
+      "roman": "Aabaranam",
+      "meaning": "jewelry",
+      "tone": "ornate"
+    },
+    {
+      "tamil": "வடிவமைப்பு",
+      "roman": "Vadivamaippu",
+      "meaning": "designing",
+      "tone": "stylish"
+    },
+    {
+      "tamil": "கைவேலை",
+      "roman": "Kaivelai",
+      "meaning": "handiwork",
+      "tone": "crafted"
+    }
+  ]
+}

@@ -65,7 +65,7 @@ csp = {
     'script-src': ['\'self\'', 'https://cdnjs.cloudflare.com'],
     'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com'],
     'img-src': ['\'self\'', 'data:', 'https://img.shields.io'],
-    'connect-src': ['\'self\'', 'https://tamil-kural-api.vercel.app', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com'],
+    'connect-src': ['\'self\'', 'https://kural.codewithram.dev', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com'],
     'font-src': ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://fonts.googleapis.com']
 }
 Talisman(app, content_security_policy=csp, force_https=False)

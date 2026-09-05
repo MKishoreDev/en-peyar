@@ -234,9 +234,10 @@ python app.py
 
 ### Thirukkural API
 
-Used for Thirukkural discovery and inspiration.
+Used for Thirukkural discovery and inspiration. Special thanks to [@nramc](https://github.com/nramc) for creating and maintaining this wonderful open-source project ([nramc/thirukkural-api](https://github.com/nramc/thirukkural-api)) and notifying us about the API domain migration!
 
-https://tamil-kural-api.vercel.app
+- **Live API Endpoint**: [https://kural.codewithram.dev](https://kural.codewithram.dev)
+- **GitHub Repository**: [https://github.com/nramc/thirukkural-api](https://github.com/nramc/thirukkural-api)
 
 ### Tamil Nadu SVG Map
 

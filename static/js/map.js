@@ -221,7 +221,7 @@ class MapManager {
     }
 
     try {
-      const response = await fetch("https://tamil-kural-api.vercel.app/api/random");
+      const response = await fetch("https://kural.codewithram.dev/api/random");
       if (!response.ok) throw new Error("API error");
       const data = await response.json();
       this.renderKural(data);
@@ -233,70 +233,89 @@ class MapManager {
           line1: "அகர முதல எழுத்தெல்லாம் ஆதி",
           line2: "பகவன் முதற்றே உலகு.",
           tam_exp: "எழுத்துக்கள் எல்லாம் அகரத்தை முதலாகக் கொண்டிருக்கின்றன; அதுபோல உலகம் ஆதி பகவனை முதலாகக் கொண்டிருக்கிறது.",
-          translation: "As the letter A is the first of all letters, so the eternal God is first in the world."
+          translation: "As the letter A is the first of all letters, so the eternal God is first in the world.",
+          section: { names: { ta: "அறத்துப்பால்", en: "Virtue" } },
+          chapter: { names: { ta: "கடவுள் வாழ்த்து", en: "Praise of God" } }
         },
         {
           number: 2,
           line1: "கற்றதனால் ஆய பயனென்கொல் வாலறிவன்",
           line2: "நற்றாள் தொழாஅர் எனின்.",
           tam_exp: "தூய அறிவு வடிவாக விளங்கும் இறைவனுடைய நல்ல திருவடிகளைத் தொழாமல் இருப்பாரானால், அவர் கற்ற கல்வியினால் ஆகிய பயன் என்ன?",
-          translation: "What fruit have they of their learning who worship not the good feet of Him who is possessed of pure knowledge?"
+          translation: "What fruit have they of their learning who worship not the good feet of Him who is possessed of pure knowledge?",
+          section: { names: { ta: "அறத்துப்பால்", en: "Virtue" } },
+          chapter: { names: { ta: "கடவுள் வாழ்த்து", en: "Praise of God" } }
         },
         {
           number: 7,
           line1: "தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க்கு அல்லால்",
           line2: "மனக்கவலை மாற்றல் அரிது.",
           tam_exp: "தனக்கு ஒப்புமை இல்லாத தலைவனுடைய திருவடிகளைப் பொருந்தி நினைக்கின்றவர்கற்கல்லாமல், மற்றவர்களுக்கு மனக்கவலையை மாற்றுவது அரிது.",
-          translation: "Anxiety of mind cannot be removed, except for those who are united to the feet of Him who has no equal."
+          translation: "Anxiety of mind cannot be removed, except for those who are united to the feet of Him who has no equal.",
+          section: { names: { ta: "அறத்துப்பால்", en: "Virtue" } },
+          chapter: { names: { ta: "கடவுள் வாழ்த்து", en: "Praise of God" } }
         },
         {
           number: 391,
           line1: "கற்க கசடறக் கற்பவை கற்றபின்",
           line2: "நிற்க அதற்குத் தக.",
           tam_exp: "கற்கத் தகுந்த நூல்களைக் குற்றமறக் கற்க வேண்டும்; அவ்வாறு கற்ற பிறகு, கற்ற கல்விக்குத் தக்கவாறு நெறியில் நிற்க வேண்டும்.",
-          translation: "Let a man learn thoroughly whatever he may learn, and let his conduct be worthy of his learning."
+          translation: "Let a man learn thoroughly whatever he may learn, and let his conduct be worthy of his learning.",
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "கல்வி", en: "Learning" } }
         },
         {
           number: 392,
           line1: "எண்ணென்ப ஏனை எழுத்தென்ப இவ்விரண்டும்",
           line2: "கண்ணென்ப வாழும் உயிர்க்கு.",
           tam_exp: "எண்கள் என்று சொல்லப்படுபவை, எழுத்துக்கள் என்று சொல்லப்படுபவை ஆகிய இவ்விரண்டையும் வாழும் மக்களுக்கு இரு கண்கள் என்று கூறுவர்.",
-          translation: "Numbers and letters, they say, are the two eyes of living beings."
+          translation: "Numbers and letters, they say, are the two eyes of living beings.",
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "கல்வி", en: "Learning" } }
         },
         {
           number: 394,
           line1: "உவப்பத் தலைக்கூடி உள்ளப் பிரிதல்",
           line2: "அனைத்தே புலவர் தொழில்.",
           tam_exp: "மகிழுமாறு கூடிப் பழகி, இனி இவரை எப்போது காண்போம் என்று வருந்துமாறு பிரிவது அறிஞர்களின் தொழிலாகும்.",
-          translation: "The office of the learned is to meet with joy, and depart with regretful longing."
+          translation: "The office of the learned is to meet with joy, and depart with regretful longing.",
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "கல்வி", en: "Learning" } }
         },
         {
           number: 396,
           line1: "தொட்டனைத் தூறும் மணற்கேணி மாந்தர்க்குக்",
           line2: "கற்றனைத் தூறும் அறிவு.",
           tam_exp: "மணற்பாங்கான இடத்தில் தோண்டத் தோண்ட நீர் ஊறும்; அதுபோல மக்களுக்குக் கற்கக் கற்க அறிவு வளரும்.",
-          translation: "Water will flow from a sandy well in proportion to the depth to which it is dug, and knowledge will flow in proportion to learning."
+          translation: "Water will flow from a sandy well in proportion to the depth to which it is dug, and knowledge will flow in proportion to learning.",
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "கல்வி", en: "Learning" } }
         },
         {
           number: 397,
           line1: "யாதானும் நாடாமல் ஊராமால் என்னொருவன்",
           line2: "சாந்துணையும் கல்லாத வாறு.",
           tam_exp: "கற்றவனுக்கு எந்த நாடும் சொந்த நாடாகும், எந்த ஊரும் சொந்த ஊராகும்; அப்படியிருக்க ஒருவன் சாகும் வரையில் கற்காமல் காலம் கழிப்பது ஏன்?",
-          translation: "Why should any man remain unlearned till his death, when every land and city is his own?"
+          translation: "Why should any man remain unlearned till his death, when every land and city is his own?",
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "கல்வி", en: "Learning" } }
         },
         {
           number: 411,
           line1: "செல்வத்துள் செல்வம் செவிச்செல்வம் அச்செல்வம்",
           line2: "செல்வத்துள் எல்லாம் தலை.",
           tam_exp: "செல்வங்கள் பலவற்றுள்ளும் சிறந்த செல்வம் செவியால் கேட்டுப் பெறும் செல்வமாகும்; அந்தச் செல்வம் பிற செல்வங்கள் எல்லாவற்றிலும் முதன்மையானதாகும்.",
-          translation: "Wealth of the ear is the chief wealth; it is the head of all wealth."
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "கேள்வி", en: "Listening" } }
         },
         {
           number: 781,
           line1: "செயற்கரிய யாவுள நட்பின் அதுபோல்",
           line2: "வினைக்கரிய யாவுள காப்பு.",
           tam_exp: "நட்பைப்போலச் செய்து கொள்வதற்கரிய அரிய செயல்கள் எவை உள்ளன? அதுபோலத் தொழிலுக்குச் சிறந்த பாதுகாப்பாக இருப்பவை எவை உள்ளன?",
-          translation: "What is so difficult to acquire as friendship? What guard is so secure against the efforts of enemies?"
+          translation: "What is so difficult to acquire as friendship? What guard is so secure against the efforts of enemies?",
+          section: { names: { ta: "பொருட்பால்", en: "Wealth" } },
+          chapter: { names: { ta: "நட்பு", en: "Friendship" } }
         }
       ];
       const randomKural = fallbacks[Math.floor(Math.random() * fallbacks.length)];
@@ -313,6 +332,20 @@ class MapManager {
         `;
       }
     }
+  }
+
+  parseSectionOrChapter(field) {
+    if (!field) return { ta: "", en: "" };
+    if (typeof field === "string") {
+      return { ta: field.trim(), en: "" };
+    }
+    if (typeof field === "object") {
+      const target = (field.names && typeof field.names === "object") ? field.names : field;
+      const ta = target.ta || target.tam || target.tamil || target.ta_IN || (typeof field.name === "string" ? field.name : "") || "";
+      const en = target.en || target.eng || target.english || target.en_US || "";
+      return { ta: String(ta).trim(), en: String(en).trim() };
+    }
+    return { ta: "", en: "" };
   }
 
   renderKural(kural) {
@@ -348,22 +381,37 @@ class MapManager {
     
     let engExp = kural.eng_exp || kural.eng_explanation || "";
 
+    const sectInfo = this.parseSectionOrChapter(kural.section || kural.sect || kural.paal);
+    const chapInfo = this.parseSectionOrChapter(kural.chapter || kural.chap || kural.adhigaram);
+
     if (typeof DOMPurify !== "undefined") {
       line1 = DOMPurify.sanitize(line1);
       line2 = DOMPurify.sanitize(line2);
       translation = DOMPurify.sanitize(translation);
       tamExp = DOMPurify.sanitize(tamExp);
       engExp = DOMPurify.sanitize(engExp);
+      sectInfo.ta = DOMPurify.sanitize(sectInfo.ta);
+      sectInfo.en = DOMPurify.sanitize(sectInfo.en);
+      chapInfo.ta = DOMPurify.sanitize(chapInfo.ta);
+      chapInfo.en = DOMPurify.sanitize(chapInfo.en);
     }
+
+    const metaBadges = (sectInfo.ta || chapInfo.ta) ? `
+      <div class="flex flex-wrap items-center gap-2 mb-3.5 pr-8 text-xs font-medium">
+        ${sectInfo.ta ? `<span class="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20" ${sectInfo.en ? `title="${sectInfo.en}"` : ''}>${sectInfo.ta}${sectInfo.en ? ` <span class="opacity-75 font-normal">(${sectInfo.en})</span>` : ''}</span>` : ''}
+        ${chapInfo.ta ? `<span class="px-2.5 py-0.5 rounded-full bg-surface-hover text-muted-foreground border border-border/40" ${chapInfo.en ? `title="${chapInfo.en}"` : ''}>${chapInfo.ta}${chapInfo.en ? ` <span class="opacity-75 font-normal">(${chapInfo.en})</span>` : ''}</span>` : ''}
+      </div>
+    ` : '';
 
     kuralContainer.innerHTML = `
       <div class="animate-fade-up relative">
-        <button class="absolute top-0 right-0 p-1 text-muted-foreground hover:text-accent transition-colors" data-action="copy-kural" data-lines="${line1.replace(/'/g, "\\'")} ${line2.replace(/'/g, "\\'")}" data-trans="${translation.replace(/'/g, "\\'")}" title="Copy couplet">
+        <button class="absolute top-0 right-0 p-1 text-muted-foreground hover:text-accent transition-colors z-10" data-action="copy-kural" data-lines="${line1.replace(/'/g, "\\'")} ${line2.replace(/'/g, "\\'")}" data-trans="${translation.replace(/'/g, "\\'")}" title="Copy couplet">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
           </svg>
         </button>
+        ${metaBadges}
         <p class="tamil kural-couplet text-accent font-semibold pr-6">${line1}<br>${line2}</p>
         
         <div class="mt-6 border-t border-border/60 pt-6 grid gap-4 sm:grid-cols-2 text-left text-sm text-muted-foreground">

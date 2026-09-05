@@ -124,14 +124,14 @@
       "url": "https://mkishore.is-a.dev"
     }
   }
-  </script>
+  <script>window.BUILD_ID = "{{ v }}";</script>
 
   <!-- ── Stylesheets ────────────────────────────────────────── -->
   <link rel="stylesheet" href="/static/css/tailwind.css?v={{ v }}" />
   <link rel="stylesheet" href="/static/css/style.css?v={{ v }}" />
 
   <!-- ── Security ───────────────────────────────────────────── -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.4/purify.min.js"></script>
+  <script src="/static/js/purify.min.js?v={{ v }}"></script>
 
   <!-- ── Base Scripts ───────────────────────────────────────── -->
 </head>

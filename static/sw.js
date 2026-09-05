@@ -1,4 +1,6 @@
-const CACHE_NAME = 'en-peyar-cache-v10';
+const swParams = new URLSearchParams(self.location.search);
+const BUILD_VER = swParams.get('v') || 'v11';
+const CACHE_NAME = 'en-peyar-cache-' + BUILD_VER;
 const urlsToCache = [
   '/',
   '/static/css/tailwind.css',
@@ -10,6 +12,7 @@ const urlsToCache = [
   '/static/images/generator.png',
   '/static/images/map.png',
   '/static/images/tamilnadu_map.svg',
+  '/static/js/purify.min.js',
   '/static/js/events.js',
   '/static/js/generator_api.js',
   '/static/js/generator_ui.js',

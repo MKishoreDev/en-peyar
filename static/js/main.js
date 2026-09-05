@@ -753,38 +753,10 @@ if (yearEl) {
 
 // Register PWA Service Worker
 if ('serviceWorker' in navigator) {
-  let refreshing = false;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (!refreshing) {
-      refreshing = true;
-      window.location.reload();
-    }
-  });
-
   window.addEventListener('load', () => {
-    const swUrl = '/sw.js?v=' + (window.BUILD_ID || Date.now());
-    navigator.serviceWorker.register(swUrl)
+    navigator.serviceWorker.register('/sw.js')
       .then(registration => {
         console.log('ServiceWorker registration successful');
-        registration.update();
-
-        setInterval(() => {
-          registration.update();
-        }, 30000);
-
-        registration.addEventListener('updatefound', () => {
-          const newWorker = registration.installing;
-          if (newWorker) {
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                newWorker.postMessage({ action: 'skipWaiting' });
-                if (window.app && window.app.toast) {
-                  window.app.toast('Updating app to latest version...', 'info', 3000);
-                }
-              }
-            });
-          }
-        });
       })
       .catch(err => console.log('ServiceWorker registration failed: ', err));
   });

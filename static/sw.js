@@ -1,6 +1,4 @@
-const swParams = new URLSearchParams(self.location.search);
-const BUILD_VER = swParams.get('v') || 'v11';
-const CACHE_NAME = 'en-peyar-cache-' + BUILD_VER;
+const CACHE_NAME = 'en-peyar-cache-v12';
 const urlsToCache = [
   '/',
   '/static/css/tailwind.css',

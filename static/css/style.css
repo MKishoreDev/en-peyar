@@ -57,7 +57,7 @@
 html { 
   scroll-behavior: smooth; 
   -webkit-font-smoothing: antialiased; 
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -69,7 +69,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   overflow-wrap: break-word;
   word-break: normal;
